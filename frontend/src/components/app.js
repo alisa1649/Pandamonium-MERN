@@ -11,6 +11,7 @@ import EditProfileFormContainer from './profile/edit_profile_form_container';
 import Dashboard from "./dashboard/dashboard";
 
 import '../styles/app.css';
+import Thread from "../thread/post/thread";
 
 const App = () => (
   <div>
@@ -23,6 +24,7 @@ const App = () => (
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/profile/edit" component={EditProfileFormContainer} />
       <AuthRoute exact path="/dashboard" component={Dashboard} />
+      <AuthRoute exact path="/thread/:postId" component={Thread} />
     </Switch>
   </div>
 );

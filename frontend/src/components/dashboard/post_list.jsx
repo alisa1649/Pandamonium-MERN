@@ -1,6 +1,7 @@
 import React from 'react';
 import {createPost} from "../../actions/post_actions";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 class PostList extends React.Component {
     render() {
@@ -8,7 +9,13 @@ class PostList extends React.Component {
             <ul className='post-list'>
                 {
                     this.props.posts.map(post => {
-                        return <li key={post.id}>{post.body}</li>
+                        return (
+                            <li key={post.id}>
+                                <Link to={`/thread/${post.id}`}>
+                                    {post.body}
+                                </Link>
+                            </li>
+                        )
                     })
                 }
             </ul>
