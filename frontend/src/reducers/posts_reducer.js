@@ -1,8 +1,6 @@
 import { RECEIVE_POST, RECEIVE_POST_ERRORS } from '../actions/post_actions';
 
-const initialState = {
-    posts: {},
-};
+const initialState = {};
 
 const PostsReducer = (state = initialState, action) =>  {
     switch (action.type) {

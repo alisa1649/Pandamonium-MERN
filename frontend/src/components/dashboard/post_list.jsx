@@ -16,9 +16,11 @@ class PostList extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    posts: Object.values(state.posts)
-});
+const mapStateToProps = (state) => {
+    return {
+        posts: Object.values(state.posts)
+    }
+};
 
 const mapDispatchToProps = (dispatch) => ({
     createPost: (forumId, post) => dispatch(createPost(forumId, post)),
