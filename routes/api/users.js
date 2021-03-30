@@ -93,4 +93,17 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   });
 })
 
+router.patch('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  let _id = req.user.id;
+  let newUsername = req.body.username;
+  let newBio = req.body.bio;
+  
+  User.findByIdAndUpdate({_id}, {
+
+    username: newUsername, 
+    bio: newBio,
+  },
+  ).then(result => res.send(result)).catch((err) => res.send(err))
+})
+
 module.exports = router;
