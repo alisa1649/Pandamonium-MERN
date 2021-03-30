@@ -1,6 +1,4 @@
 import React from 'react';
-import {connect} from "react-redux";
-import {createParentPost} from "../../actions/parent_post_actions";
 
 class NewPostForm extends React.Component {
     constructor(props) {
@@ -9,6 +7,7 @@ class NewPostForm extends React.Component {
             body: ''
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -17,9 +16,13 @@ class NewPostForm extends React.Component {
         })
     }
 
+    handleSubmit() {
+        this.props.createPost(this.state);
+    }
+
     render() {
         return (
-            <form className='new-post-box' onSubmit={() => this.props.createPost(1, this.state)}>
+            <form className='new-post-box' onSubmit={this.handleSubmit}>
                 <div className='post-user-avatar'> </div>
                 <textarea onChange={this.handleChange}>{this.state.body}</textarea>
                 <input type='submit' className='post-box-button' value='Post' />
@@ -28,10 +31,4 @@ class NewPostForm extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    createPost: (forumId, post) => dispatch(createParentPost(forumId, post)),
-})
-export default connect(mapStateToProps, mapDispatchToProps)(NewPostForm);
+export default NewPostForm;

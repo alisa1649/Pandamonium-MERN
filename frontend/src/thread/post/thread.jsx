@@ -1,22 +1,26 @@
 import React from 'react';
-import {createParentPost} from "../../actions/parent_post_actions";
 import {connect} from "react-redux";
 import {Link, Redirect} from "react-router-dom";
-import {requestThread} from "../../actions/thread_actions";
+import {createComment, requestThread} from "../../actions/thread_actions";
+import NewPostForm from "../../components/dashboard/new_post_form";
 
 class Thread extends React.Component {
 
     componentDidMount() {
         if (this.props.parentPost) {
-            this.props.requestThread(this.props.parentPost.id);
+            this.props.requestThread(
+                this.props.parentPost.forumId,
+                this.props.parentPost.id);
         }
     }
 
     render() {
+        const createComment = (comment) => this.props.createComment(this.props.parentPost, comment);
         if(this.props.parentPost) {
             console.log(this.props.comments)
             return (
                 <div>
+                    <NewPostForm createPost={createComment} />
                     <div>
                         <Link to='/dashboard'>Back to Dashboard</Link>
                     </div>
@@ -51,7 +55,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    createPost: (forumId, post) => dispatch(createParentPost(forumId, post)),
-    requestThread: (postId) => dispatch(requestThread(postId))
+    createComment: (parentPost, comment) => dispatch(createComment(parentPost, comment)),
+    requestThread: (forumId, postId) => dispatch(requestThread(forumId, postId))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);
