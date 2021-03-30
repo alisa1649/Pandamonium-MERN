@@ -1,5 +1,5 @@
 import React from 'react';
-import {createPost} from "../../actions/post_actions";
+import {createParentPost} from "../../actions/parent_post_actions";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
@@ -8,7 +8,7 @@ class PostList extends React.Component {
         return (
             <ul className='post-list'>
                 {
-                    this.props.posts.map(post => {
+                    this.props.parent_posts.map(post => {
                         return (
                             <li key={post.id} className='post-item-container'>
                                 <Link to={`/thread/${post.id}`}>
@@ -25,11 +25,11 @@ class PostList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: Object.values(state.posts)
+        parent_posts: Object.values(state.parent_posts)
     }
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    createPost: (forumId, post) => dispatch(createPost(forumId, post)),
+    createPost: (forumId, post) => dispatch(createParentPost(forumId, post)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

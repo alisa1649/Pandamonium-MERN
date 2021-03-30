@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const createPost = (forumId, post) => {
+export const createParentPost = (forumId, post) => {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }

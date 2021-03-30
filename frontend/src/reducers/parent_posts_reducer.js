@@ -1,15 +1,15 @@
-import { RECEIVE_POST, RECEIVE_POST_ERRORS } from '../actions/post_actions';
+import { RECEIVE_PARENT_POST, RECEIVE_PARENT_POST_ERRORS } from '../actions/parent_post_actions';
 
 const initialState = {};
 
-const PostsReducer = (state = initialState, action) =>  {
+const ParentPostsReducer = (state = initialState, action) =>  {
     switch (action.type) {
-        case RECEIVE_POST:
+        case RECEIVE_PARENT_POST:
             return {
                 ...state,
                 [action.post.id]: action.post
             };
-        case RECEIVE_POST_ERRORS:
+        case RECEIVE_PARENT_POST_ERRORS:
             // TODO: add error code
             return state;
         default:
@@ -17,4 +17,4 @@ const PostsReducer = (state = initialState, action) =>  {
     }
 }
 
-export default PostsReducer;
+export default ParentPostsReducer;

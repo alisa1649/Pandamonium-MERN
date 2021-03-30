@@ -1,5 +1,5 @@
 import React from 'react';
-import {createPost} from "../../actions/post_actions";
+import {createParentPost} from "../../actions/parent_post_actions";
 import {connect} from "react-redux";
 import {Link, Redirect} from "react-router-dom";
 
@@ -24,10 +24,10 @@ class Thread extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    parentPost: state.posts[ownProps.match.params.postId],
+    parentPost: state.parent_posts[ownProps.match.params.postId],
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    createPost: (forumId, post) => dispatch(createPost(forumId, post)),
+    createPost: (forumId, post) => dispatch(createParentPost(forumId, post)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);

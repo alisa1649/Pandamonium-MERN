@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {createPost} from "../../actions/post_actions";
+import {createParentPost} from "../../actions/parent_post_actions";
 
 class NewPostForm extends React.Component {
     constructor(props) {
@@ -32,6 +32,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    createPost: (forumId, post) => dispatch(createPost(forumId, post)),
+    createPost: (forumId, post) => dispatch(createParentPost(forumId, post)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(NewPostForm);
