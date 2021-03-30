@@ -10,7 +10,7 @@ class PostList extends React.Component {
                 {
                     this.props.posts.map(post => {
                         return (
-                            <li key={post.id}>
+                            <li key={post.id} className='post-item-container'>
                                 <Link to={`/thread/${post.id}`}>
                                     {post.body}
                                 </Link>

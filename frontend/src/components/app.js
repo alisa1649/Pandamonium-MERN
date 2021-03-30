@@ -11,6 +11,7 @@ import EditProfileFormContainer from './profile/edit_profile_form_container';
 import Dashboard from "./dashboard/dashboard";
 
 import '../styles/app.css';
+import '../styles/normalize.css';
 import Thread from "../thread/post/thread";
 
 const App = () => (

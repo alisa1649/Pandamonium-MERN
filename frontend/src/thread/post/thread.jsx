@@ -11,7 +11,7 @@ class Thread extends React.Component {
                     <div>
                         <Link to='/dashboard'>Back to Dashboard</Link>
                     </div>
-                    <div>
+                    <div className='post-item-container'>
                         {this.props.parentPost.body}
                     </div>
                 </div>

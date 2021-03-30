@@ -56,3 +56,16 @@ body {
 .new-post-box textarea {
     width: 100%;
 }
+
+ul.post-list {
+    list-style-type: none;
+    margin: 25px 0 0 0;
+    padding: 0;
+}
+
+.post-item-container {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
