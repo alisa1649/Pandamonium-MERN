@@ -13,3 +13,9 @@ export const getCurrentUserInfo = () => dispatch => {
         APIUtil.getCurrentUserInfo().then((currentUser) => dispatch(receiveCurrentUser(currentUser)))
     )
 }
+
+export const editCurrentUserInfo = (newInfo) => dispatch => {
+    return (
+        APIUtil.editCurrentUserInfo(newInfo).then((currentUser) => dispatch(receiveCurrentUser(currentUser)))
+    )
+}
