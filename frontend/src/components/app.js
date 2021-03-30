@@ -6,6 +6,8 @@ import NavBarContainer from './nav/navbar_container';
 import LandingPage from './main/landing_page'
 import LoginFormContainer from './session_forms/login_container';
 import SignupFormContainer from './session_forms/signup_container';
+import ProfileContainer from './profile/profile_container'
+import EditProfileFormContainer from './profile/edit_profile_form_container';
 
 const App = () => (
   <div>
@@ -14,6 +16,9 @@ const App = () => (
         <AuthRoute exact path="/" component={LandingPage} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+
+        <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+        <ProtectedRoute exact path="/profile/edit" component={EditProfileFormContainer} />
     </Switch>
   </div>
 );
