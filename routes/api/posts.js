@@ -63,7 +63,7 @@ router.post('/forums/:forum_id/:post_id', (req, res) => {
     }
 });
 
-router.delete('forums/:forum_id/:post_id', (req, res) => {
+router.delete('/forums/:forum_id/:post_id', (req, res) => {
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         let post = Post.find({forum: req.params.forum_id}, {post: req.params.postId});

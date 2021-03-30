@@ -10,3 +10,14 @@ router.get('/forums/:forum_id', (req, res) => {
         .then(forum => res.json(forum))
         .catch(err => res.status(404).json({ noforumfound: 'This forum does not exist.' }));
 });
+
+router.post('/forums/new', (req, res) => {
+  
+      const newForum = new Forum({
+        name: req.body.name,
+      });
+  
+      newForum.save().then(forum => res.json(forum));
+});
+
+module.exports = router;
