@@ -10,6 +10,14 @@ const PostSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
+    forum: {
+        type: Schema.Types.ObjectId,
+        ref: 'Forum'
+    },
+    parent: {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+    }
   }, {
     timestamps: true
   })
