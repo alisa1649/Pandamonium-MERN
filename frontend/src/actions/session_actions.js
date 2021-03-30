@@ -50,7 +50,7 @@ export const login = user => dispatch => (
     .catch(err => {
         dispatch(receiveErrors(err.response.data));
     })
-)
+);
 
 export const logout = () => dispatch => {
     
