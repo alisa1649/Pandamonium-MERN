@@ -3,8 +3,10 @@ import { getCurrentUserInfo, editCurrentUserInfo } from '../../actions/user_acti
 import EditProfileForm from './edit_profile_form';
 
 const mapStateToProps = state => {
+     debugger
     return {
         currentUser: state.entities.users.currentUser,
+       
     }
 }
 
