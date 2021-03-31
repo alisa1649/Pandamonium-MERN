@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-const jwt = require('jsonwebtoken');
 
 const Post = require('../../models/Post');
 const validatePostInput = require('../../validation/posts');
@@ -11,42 +10,23 @@ const validatePostInput = require('../../validation/posts');
 router.get('/forums/:forum_id', (req, res) => {
     Post.find({forum: req.params.forum_id})
         .sort({ date: -1 })
-        .then(posts => {
-          res.json(posts)
-        })
+        .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ nopostsfound: 'This forum has no posts at this time.' }));
 });
 
-router.get('/forums/:forum_id/:post_id', (req, res) => {
+router.get('/:parent_id', (req, res) => {
     Post.find({parent: req.params.parent_id})
         .sort({ date: -1 })
         .then(posts => res.json(posts))
         .catch(err =>
-            res.status(404).json({ nopostsfound: 'No sub-posts exist under this post.' }
+            res.status(404).json({ nopostsfound: 'There are no sub-posts at this time.' }
         )
     );
 });
 
-router.post('/forums/:forum_id', (req, res) => {
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-      const { errors, isValid } = validatePostInput(req.body);
-        
-      if (!isValid) {
-        return res.status(400).json(errors);
-      }
-  
-      const newMainPost = new Post({
-        text: req.body.text,
-        user: req.user.id,
-        forum: req.forum.id
-      });
-  
-      newMainPost.save().then(post => res.json(post));
-    }
-});
 
-router.post('/forums/:forum_id/:post_id', (req, res) => {
+// create a new post in a forum
+router.post('/new',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
@@ -54,26 +34,61 @@ router.post('/forums/:forum_id/:post_id', (req, res) => {
       if (!isValid) {
         return res.status(400).json(errors);
       }
-  
+
       const newPost = new Post({
         text: req.body.text,
-        user: req.user.id,
-        forum: req.forum.id,
-        parent: req.parent.id
+        user: req.body.user,
+        forum: req.body.forum
       });
   
       newPost.save().then(post => res.json(post));
     }
-});
+);
 
-router.delete('/:id', (req, res) => {
+
+// create a sub-post under a main post
+router.post('/new/:post_id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        let post = Post.findById(req.params.id);
-        if (post) {
-            Post.deleteOne(post)
-        };
+      const { errors, isValid } = validatePostInput(req.body);
+        
+      if (!isValid) {
+        return res.status(400).json(errors);
+      }
+
+      const newPost = new Post({
+        text: req.body.text,
+        user: req.body.user,
+        forum: req.body.forum,
+        parent: req.body.parent
+      });
+  
+      newPost.save().then(post => res.json(post));
     }
+);
+
+
+// delete individual post
+router.delete('/:id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+
+        Post.findByIdAndDelete(req.params.id) 
+          .then(() => res.json('Post deleted!'))
+          .catch((err) => res.status(400).json(err))
+});
+
+
+// edit a post 
+router.patch('/:id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+  
+        let updates = req.body;
+
+        Post.findByIdAndUpdate({_id: req.params.id}, updates, { new: true }) 
+          .then(updatedPost => res.json(updatedPost))
+          .catch((err) => res.status(400).json(err))
 });
 
 module.exports = router;
