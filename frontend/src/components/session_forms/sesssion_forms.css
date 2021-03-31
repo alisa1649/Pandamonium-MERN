@@ -3,7 +3,8 @@
   height: 300px;
   border-radius: 4px;
   border: 1px solid black;
-  background: lightseagreen;
+  background: white;
+  padding: 20px 
 }
 .modal-background {
     position: fixed;
