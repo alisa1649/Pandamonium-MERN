@@ -2,29 +2,32 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+const jwt = require('jsonwebtoken');
 
 const Post = require('../../models/Post');
 const validatePostInput = require('../../validation/posts');
 
 
-router.get('/forums/:forum_id/posts', (req, res) => {
+router.get('/forums/:forum_id', (req, res) => {
     Post.find({forum: req.params.forum_id})
         .sort({ date: -1 })
-        .then(posts => res.json(posts))
+        .then(posts => {
+          res.json(posts)
+        })
         .catch(err => res.status(404).json({ nopostsfound: 'This forum has no posts at this time.' }));
 });
 
-router.get('/forums/:forum_id/:postId', (req, res) => {
-    Post.find({forum: req.params.forum_id}, {post: req.params.postId})
+router.get('/forums/:forum_id/:post_id', (req, res) => {
+    Post.find({parent: req.params.parent_id})
         .sort({ date: -1 })
         .then(posts => res.json(posts))
         .catch(err =>
-            res.status(404).json({ nopostfound: 'No such post exists.' }
+            res.status(404).json({ nopostsfound: 'No sub-posts exist under this post.' }
         )
     );
 });
 
-router.post('/forums/:forum_id/posts', (req, res) => {
+router.post('/forums/:forum_id', (req, res) => {
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
@@ -63,10 +66,10 @@ router.post('/forums/:forum_id/:post_id', (req, res) => {
     }
 });
 
-router.delete('/forums/:forum_id/:post_id', (req, res) => {
+router.delete('/:id', (req, res) => {
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        let post = Post.find({forum: req.params.forum_id}, {post: req.params.postId});
+        let post = Post.findById(req.params.id);
         if (post) {
             Post.deleteOne(post)
         };

@@ -7,7 +7,7 @@ module.exports = function validatePostInput(data) {
   data.text = validText(data.text) ? data.text : '';
 
   if (!Validator.isLength(data.text, { min: 5, max: 500 })) {
-    errors.text = 'Tweet must be between 5 and 500 characters';
+    errors.text = 'Post must be between 5 and 500 characters';
   }
 
   if (Validator.isEmpty(data.text)) {
