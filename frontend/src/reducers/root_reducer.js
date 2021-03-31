@@ -5,6 +5,7 @@ import EntitiesReducer from './entities_reducer';
 import PostsReducer from './posts_reducer'
 import ParentPostsReducer from './parent_posts_reducer'
 import ThreadReducer from "./thread_reducer";
+import uiReducer from './ui_reducer';
 
 const RootReducer = combineReducers({
   entities: EntitiesReducer,
@@ -12,6 +13,7 @@ const RootReducer = combineReducers({
   parent_posts: ParentPostsReducer,
   thread: ThreadReducer,
   errors: ErrorsReducer,
+  ui: uiReducer,
 });
 
 export default RootReducer;

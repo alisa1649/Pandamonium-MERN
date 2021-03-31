@@ -2,10 +2,9 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
+import Modal from './modal/modal'
 
-import LandingPage from './main/landing_page'
 import LoginFormContainer from './session_forms/login_container';
-import SignupFormContainer from './session_forms/signup_container';
 import ProfileContainer from './profile/profile_container'
 import EditProfileFormContainer from './profile/edit_profile_form_container';
 import Dashboard from "./dashboard/dashboard";
@@ -17,10 +16,12 @@ import Thread from "../thread/post/thread";
 const App = () => (
   <div>
     <NavBarContainer />
+    <Modal />
     <Switch>
-      <AuthRoute exact path="/" component={LandingPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/" component={LoginFormContainer} />
+
 
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/profile/edit" component={EditProfileFormContainer} />
