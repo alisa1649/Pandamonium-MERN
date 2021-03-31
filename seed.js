@@ -1,9 +1,7 @@
 const db = require('./config/keys').mongoURI;
 const seeder = require('mongoose-seed');
 
-// const db = 'mongodb://127.0.0.1:27017/pandamonium';
 
-// const id = ObjectId()
 
 const data = [
     {
