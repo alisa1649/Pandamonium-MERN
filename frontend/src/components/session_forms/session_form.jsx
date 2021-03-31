@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import './sesssion_forms.css'
+// import './session_forms.css'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -54,13 +54,13 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <h1 className='welcome-header'>Welcome to Pandamonium!</h1>
-                        <div className ='welcome-body'> 
-                        Pandamonium is a location based social media application for members of the LGBTQ community and allies. We provide a community for individuals to communicate and provide one other with support, resources, and friendships.                        
+                        <div className='welcome-body'>
+                            Pandamonium is a location based social media application for members of the LGBTQ community and allies. We provide a community for individuals to communicate and provide one other with support, resources, and friendships.
                         </div>
                         <h2 className='login-header'>Sign In</h2>
-                        
+
                         {this.props.modalStatus === null ? <p>{this.renderErrors()}</p> : null}
-                        
+
                         <input
                             type="text"
                             value={this.state.email}
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
                         />
                         <br />
 
-                        <input type="submit"  value="submit" />
+                        <input type="submit" value="submit" />
                     </div>
                 </form>
 
