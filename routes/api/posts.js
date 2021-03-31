@@ -8,8 +8,8 @@ const Post = require('../../models/Post');
 const validatePostInput = require('../../validation/posts');
 
 
-router.get('/forums/:forum_id', (req, res) => {
-    Post.find({forum: req.params.forum_id})
+router.get('/forums/:forum_name', (req, res) => {
+    Post.find({forum: req.params.forum_name})
         .sort({ date: -1 })
         .then(posts => {
           res.json(posts)
@@ -69,9 +69,13 @@ router.post('/forums/:forum_id/:post_id', (req, res) => {
 router.delete('/:id', (req, res) => {
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        let post = Post.findById(req.params.id);
-        if (post) {
-            Post.deleteOne(post)
+        Post.findByIdAndDelete(req.params.id, function(err, docs){
+          if (err){
+              console.log(err)
+          }
+          else{
+              console.log("Deleted : ", docs);
+          })
         };
     }
 });
