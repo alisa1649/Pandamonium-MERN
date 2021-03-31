@@ -19,15 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentTime = Date.now() / 1000;
 
-    
+
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
       window.location.href = '/login';
     }
-  } else {  
+  } else {
     store = configureStore({});
   }
-  
+
+  // Make state accessible during development
+  if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    window.getState = store.getState;
+  }
 
   const root = document.getElementById('root');
 
