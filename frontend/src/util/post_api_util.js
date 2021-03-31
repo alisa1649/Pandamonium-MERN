@@ -13,7 +13,7 @@ export const createParentPost = (forumId, post) => {
         // NOTE: when building backend, return results in this format
         post: {
             id: getRandomInt(),
-            forumId: 1,
+            forumId: '6064e15dbc30e7788b2fb300',
             body: post.body
         }
     })
@@ -25,7 +25,7 @@ export const createComment = (parentPost, post) => {
         // NOTE: when building backend, return results in this format
         post: {
             id: getRandomInt(),
-            forumId: 1,
+            forumId: '6064e15dbc30e7788b2fb300',
             parentPostId: parentPost.id,
             body: post.body
         }
@@ -39,7 +39,7 @@ export const fetchThread = (forumId, postId) => {
         // NOTE: when building backend, return results in this format
         post: {
             id: postId,
-            forumId: 1,
+            forumId: '6064e15dbc30e7788b2fb300',
             body: "TODO: fill this in after connecting to server",
             comments: {
                 [getRandomInt()]: { body: "Placeholder comment 1" },

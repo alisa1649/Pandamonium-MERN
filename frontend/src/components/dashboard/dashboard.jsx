@@ -1,12 +1,12 @@
 import React from 'react';
 import NewPostForm from "./new_post_form";
 import PostList from "./post_list";
-import {createParentPost} from "../../actions/parent_post_actions";
-import {connect} from "react-redux";
+import { createParentPost } from "../../actions/parent_post_actions";
+import { connect } from "react-redux";
 
 class Dashboard extends React.Component {
     render() {
-        const forumId = 1;
+        const forumId = '6064e15dbc30e7788b2fb300';
         const createPost = (post) => this.props.createPost(forumId, post);
         return (
             <div className='dashboard'>
