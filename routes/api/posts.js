@@ -11,16 +11,18 @@ const validatePostInput = require('../../validation/posts');
 router.get('/forums/:forum_id', (req, res) => {
     Post.find({forum: req.params.forum_id})
         .sort({ date: -1 })
-        .then(posts => res.json(posts))
+        .then(posts => {
+          res.json(posts)
+        })
         .catch(err => res.status(404).json({ nopostsfound: 'This forum has no posts at this time.' }));
 });
 
 router.get('/forums/:forum_id/:post_id', (req, res) => {
-    Post.find({forum: req.params.forum_id}, {post: req.params.post_id})
+    Post.find({parent: req.params.parent_id})
         .sort({ date: -1 })
         .then(posts => res.json(posts))
         .catch(err =>
-            res.status(404).json({ nopostfound: 'No such post exists.' }
+            res.status(404).json({ nopostsfound: 'No sub-posts exist under this post.' }
         )
     );
 });

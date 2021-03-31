@@ -1,30 +1,50 @@
-// const seeder = require('mongoose-seed');
+const db = require('./config/keys').mongoURI;
+const seeder = require('mongoose-seed');
 
-// const db = 'mongodb://localhost:5000/seed';
+// const db = 'mongodb://127.0.0.1:27017/pandamonium';
 
-// seeder.connect(db, function(){
-//     seeder.loadModels(['./models/Forum']);
+// const id = ObjectId()
 
-//     seeder.clearModels(['Forum'])
-//     seeder.populateModels(data, function(err, done){
-//         if (err){
-//             return console.log('seed err', err);
-//         }
-//         if (done){
-//             return console.log('seed done', done);
-//         }
-//         seeder.disconnect()
-//     })
-// });
+const data = [
+    {
+        'model': 'Forum',
+        'documents': [
+            {
+                // '_id': id,
+                'name': 'sampleForum'
+            }
+        ]
+    }
+]
 
-// const data = [
-//     {
-//         'model': 'Forum',
-//         'documents': [
-//             {
-//                 '_id': '1',
-//                 'name': 'sampleForum'
-//             }
-//         ]
-//     }
-// ]
+seeder.connect(db, function(){
+    seeder.loadModels(['./models/Forum'], function(err, done){
+        if (err){
+            return console.log('seed err', err);
+        }
+        if (done){
+            return console.log('seed done', done);
+        }
+        // seeder.disconnect()
+    });
+
+    seeder.clearModels(['Forum'], function(err, done){
+        if (err){
+            return console.log('seed err', err);
+        }
+        if (done){
+            return console.log('seed done', done);
+        }
+        // seeder.disconnect()
+    });
+
+    seeder.populateModels(data, function(err, done){
+        if (err){
+            return console.log('seed err', err);
+        }
+        if (done){
+            return console.log('seed done', done);
+        }
+        seeder.disconnect()
+    });
+});
