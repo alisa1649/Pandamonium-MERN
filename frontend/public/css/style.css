@@ -323,12 +323,12 @@ template {
   border-radius: 5px; }
 
 .post-user-avatar {
-  background-color: var(--blue);
+  background-color: #0075F2;
   width: 70px;
   height: 50px; }
 
 .post-box-button {
-  background-color: var(--action-color);
+  background-color: #06d6a0;
   color: white;
   padding: 10px;
   font-weight: bold;

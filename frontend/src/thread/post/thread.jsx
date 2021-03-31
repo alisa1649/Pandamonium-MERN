@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from "react-redux";
-import {Link, Redirect} from "react-router-dom";
-import {createComment, requestThread} from "../../actions/thread_actions";
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import { createComment, requestThread } from "../../actions/thread_actions";
 import NewPostForm from "../../components/dashboard/new_post_form";
 
 class Thread extends React.Component {
@@ -16,7 +16,7 @@ class Thread extends React.Component {
 
     render() {
         const createComment = (comment) => this.props.createComment(this.props.parentPost, comment);
-        if(this.props.parentPost) {
+        if (this.props.parentPost) {
             console.log(this.props.comments)
             return (
                 <div>
@@ -48,9 +48,9 @@ class Thread extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    parentPost: state.parent_posts[ownProps.match.params.postId],
-    comments: Object.keys(state.thread).length
-        ? Object.values(state.thread.comments)
+    parentPost: state.entities.parent_posts[ownProps.match.params.postId],
+    comments: Object.keys(state.entities.thread).length
+        ? Object.values(state.entities.thread.comments)
         : []
 });
 

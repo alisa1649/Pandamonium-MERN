@@ -1,7 +1,7 @@
 import React from 'react';
-import {createParentPost} from "../../actions/parent_post_actions";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
+import { createParentPost } from "../../actions/parent_post_actions";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class PostList extends React.Component {
     render() {
@@ -25,7 +25,7 @@ class PostList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        parent_posts: Object.values(state.parent_posts)
+        parent_posts: Object.values(state.entities.parent_posts)
     }
 };
 
