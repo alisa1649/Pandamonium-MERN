@@ -382,4 +382,23 @@ ul.post-list {
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.profile-page .profile-header {
+  border: 1px solid blue;
+  display: flex;
+  align-items: center; }
+  .profile-page .profile-header .profile-pic {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+    position: relative; }
+    .profile-page .profile-header .profile-pic img {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 70px;
+      height: 70px; }
+  .profile-page .profile-header h1 {
+    margin: 0 20px; }
+
 /*# sourceMappingURL=style.css.map */
