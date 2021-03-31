@@ -13,12 +13,13 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
         this.clearedErrors = false;
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
+            this.props.history.push('/');
         }
 
         this.setState({ errors: nextProps.errors });
@@ -40,7 +41,7 @@ class SignupForm extends React.Component {
             password2: this.state.password2,
         };
 
-        this.props.signup(user, this.props.history);
+        this.props.signup(user, this.props.history)
     }
 
     renderErrors() {
@@ -58,6 +59,7 @@ class SignupForm extends React.Component {
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
+                        <button onClick={this.props.closeModal} className='btn-close'>X</button>
                         <br />
                         <label>
                             Email:
