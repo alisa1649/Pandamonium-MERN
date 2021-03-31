@@ -22,4 +22,14 @@ const UserSchema = new Schema({
     timestamps: true
   })
 
+  UserSchema.add({
+    image_path: {
+      type: String,
+      default: "/panda.png"
+    },
+    img_bg_color: {
+      type: String,
+      default: "white"
+    }
+  })
   module.exports = User = mongoose.model('User', UserSchema);
