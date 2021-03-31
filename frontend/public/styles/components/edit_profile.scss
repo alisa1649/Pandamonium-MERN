@@ -1,0 +1,36 @@
+.edit-profile-form-container {
+    .edit-profile-form {
+        .main-form-section {
+            display: flex;
+            .left-half {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+            }
+            .right-half {
+                .panda-pics-box {
+                    .panda-pic {
+                        width: 70px;
+                        height: 70px;
+                        position: relative;
+                        img {
+                            width: 70px;
+                            height: 70px;
+                        }
+                        #OG-panda {
+                            width: 60px;
+                            height: 60px;
+                            position: absolute;
+                            top: 5px;
+                            left: 5px;
+                        }
+                    }
+                    .active {
+                        border: 1px solid black;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+}

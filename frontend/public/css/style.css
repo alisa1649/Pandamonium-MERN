@@ -389,7 +389,6 @@ ul.post-list {
   .profile-page .profile-header .profile-pic {
     width: 100px;
     height: 100px;
-    background-color: blue;
     border-radius: 50%;
     position: relative; }
     .profile-page .profile-header .profile-pic img {
@@ -400,5 +399,28 @@ ul.post-list {
       height: 70px; }
   .profile-page .profile-header h1 {
     margin: 0 20px; }
+
+.edit-profile-form-container .edit-profile-form .main-form-section {
+  display: flex; }
+  .edit-profile-form-container .edit-profile-form .main-form-section .left-half {
+    display: flex;
+    flex-direction: column;
+    width: 50%; }
+  .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic {
+    width: 70px;
+    height: 70px;
+    position: relative; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic img {
+      width: 70px;
+      height: 70px; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic #OG-panda {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 5px;
+      left: 5px; }
+  .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .active {
+    border: 1px solid black;
+    background-color: red; }
 
 /*# sourceMappingURL=style.css.map */

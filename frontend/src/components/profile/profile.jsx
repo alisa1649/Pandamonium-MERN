@@ -15,7 +15,6 @@ class Profile extends React.Component {
         if (!currentUser) {
             return <div>User not found</div>;
         }
-        debugger;
         return (
             <div className="profile-page">
                 <div className="profile-header">
