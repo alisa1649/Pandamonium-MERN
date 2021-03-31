@@ -57,10 +57,12 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
+                <h2 className='signup-header'>Sign Up</h2> 
+                <h3>It's quick and easy!</h3>
+                <button onClick={this.props.closeModal} className='btn-close'>X</button>
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
-                        <button onClick={this.props.closeModal} className='btn-close'>X</button>
-                        <br />
+                        
                         <label>
                             Email:
                             <input type="text" value={this.state.email} onChange={this.update('email')} />

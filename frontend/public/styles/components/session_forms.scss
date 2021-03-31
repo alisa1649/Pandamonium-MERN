@@ -1,4 +1,11 @@
-
+.signup-form-container {
+  width: 400px;
+  height: 300px;
+  border-radius: 4px;
+  border: 1px solid black;
+  background: white;
+  padding: 20px 
+}
 .modal-background {
     position: fixed;
     top: 0;
@@ -8,6 +15,13 @@
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
     height: 500px;
+    
+  }
+  
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   
 .modal-child {
