@@ -51,11 +51,13 @@ class SessionForm extends React.Component {
         return (
             <div>
 
-                <h1>Pandamonium</h1>
-                <footer>Copyright &copy; 2021 PandaCorp</footer>
-
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        <h1 className='welcome-header'>Welcome to Pandamonium!</h1>
+                        <div className ='welcome-body'> 
+                        Pandamonium is a location based social media application for members of the LGBTQ community and allies. We provide a community for individuals to communicate and provide one other with support, resources, and friendships.                        
+                        </div>
+                        <h2 className='login-header'>Sign In</h2>
                         
                         {this.props.modalStatus === null ? <p>{this.renderErrors()}</p> : null}
                         
@@ -79,7 +81,10 @@ class SessionForm extends React.Component {
                     </div>
                 </form>
 
+                <h3 className='createaccount-header'>New User? Create an Account</h3>
                 {this.props.otherForm}
+
+                <footer>Copyright &copy; 2021 PandaCorp</footer>
             </div>
         );
     }
