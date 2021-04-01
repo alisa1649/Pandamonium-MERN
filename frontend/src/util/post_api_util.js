@@ -7,6 +7,11 @@ function getRandomInt() {
     return Math.floor(Math.random() * Math.floor(1000000000));
 }
 
+export const fetchParentPosts = (forumId) => {
+    return axios.get(`api/posts/forums/${forumId}`)
+        .then(result => result.data);
+};
+
 export const createParentPost = (forumId, post) => {
     // return axios.post(`api/forums/${forumId}/posts`, post);
     return Promise.resolve({

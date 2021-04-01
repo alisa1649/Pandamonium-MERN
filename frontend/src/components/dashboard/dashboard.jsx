@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
             <div className='dashboard'>
                 <h2>MIAMI</h2>
                 <NewPostForm createPost={createPost} />
-                <PostList />
+                <PostList forumId={forumId} />
             </div>
         );
     }

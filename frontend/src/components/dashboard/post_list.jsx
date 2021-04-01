@@ -1,9 +1,13 @@
 import React from 'react';
-import { createParentPost } from "../../actions/parent_post_actions";
+import {createParentPost, requestParentPosts} from "../../actions/parent_post_actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 class PostList extends React.Component {
+    componentDidMount() {
+        this.props.requestParentPosts(this.props.forumId)
+    }
+
     render() {
         return (
             <ul className='post-list'>
@@ -30,6 +34,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+    requestParentPosts: (forumId) => dispatch(requestParentPosts(forumId)),
     createPost: (forumId, post) => dispatch(createParentPost(forumId, post)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);
