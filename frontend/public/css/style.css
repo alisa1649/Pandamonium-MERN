@@ -325,12 +325,12 @@ template {
   border-radius: 5px; }
 
 .post-user-avatar {
-  background-color: var(--blue);
+  background-color: #0075F2;
   width: 70px;
   height: 50px; }
 
 .post-box-button {
-  background-color: var(--action-color);
+  background-color: #06d6a0;
   color: white;
   padding: 10px;
   font-weight: bold;
@@ -353,7 +353,9 @@ ul.post-list {
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between; }
 
 body {
   background-image: url(../bamboo_bg.jpg);

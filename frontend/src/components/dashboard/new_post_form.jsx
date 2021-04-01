@@ -4,7 +4,7 @@ class NewPostForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            body: ''
+            text: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -12,7 +12,7 @@ class NewPostForm extends React.Component {
 
     handleChange(e) {
         this.setState({
-            body: e.currentTarget.value
+            text: e.currentTarget.value
         })
     }
 
@@ -24,7 +24,7 @@ class NewPostForm extends React.Component {
         return (
             <form className='new-post-box' onSubmit={this.handleSubmit}>
                 <div className='post-user-avatar'> </div>
-                <textarea onChange={this.handleChange}>{this.state.body}</textarea>
+                <textarea onChange={this.handleChange}>{this.state.text}</textarea>
                 <input type='submit' className='post-box-button' value='Post' />
             </form>
         );
