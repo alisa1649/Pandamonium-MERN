@@ -5,6 +5,7 @@ import {createComment, deleteComment, requestThread} from "../../actions/thread_
 import NewPostForm from "../../components/dashboard/new_post_form";
 import PostListItem from "../../components/dashboard/post_list_item";
 import EditPostModal from "../../components/dashboard/edit_post_modal";
+import {updateParentPost} from "../../actions/parent_post_actions";
 
 class Thread extends React.Component {
     constructor(props) {
@@ -33,7 +34,10 @@ class Thread extends React.Component {
                 <div>
                     {
                         this.state.editModalVisible
-                            ? <EditPostModal post={this.props.parentPost} closeAction={() => this.setState({editModalVisible: false} )}/>
+                            ? <EditPostModal
+                                post={this.props.parentPost}
+                                closeAction={() => this.setState({editModalVisible: false} )}
+                                submitAction={(post) => this.props.updateParentPost(post)} />
                             : ""
                     }
                     <NewPostForm createPost={createComment}   />
@@ -66,6 +70,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+    updateParentPost: (post) => dispatch(updateParentPost(post)),
     createComment: (comment) => dispatch(createComment(comment)),
     requestThread: (postId) => dispatch(requestThread(postId)),
     deleteComment: (postId) => dispatch(deleteComment(postId))

@@ -12,6 +12,13 @@ export const createParentPost = (post) => {
         });
 };
 
+export const updatePost = (post) => {
+    return axios.patch(`api/posts/${post._id}`, post)
+        .then(result => {
+            return result.data
+        });
+};
+
 export const createComment = (post) => {
     return axios.post(`api/posts/new/${post.forum}`, post)
         .then(result => {

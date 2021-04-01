@@ -17,7 +17,9 @@ class EditPostModal extends React.Component {
     }
 
     handleSubmit() {
-        this.props.createPost(this.state);
+        const newPost = Object.assign({}, this.props.post, this.state)
+        this.props.submitAction(newPost);
+        this.props.closeAction();
     }
 
     render() {
