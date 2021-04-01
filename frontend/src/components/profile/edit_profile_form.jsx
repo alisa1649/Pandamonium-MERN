@@ -17,6 +17,9 @@ class EditProfileForm extends React.Component {
             imgArr: ['/panda.png', '/panda2.png', '/panda3.png', '/panda4.png'],
         };
 
+        this.autocompleteInput = React.createRef();
+        this.autocomplete = null;
+        this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -53,7 +56,7 @@ class EditProfileForm extends React.Component {
             });
     }
 
-    handlePlaceChanged= () => {
+    handlePlaceChanged = () => {
       
         const place = this.autocomplete.getPlace();
         this.setState ({

@@ -92,8 +92,8 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     username: req.user.username,
     email: req.user.email,
     bio: req.user.bio,
-    city: req.body.city,
-    state: req.body.state,
+    city: req.user.city,
+    state: req.user.state,
     image_path: req.user.image_path,
     img_bg_color: req.user.img_bg_color
   });
