@@ -19,8 +19,8 @@ export const requestThread = (postId) => dispatch => (
     ))
 );
 
-export const createComment = (parentPost, comment) => dispatch => (
-    APIUtil.createComment(parentPost, comment).then((comment) => (
-        dispatch(receiveComment(comment.post))
+export const createComment = (comment) => dispatch => (
+    APIUtil.createComment(comment).then((comment) => (
+        dispatch(receiveComment(comment))
     ))
 );

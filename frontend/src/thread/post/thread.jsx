@@ -13,7 +13,13 @@ class Thread extends React.Component {
     }
 
     render() {
-        const createComment = (comment) => this.props.createComment(this.props.parentPost, comment);
+        const forumId = '6064e15dbc30e7788b2fb300';
+        const createComment = (comment) => {
+            comment.forum = forumId;
+            comment.parent = this.props.parentPost._id;
+            comment.user = this.props.userId;
+            this.props.createComment(comment);
+        }
         if (this.props.parentPost) {
             console.log(this.props.comments)
             return (
@@ -46,6 +52,7 @@ class Thread extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
+    userId: state.session.user.id,
     parentPost: state.entities.parent_posts[ownProps.match.params.postId],
     comments: Object.keys(state.entities.thread).length
         ? Object.values(state.entities.thread.comments)
@@ -53,7 +60,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    createComment: (parentPost, comment) => dispatch(createComment(parentPost, comment)),
+    createComment: (comment) => dispatch(createComment(comment)),
     requestThread: (postId) => dispatch(requestThread(postId))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);
