@@ -16,11 +16,12 @@ const App = () => (
     <NavBarContainer />
     <Modal />
     <Switch>
-      <AuthRoute exact path="/" component={LoginFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
 
 
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/profile/edit" component={EditProfileFormContainer} />
+      <ProtectedRoute exact path="/" component={Dashboard} />
       <ProtectedRoute exact path="/dashboard" component={Dashboard} />
       <ProtectedRoute exact path="/thread/:postId" component={Thread} />
     </Switch>
