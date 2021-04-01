@@ -11,13 +11,13 @@ router.get('/:id', (req, res) => {
         .catch(err => res.status(404).json({ noforumfound: 'This forum does not exist.' }));
 });
 
-router.post('/new', (req, res) => {
+// router.post('/new', (req, res) => {
   
-      const newForum = new Forum({
-        name: req.body.name,
-      });
+//       const newForum = new Forum({
+//         name: req.body.name,
+//       });
   
-      newForum.save().then(forum => res.json(forum));
-});
+//       newForum.save().then(forum => res.json(forum));
+// });
 
 module.exports = router;
