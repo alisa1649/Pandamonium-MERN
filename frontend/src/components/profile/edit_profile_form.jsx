@@ -112,6 +112,7 @@ class EditProfileForm extends React.Component {
         return (
             <div className="edit-profile-form-container">
                 <h2>Edit Your Profile</h2>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         <input ref={this.autocompleteInput}  
                         id="autocomplete" 
