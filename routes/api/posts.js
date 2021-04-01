@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const Post = require('../../models/Post');
 const validatePostInput = require('../../validation/posts');
+const { post } = require('./forums');
 
 
 router.get('/forums/:forum_id', (req, res) => {
@@ -47,7 +48,7 @@ router.post('/new',
 
 
 // create a sub-post under a main post
-router.post('/new/:post_id',
+router.post('/new/:parent_id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
@@ -73,9 +74,14 @@ router.delete('/:id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
 
-        Post.findByIdAndDelete(req.params.id) 
+        let id = req.params.id
+
+        Post.findByIdAndDelete(id) 
           .then(() => res.json('Post deleted!'))
-          .catch((err) => res.status(400).json(err))
+          .catch((err) => res.status(400).json(err));
+
+        Post.deleteMany({parent: id}) 
+          .then(() => res.json('Post deleted!'));
 });
 
 
@@ -83,12 +89,13 @@ router.delete('/:id',
 router.patch('/:id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-  
-        let updates = req.body;
 
-        Post.findByIdAndUpdate({_id: req.params.id}, updates, { new: true }) 
-          .then(updatedPost => res.json(updatedPost))
-          .catch((err) => res.status(400).json(err))
+        let updates = req.body;
+        
+            Post.findByIdAndUpdate({_id: req.params.id}, updates, { new: true }) 
+              .then(updatedPost => res.json(updatedPost))
+              .catch((err) => res.status(400).json(err))
+        
 });
 
 module.exports = router;
