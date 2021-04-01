@@ -16,7 +16,7 @@ router.get('/forums/:forum_id', (req, res) => {
 
 router.get('/:parent_id', (req, res) => {
     Post.find({parent: req.params.parent_id})
-        .sort({ date: -1 })
+        .sort({ createdAt: 'asc' })
         .then(posts => res.json(posts))
         .catch(err =>
             res.status(404).json({ nopostsfound: 'There are no sub-posts at this time.' }
