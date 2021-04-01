@@ -4,8 +4,15 @@ import { Link, Redirect } from "react-router-dom";
 import {createComment, deleteComment, requestThread} from "../../actions/thread_actions";
 import NewPostForm from "../../components/dashboard/new_post_form";
 import PostListItem from "../../components/dashboard/post_list_item";
+import EditPostModal from "../../components/dashboard/edit_post_modal";
 
 class Thread extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            editModalVisible: false
+        }
+    }
 
     componentDidMount() {
         if (this.props.parentPost) {
@@ -24,13 +31,16 @@ class Thread extends React.Component {
         if (this.props.parentPost) {
             return (
                 <div>
-                    <NewPostForm createPost={createComment} />
+                    {
+                        this.state.editModalVisible
+                            ? <EditPostModal post={this.props.parentPost} closeAction={() => this.setState({editModalVisible: false} )}/>
+                            : ""
+                    }
+                    <NewPostForm createPost={createComment}   />
                     <div>
                         <Link to='/dashboard'>Back to Dashboard</Link>
                     </div>
-                    <div className='post-item-container'>
-                        {this.props.parentPost.text}
-                    </div>
+                    <PostListItem post={this.props.parentPost} editAction={() => this.setState({editModalVisible: true})}/>
                     <ul className='post-list'>
                         {
                             this.props.comments.map(comment => {
