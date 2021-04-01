@@ -9,7 +9,6 @@ import ProfileContainer from './profile/profile_container'
 import EditProfileFormContainer from './profile/edit_profile_form_container';
 import Dashboard from "./dashboard/dashboard";
 
-
 import Thread from "../thread/post/thread";
 
 const App = () => (
