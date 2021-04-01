@@ -112,15 +112,6 @@ class EditProfileForm extends React.Component {
         return (
             <div className="edit-profile-form-container">
                 <h2>Edit Your Profile</h2>
-                <form className="edit-profile-form" onSubmit={this.handleSubmit}>
-                    <label>
-                        Username:
-                        <input type="text" value={this.state.username} onChange={this.update('username')} />
-                    </label>
-                    <label>
-                        Bio:
-                        <textarea cols="30" rows="10" value={this.state.bio} onChange={this.update('bio')}></textarea>
-                    </label>
                     <label>
                         <input ref={this.autocompleteInput}  
                         id="autocomplete" 
@@ -190,6 +181,17 @@ class EditProfileForm extends React.Component {
                                 <div className="color" id="yellow" onClick={this.updateColor()}></div>
                                 <div className="color" id="orange" onClick={this.updateColor()}></div>
                                 <div className="color" id="pink" onClick={this.updateColor()}></div>
+                                <div className="color" id="rainbow" onClick={this.updateColor()}></div>
+                                <div className="color" id="lesbian-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="bisexual-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="pansexual-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="transgender-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="asexual-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="nonbinary-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="genderfluid-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="genderqueer-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="agender-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="intersex-pride" onClick={this.updateColor()}></div>
                             </div>
                         </div>
                     </div>
