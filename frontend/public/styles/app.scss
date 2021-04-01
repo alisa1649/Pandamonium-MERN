@@ -1,9 +1,11 @@
-
 #root {
     border: 2px solid black;
+    background-image: radial-gradient($main-bg-color 90%, rgba(234, 247, 191, 0.5) 10%);
     margin-left: auto;
     margin-right: auto;
-    max-width: 800px;
+    // max-width: 800px;
+    max-width: 750px;
+    min-height: 450px;
     padding: 20px;
     border-radius: 5px;
 }
@@ -57,4 +59,10 @@ ul.post-list {
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
+}
+
+body {
+    background-image: url(../bamboo_bg.jpg);
+    background-position: center;
+    background-size: cover;
 }

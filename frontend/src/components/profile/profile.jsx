@@ -12,22 +12,23 @@ class Profile extends React.Component {
 
     render() {
         const { currentUser } = this.props;
-
         if (!currentUser) {
             return <div>User not found</div>;
         }
         return (
             <div className="profile-page">
                 <div className="profile-header">
-                    <div className="profile-pic"></div>
+                    <div className="profile-pic" id={currentUser.img_bg_color}>
+                        <img src={currentUser.image_path} alt="panda??" />
+                    </div>
                     <h1>{currentUser.username}'s Profile</h1>
                 </div>
                 <div className="profile-body">
                     <div className="location-box">
-                        <h3>Current Location:</h3> <h4>location goes here!</h4>
+                        <h3>Current Location:</h3> <h3>location goes here!</h3>
                     </div>
                     <div className="bio-box">
-                        <h4>Bio: </h4>
+                        <h3>Bio: </h3>
                         <p>{currentUser.bio}</p>
                     </div>
 
