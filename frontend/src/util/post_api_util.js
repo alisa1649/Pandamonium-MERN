@@ -14,7 +14,7 @@ export const createParentPost = (forumId, post) => {
         post: {
             id: getRandomInt(),
             forumId: '6064e15dbc30e7788b2fb300',
-            body: post.body
+            text: post.text
         }
     })
 };
@@ -27,7 +27,7 @@ export const createComment = (parentPost, post) => {
             id: getRandomInt(),
             forumId: '6064e15dbc30e7788b2fb300',
             parentPostId: parentPost.id,
-            body: post.body
+            text: post.text
         }
     })
 };
@@ -40,12 +40,12 @@ export const fetchThread = (forumId, postId) => {
         post: {
             id: postId,
             forumId: '6064e15dbc30e7788b2fb300',
-            body: "TODO: fill this in after connecting to server",
+            text: "TODO: fill this in after connecting to server",
             comments: {
-                [getRandomInt()]: { body: "Placeholder comment 1" },
-                [getRandomInt()]: { body: "Placeholder comment 2" },
-                [getRandomInt()]: { body: "Placeholder comment 3" },
-                [getRandomInt()]: { body: "Placeholder comment 4" },
+                [getRandomInt()]: { text: "Placeholder comment 1" },
+                [getRandomInt()]: { text: "Placeholder comment 2" },
+                [getRandomInt()]: { text: "Placeholder comment 3" },
+                [getRandomInt()]: { text: "Placeholder comment 4" },
             }
         }
     })

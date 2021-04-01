@@ -25,14 +25,14 @@ class Thread extends React.Component {
                         <Link to='/dashboard'>Back to Dashboard</Link>
                     </div>
                     <div className='post-item-container'>
-                        {this.props.parentPost.body}
+                        {this.props.parentPost.text}
                     </div>
                     <ul className='post-list'>
                         {
                             this.props.comments.map(comment => {
                                 return (
                                     <li key={comment.id} className='post-item-container'>
-                                        {comment.body}
+                                        {comment.text}
                                     </li>
                                 )
                             })

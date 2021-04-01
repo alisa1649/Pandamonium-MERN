@@ -12,7 +12,7 @@ class PostList extends React.Component {
                         return (
                             <li key={post.id} className='post-item-container'>
                                 <Link to={`/thread/${post.id}`}>
-                                    {post.body}
+                                    {post.text}
                                 </Link>
                             </li>
                         )
