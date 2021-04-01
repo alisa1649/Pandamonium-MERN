@@ -29,7 +29,9 @@ router.post('/signup', (req, res) => {
           username: req.body.username,
           email: req.body.email,
           password: req.body.password,
-          bio: req.body.bio
+          bio: req.body.bio,
+          city: req.body.city,
+          state: req.body.state
         })
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -90,6 +92,8 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     username: req.user.username,
     email: req.user.email,
     bio: req.user.bio,
+    city: req.user.city,
+    state: req.user.state,
     image_path: req.user.image_path,
     img_bg_color: req.user.img_bg_color
   });
@@ -99,6 +103,8 @@ router.patch('/current', passport.authenticate('jwt', { session: false }), (req,
   let _id = req.user.id;
   let newUsername = req.body.username;
   let newBio = req.body.bio;
+  let newCity = req.body.city;
+  let newState = req.body.state;
   let newImgPath = req.body.image_path;
   let newImgColor = req.body.img_bg_color;
   
@@ -106,6 +112,8 @@ router.patch('/current', passport.authenticate('jwt', { session: false }), (req,
 
     username: newUsername, 
     bio: newBio,
+    city: newCity,
+    state: newState,
     image_path: newImgPath,
     img_bg_color: newImgColor
   },

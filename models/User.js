@@ -17,9 +17,20 @@ const UserSchema = new Schema({
     bio: {
         type: String,
         required: false
-      }
+    }
   }, {
     timestamps: true
+  })
+
+  UserSchema.add({
+    city: {
+        type: String,
+        required: false
+    },
+    state: {
+        type: String,
+        required: false 
+    },
   })
 
   UserSchema.add({

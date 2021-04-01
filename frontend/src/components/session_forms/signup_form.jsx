@@ -12,18 +12,17 @@ class SignupForm extends React.Component {
             errors: {},
         };
 
+    
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.clearedErrors = false;
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            this.props.history.push('/');
-        }
 
         this.setState({ errors: nextProps.errors });
     }
+
 
     update(field) {
         return (e) =>
@@ -31,6 +30,8 @@ class SignupForm extends React.Component {
                 [field]: e.currentTarget.value,
             });
     }
+
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -40,9 +41,12 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2,
         };
-
-        this.props.signup(user, this.props.history)
+        
+        
+        this.props.signup(user)
     }
+
+
 
     renderErrors() {
         return (
@@ -83,9 +87,11 @@ class SignupForm extends React.Component {
                             <input type="password" value={this.state.password2} onChange={this.update('password2')} />
                         </label>
                         <br />
+                        
                         <input type="submit" value="Submit" />
+                 
                         {this.renderErrors()}
-
+                        
                         {/* Location information goes here */}
                     </div>
                 </form>
