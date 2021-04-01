@@ -3,6 +3,27 @@
         border: 1px solid blue;
         display: flex;
         align-items: center;
+        #blue {
+            background-color: $blue;
+        }
+        #red {
+            background-color: $red;
+        }
+        #green {
+            background-color: $green;
+        }
+        #purple {
+            background-color: $purple;
+        }
+        #yellow {
+            background-color: $yellow;
+        }
+        #orange {
+            background-color: $orange;
+        }
+        #pink {
+            background-color: $pink;
+        }
         .profile-pic {
             width: 100px;
             height: 100px;

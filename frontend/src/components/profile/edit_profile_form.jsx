@@ -50,6 +50,15 @@ class EditProfileForm extends React.Component {
         };
     }
 
+    updateColor() {
+        return (e) => {
+            let newColor = e.currentTarget.id;
+            this.setState({
+                img_bg_color: newColor,
+            });
+        };
+    }
+
     handleSubmit(e) {
         e.preventDefault();
 
@@ -80,16 +89,23 @@ class EditProfileForm extends React.Component {
                                 Username:
                                 <input type="text" value={this.state.username} onChange={this.update('username')} />
                             </label>
+
                             <label>
-                                Bio:
+                                Bio: <br />
                                 <textarea
-                                    cols="30"
-                                    rows="10"
+                                    cols="35"
+                                    rows="5"
                                     value={this.state.bio}
                                     onChange={this.update('bio')}></textarea>
                             </label>
                         </div>
                         <div className="right-half">
+                            <div className="new-avatar-box">
+                                <h3>New Avatar:</h3>
+                                <div className="profile-pic-sample" id={this.state.img_bg_color}>
+                                    <img src={this.state.image_path}></img>
+                                </div>
+                            </div>
                             <div className="panda-pics-box">
                                 <div className={this.state.selectedIdx === 0 ? 'panda-pic active' : 'panda-pic'}>
                                     <img
@@ -108,6 +124,15 @@ class EditProfileForm extends React.Component {
                                 <div className={this.state.selectedIdx === 3 ? 'panda-pic active' : 'panda-pic'}>
                                     <img src="/panda4.png" alt="panda" onClick={this.updateImage('image_path')} />
                                 </div>
+                            </div>
+                            <div className="color-box">
+                                <div className="color" id="blue" onClick={this.updateColor()}></div>
+                                <div className="color" id="red" onClick={this.updateColor()}></div>
+                                <div className="color" id="green" onClick={this.updateColor()}></div>
+                                <div className="color" id="purple" onClick={this.updateColor()}></div>
+                                <div className="color" id="yellow" onClick={this.updateColor()}></div>
+                                <div className="color" id="orange" onClick={this.updateColor()}></div>
+                                <div className="color" id="pink" onClick={this.updateColor()}></div>
                             </div>
                         </div>
                     </div>

@@ -386,6 +386,20 @@ ul.post-list {
   border: 1px solid blue;
   display: flex;
   align-items: center; }
+  .profile-page .profile-header #blue {
+    background-color: #0075f2; }
+  .profile-page .profile-header #red {
+    background-color: #f71735; }
+  .profile-page .profile-header #green {
+    background-color: #06d6a0; }
+  .profile-page .profile-header #purple {
+    background-color: #631a86; }
+  .profile-page .profile-header #yellow {
+    background-color: #ffd275; }
+  .profile-page .profile-header #orange {
+    background-color: #e37f37; }
+  .profile-page .profile-header #pink {
+    background-color: #fb8a9d; }
   .profile-page .profile-header .profile-pic {
     width: 100px;
     height: 100px;
@@ -400,27 +414,79 @@ ul.post-list {
   .profile-page .profile-header h1 {
     margin: 0 20px; }
 
-.edit-profile-form-container .edit-profile-form .main-form-section {
-  display: flex; }
-  .edit-profile-form-container .edit-profile-form .main-form-section .left-half {
-    display: flex;
-    flex-direction: column;
-    width: 50%; }
-  .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic {
-    width: 70px;
-    height: 70px;
-    position: relative; }
-    .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic img {
-      width: 70px;
-      height: 70px; }
-    .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic #OG-panda {
-      width: 60px;
-      height: 60px;
-      position: absolute;
-      top: 5px;
-      left: 5px; }
-  .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .active {
-    border: 1px solid black;
-    background-color: red; }
+.edit-profile-form-container {
+  text-align: center; }
+  .edit-profile-form-container h2 {
+    text-decoration: underline wavy #631a86; }
+  .edit-profile-form-container .edit-profile-form .main-form-section {
+    text-align: left;
+    display: flex; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .left-half {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      justify-content: space-between; }
+      .edit-profile-form-container .edit-profile-form .main-form-section .left-half label {
+        margin: 10px; }
+      .edit-profile-form-container .edit-profile-form .main-form-section .left-half input {
+        margin-left: 10px; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #blue {
+      background-color: #0075f2; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #red {
+      background-color: #f71735; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #green {
+      background-color: #06d6a0; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #purple {
+      background-color: #631a86; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #yellow {
+      background-color: #ffd275; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #orange {
+      background-color: #e37f37; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #pink {
+      background-color: #fb8a9d; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half .new-avatar-box {
+      display: flex;
+      border: 1px solid green;
+      align-items: center;
+      padding: 10px; }
+      .edit-profile-form-container .edit-profile-form .main-form-section .right-half .new-avatar-box .profile-pic-sample {
+        margin: 0 20px;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background-color: blue;
+        position: relative; }
+        .edit-profile-form-container .edit-profile-form .main-form-section .right-half .new-avatar-box .profile-pic-sample img {
+          width: 70px;
+          height: 70px;
+          position: absolute;
+          top: 10px;
+          left: 10px; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box {
+      display: flex; }
+      .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic {
+        width: 70px;
+        height: 70px;
+        position: relative;
+        margin: 10px; }
+        .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic img {
+          width: 70px;
+          height: 70px; }
+        .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .panda-pic #OG-panda {
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          top: 5px;
+          left: 5px; }
+      .edit-profile-form-container .edit-profile-form .main-form-section .right-half .panda-pics-box .active {
+        border: 1px solid black; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half .color-box {
+      display: flex;
+      margin: 20px 0;
+      justify-content: space-evenly; }
+      .edit-profile-form-container .edit-profile-form .main-form-section .right-half .color-box .color {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px; }
 
 /*# sourceMappingURL=style.css.map */

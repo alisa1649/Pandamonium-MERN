@@ -18,7 +18,7 @@ class Profile extends React.Component {
         return (
             <div className="profile-page">
                 <div className="profile-header">
-                    <div className="profile-pic">
+                    <div className="profile-pic" id={currentUser.img_bg_color}>
                         <img src={currentUser.image_path} alt="panda??" />
                     </div>
                     <h1>{currentUser.username}'s Profile</h1>
