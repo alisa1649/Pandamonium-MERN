@@ -7,3 +7,7 @@ export const getCurrentUserInfo  = () => {
 export const editCurrentUserInfo = (newInfo) => {
     return axios.patch('/api/users/current', newInfo)
 }
+
+export const getOtherUserInfo = () => {
+    return axios.get('/api/users/:id')
+}

@@ -411,6 +411,40 @@ body {
       background-color: #e37f37; }
     .profile-page .profile-header #pink {
       background-color: #fb8a9d; }
+    .profile-page .profile-header #rainbow {
+      background-image: url(../LGBT_Rainbow_Flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #lesbian-pride {
+      background-image: url(../lesbian_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #bisexual-pride {
+      background-image: url(../bisexual_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #pansexual-pride {
+      background-image: url(../pansexual_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #transgender-pride {
+      background-image: url(../transgender_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #asexual-pride {
+      background-image: url(../asexual_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #nonbinary-pride {
+      background-image: url(../nonbinary_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #genderfluid-pride {
+      background-image: url(../genderfluid_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #genderqueer-pride {
+      background-image: url(../genderqueer_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #agender-pride {
+      background-image: url(../agender_pride_flag.png);
+      background-size: cover; }
+    .profile-page .profile-header #intersex-pride {
+      background-image: url(../intersex_pride_flag.png);
+      background-size: cover;
+      background-position-x: 50%; }
     .profile-page .profile-header .profile-pic {
       width: 100px;
       height: 100px;
@@ -462,6 +496,40 @@ body {
       background-color: #e37f37; }
     .edit-profile-form-container .edit-profile-form .main-form-section .right-half #pink {
       background-color: #fb8a9d; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #rainbow {
+      background-image: url(../LGBT_Rainbow_Flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #lesbian-pride {
+      background-image: url(../lesbian_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #bisexual-pride {
+      background-image: url(../bisexual_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #pansexual-pride {
+      background-image: url(../pansexual_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #transgender-pride {
+      background-image: url(../transgender_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #asexual-pride {
+      background-image: url(../asexual_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #nonbinary-pride {
+      background-image: url(../nonbinary_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #genderfluid-pride {
+      background-image: url(../genderfluid_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #genderqueer-pride {
+      background-image: url(../genderqueer_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #agender-pride {
+      background-image: url(../agender_pride_flag.png);
+      background-size: cover; }
+    .edit-profile-form-container .edit-profile-form .main-form-section .right-half #intersex-pride {
+      background-image: url(../intersex_pride_flag.png);
+      background-size: cover;
+      background-position-x: 50%; }
     .edit-profile-form-container .edit-profile-form .main-form-section .right-half .new-avatar-box {
       display: flex;
       align-items: center;
@@ -499,10 +567,13 @@ body {
         border: 1px solid black; }
     .edit-profile-form-container .edit-profile-form .main-form-section .right-half .color-box {
       display: flex;
+      flex-wrap: wrap;
       margin: 20px 0;
-      justify-content: space-evenly; }
+      width: 350px;
+      border: 1px solid black; }
       .edit-profile-form-container .edit-profile-form .main-form-section .right-half .color-box .color {
         border-radius: 50%;
+        margin: 10px;
         width: 30px;
         height: 30px; }
 
@@ -510,8 +581,27 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px; }
-  .nav-bar h1 {
-    margin: 0; }
+  .nav-bar .left-nav-bar {
+    display: flex;
+    align-items: center; }
+    .nav-bar .left-nav-bar .panda {
+      width: 90px;
+      height: 90px;
+      background-image: url(../LGBT_Rainbow_Flag.png);
+      background-size: cover;
+      border-radius: 50%;
+      position: relative; }
+      .nav-bar .left-nav-bar .panda img {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        left: 10px;
+        top: 10px; }
+    .nav-bar .left-nav-bar h1 {
+      font-family: 'Fredericka the Great';
+      margin: 0;
+      margin-left: 20px;
+      font-size: 48px; }
   .nav-bar .links a {
     margin: 0 10px; }
 

@@ -133,6 +133,17 @@ class EditProfileForm extends React.Component {
                                 <div className="color" id="yellow" onClick={this.updateColor()}></div>
                                 <div className="color" id="orange" onClick={this.updateColor()}></div>
                                 <div className="color" id="pink" onClick={this.updateColor()}></div>
+                                <div className="color" id="rainbow" onClick={this.updateColor()}></div>
+                                <div className="color" id="lesbian-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="bisexual-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="pansexual-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="transgender-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="asexual-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="nonbinary-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="genderfluid-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="genderqueer-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="agender-pride" onClick={this.updateColor()}></div>
+                                <div className="color" id="intersex-pride" onClick={this.updateColor()}></div>
                             </div>
                         </div>
                     </div>
