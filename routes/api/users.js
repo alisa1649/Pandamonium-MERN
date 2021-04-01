@@ -29,7 +29,9 @@ router.post('/signup', (req, res) => {
           username: req.body.username,
           email: req.body.email,
           password: req.body.password,
-          bio: req.body.bio
+          bio: req.body.bio,
+          city: req.body.city,
+          state: req.body.state
         })
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -89,7 +91,9 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     id: req.user.id,
     username: req.user.username,
     email: req.user.email,
-    bio: req.user.bio
+    bio: req.user.bio,
+    city: req.body.city,
+    state: req.body.state
   });
 })
 
@@ -97,11 +101,15 @@ router.patch('/current', passport.authenticate('jwt', { session: false }), (req,
   let _id = req.user.id;
   let newUsername = req.body.username;
   let newBio = req.body.bio;
+  let newCity = req.body.city;
+  let newState = req.body.state;
   
   User.findByIdAndUpdate({_id}, {
 
     username: newUsername, 
     bio: newBio,
+    city: newCity,
+    state: newState
   },
   ).then(result => res.send(result)).catch((err) => res.send(err))
 })

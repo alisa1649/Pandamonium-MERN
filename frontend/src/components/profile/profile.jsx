@@ -26,9 +26,8 @@ class Profile extends React.Component {
                 <div className="profile-body">
                     <div className="location-box">
                         <h3>Current Location:</h3> 
-                        <div className='googlemap'>
-                            <GoogleMap/>
-                        </div>
+                        <p>City: {currentUser.city}</p>
+                        <p>State: {currentUser.state}</p>
                     </div>
                     <div className="bio-box">
                         <h4>Bio: </h4>

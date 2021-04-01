@@ -1,29 +1,40 @@
-import React from 'react'
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import React from "react";
+/* global google */
 
-const mapStyles = {
-  width: '50%',
-  height: '50%'
-};
+class SearchBar extends React.Component {
+  constructor(props) {
 
-export class MapContainer extends React.Component {
+    super(props);
+    this.autocompleteInput = React.createRef();
+    this.autocomplete = null;
+    this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
+  }
+
+  componentDidMount() {
+    const options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: "us"}
+     };
+     
+    this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current, options);
+
+    this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
+  }
+
+  handlePlaceChanged(){
+    const place = this.autocomplete.getPlace();
+    this.setState ({
+        name: place.address_componments[0],
+        state: place.address_componments[1]
+    })
+  }
+
   render() {
     return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={
-          {
-            lat: -1.2884,
-            lng: 36.8233
-          }
-        }
-      />
+        <input ref={this.autocompleteInput}  id="autocomplete" placeholder="Enter your address"
+         type="text"></input>
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDNRobbCwadK2sEBeZA-LsvW4tL2JjEKxo'
-})(MapContainer);
+export default SearchBar;
