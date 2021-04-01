@@ -112,15 +112,16 @@ router.patch('/current', passport.authenticate('jwt', { session: false }), (req,
   ).then(result => res.send(result)).catch((err) => res.send(err))
 })
 
-router.get('/:id'), (req, res) => {
-  
-  User.findById(req.params.id)
-  .then((user) => res.json({
-    username: user.username,
-    image_path: user.image_path,
-    img_bg_color: user.img_bg_color
-  }))
+router.get('/:id', (req, res) => {
 
-}
+  User.findById(req.params.id)
+    .then((user) => res.json({
+      username: user.username,
+      image_path: user.image_path,
+      img_bg_color: user.img_bg_color
+    }).catch((err) => res.send(err))
+  )
+
+})
 
 module.exports = router;
