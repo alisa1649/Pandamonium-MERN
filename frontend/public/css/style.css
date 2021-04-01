@@ -508,8 +508,27 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px; }
-  .nav-bar h1 {
-    margin: 0; }
+  .nav-bar .left-nav-bar {
+    display: flex;
+    align-items: center; }
+    .nav-bar .left-nav-bar .panda {
+      width: 90px;
+      height: 90px;
+      background-image: url(../LGBT_Rainbow_Flag.png);
+      background-size: cover;
+      border-radius: 50%;
+      position: relative; }
+      .nav-bar .left-nav-bar .panda img {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        left: 10px;
+        top: 10px; }
+    .nav-bar .left-nav-bar h1 {
+      font-family: 'Fredericka the Great';
+      margin: 0;
+      margin-left: 20px;
+      font-size: 48px; }
   .nav-bar .links a {
     margin: 0 10px; }
 

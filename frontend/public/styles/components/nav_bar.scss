@@ -2,9 +2,33 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    h1 {
-        margin: 0;
+    .left-nav-bar {
+        display: flex;
+        align-items: center;
+        .panda {
+            width: 90px;
+            height: 90px;
+            background-image: url(../LGBT_Rainbow_Flag.png);
+            background-size: cover;
+            border-radius: 50%;
+            position: relative;
+            img {
+                width: 70px;
+                height: 70px;
+                position: absolute;
+                left: 10px;
+                top: 10px;
+            }
+        }
+        h1 {
+            // font-family: 'Barriecito';
+            font-family: 'Fredericka the Great';
+            margin: 0;
+            margin-left: 20px;
+            font-size: 48px;
+        }
     }
+
     .links {
         a {
             margin: 0 10px;

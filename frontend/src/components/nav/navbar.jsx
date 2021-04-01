@@ -29,7 +29,12 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="nav-bar">
-                <h1>Pandamonium</h1>
+                <div className="left-nav-bar">
+                    <div className="panda">
+                        <img src="/panda.png" alt="panda icon" />
+                    </div>
+                    <h1>Pandamonium</h1>
+                </div>
                 {this.getLinks()}
             </div>
         );
