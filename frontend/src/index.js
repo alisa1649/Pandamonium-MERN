@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
     window.getState = store.getState;
   }
-
+  window.getState = store.getState;
   const root = document.getElementById('root');
 
   ReactDOM.render(<Root store={store} />, root);
