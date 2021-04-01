@@ -28,9 +28,9 @@ class EditProfileForm extends React.Component {
 
         const options = {
             types: ['(cities)'],
-            componentRestrictions: {country: "us"}
+            componentRestrictions: { country: 'us' },
         };
-        
+
         this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current, options);
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
     }
@@ -57,15 +57,13 @@ class EditProfileForm extends React.Component {
     }
 
     handlePlaceChanged = () => {
-      
         const place = this.autocomplete.getPlace();
-        this.setState ({
+        this.setState({
             city: place.address_components[0].long_name,
-            state: place.address_components[2].long_name
-        })
+            state: place.address_components[2].long_name,
+        });
+    };
 
-    }
-    
     updateImage(field) {
         return (e) => {
             let newUrl = `/${e.currentTarget.src.split('/').pop()}`;
@@ -103,9 +101,9 @@ class EditProfileForm extends React.Component {
         });
     }
 
-    handleChange= (event) => {
-        this.setState({[event.target.name]: event.target.value})
-    }
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+    };
 
     render() {
         if (this.state.redirect === true) {
@@ -115,23 +113,17 @@ class EditProfileForm extends React.Component {
         return (
             <div className="edit-profile-form-container">
                 <h2>Edit Your Profile</h2>
-                    <label>
-                        <input ref={this.autocompleteInput}  
-                        id="autocomplete" 
-                        placeholder="Enter your location"
-                        type="text"
-                        />
-                    </label>
-                    <input    
+                <form className="edit-profile-form" onSubmit={this.handleSubmit}>
+                    <input
                         // name={"city"}
                         value={this.state.city}
-                        placeholder={"city"}
+                        placeholder={'city'}
                         onChange={this.update('city')}
                     />
-                    <input 
+                    <input
                         // name= {"state"}
                         value={this.state.state}
-                        placeholder={"state"}
+                        placeholder={'state'}
                         onChange={this.update('state')}
                     />
                     <div className="main-form-section">
@@ -200,8 +192,6 @@ class EditProfileForm extends React.Component {
                     </div>
                     <input type="submit" value="Edit Profile"></input>
                 </form>
-
-
             </div>
         );
     }
