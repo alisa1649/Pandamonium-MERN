@@ -26,6 +26,7 @@ class PostListItem extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    debugger;
     return {
         userId: state.session.user.id,
     };
