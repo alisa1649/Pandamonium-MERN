@@ -12,16 +12,11 @@ export const fetchParentPosts = (forumId) => {
         .then(result => result.data);
 };
 
-export const createParentPost = (forumId, post) => {
-    // return axios.post(`api/forums/${forumId}/posts`, post);
-    return Promise.resolve({
-        // NOTE: when building backend, return results in this format
-        post: {
-            id: getRandomInt(),
-            forumId: '6064e15dbc30e7788b2fb300',
-            text: post.text
-        }
-    })
+export const createParentPost = (post) => {
+    return axios.post(`api/posts/new`, post)
+        .then(result => {
+            return result.data
+        });
 };
 
 export const createComment = (parentPost, post) => {

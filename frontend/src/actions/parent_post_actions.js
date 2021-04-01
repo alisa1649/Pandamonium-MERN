@@ -20,15 +20,15 @@ export const receiveErrors = errors => ({
 });
 
 export const requestParentPosts = (forumId) => dispatch => {
-    return APIUtil.fetchParentPosts(forumId).then((posts) => (
-        dispatch(receiveParentPosts(posts))
-    ))
+    return APIUtil.fetchParentPosts(forumId).then((posts) => {
+        return dispatch(receiveParentPosts(posts))
+    })
 };
 
-export const createParentPost = (forumId, post) => dispatch => (
-    APIUtil.createParentPost(forumId, post).then((post) => (
-        dispatch(receiveParentPost(post.post))
-    ), err => (
+export const createParentPost = (post) => dispatch => (
+    APIUtil.createParentPost(post).then((post) => {
+        return dispatch(receiveParentPost(post))
+    }, err => (
         dispatch(receiveErrors(err.response.data))
     ))
 );

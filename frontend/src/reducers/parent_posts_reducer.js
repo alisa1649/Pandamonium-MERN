@@ -15,7 +15,7 @@ const ParentPostsReducer = (state = initialState, action) =>  {
         case RECEIVE_PARENT_POST:
             return {
                 ...state,
-                [action.post.id]: action.post
+                [action.post._id]: action.post
             };
         case RECEIVE_PARENT_POST_ERRORS:
             // TODO: add error code

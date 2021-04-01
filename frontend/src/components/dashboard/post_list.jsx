@@ -35,6 +35,5 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     requestParentPosts: (forumId) => dispatch(requestParentPosts(forumId)),
-    createPost: (forumId, post) => dispatch(createParentPost(forumId, post)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);
