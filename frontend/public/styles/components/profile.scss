@@ -1,8 +1,9 @@
 .profile-page {
+    background-color: $main-bg-color;
     .profile-header {
-        border: 1px solid blue;
         display: flex;
         align-items: center;
+        justify-content: center;
         #blue {
             background-color: $blue;
         }
@@ -40,6 +41,16 @@
         }
         h1 {
             margin: 0 20px;
+        }
+    }
+    .profile-body {
+        .location-box {
+            display: flex;
+            h3 {
+                margin-right: 10px;
+            }
+        }
+        .bio-box {
         }
     }
 }

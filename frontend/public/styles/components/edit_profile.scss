@@ -17,6 +17,10 @@
                 }
                 input {
                     margin-left: 10px;
+                    background-color: $top-bg-color;
+                }
+                textarea {
+                    background-color: $top-bg-color;
                 }
             }
             .right-half {
@@ -43,7 +47,6 @@
                 }
                 .new-avatar-box {
                     display: flex;
-                    border: 1px solid green;
                     align-items: center;
                     padding: 10px;
                     .profile-pic-sample {
