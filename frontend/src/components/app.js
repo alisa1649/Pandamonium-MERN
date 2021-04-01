@@ -9,8 +9,6 @@ import ProfileContainer from './profile/profile_container'
 import EditProfileFormContainer from './profile/edit_profile_form_container';
 import Dashboard from "./dashboard/dashboard";
 
-import '../styles/app.css';
-import '../styles/normalize.css';
 import Thread from "../thread/post/thread";
 
 const App = () => (
@@ -18,13 +16,14 @@ const App = () => (
     <NavBarContainer />
     <Modal />
     <Switch>
-      <AuthRoute exact path="/" component={LoginFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
 
 
       <ProtectedRoute exact path="/profile" component={ProfileContainer} />
       <ProtectedRoute exact path="/profile/edit" component={EditProfileFormContainer} />
-      <AuthRoute exact path="/dashboard" component={Dashboard} />
-      <AuthRoute exact path="/thread/:postId" component={Thread} />
+      <ProtectedRoute exact path="/" component={Dashboard} />
+      <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+      <ProtectedRoute exact path="/thread/:postId" component={Thread} />
     </Switch>
   </div>
 );
