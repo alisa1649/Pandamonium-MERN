@@ -93,7 +93,9 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     email: req.user.email,
     bio: req.user.bio,
     city: req.body.city,
-    state: req.body.state
+    state: req.body.state,
+    image_path: req.user.image_path,
+    img_bg_color: req.user.img_bg_color
   });
 })
 
@@ -103,13 +105,17 @@ router.patch('/current', passport.authenticate('jwt', { session: false }), (req,
   let newBio = req.body.bio;
   let newCity = req.body.city;
   let newState = req.body.state;
+  let newImgPath = req.body.image_path;
+  let newImgColor = req.body.img_bg_color;
   
   User.findByIdAndUpdate({_id}, {
 
     username: newUsername, 
     bio: newBio,
     city: newCity,
-    state: newState
+    state: newState,
+    image_path: newImgPath,
+    img_bg_color: newImgColor
   },
   ).then(result => res.send(result)).catch((err) => res.send(err))
 })
