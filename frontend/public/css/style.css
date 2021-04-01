@@ -305,10 +305,11 @@ template {
 
 #root {
   border: 2px solid black;
-  background-color: #eaf7bf;
+  background-image: radial-gradient(#eaf7bf 90%, rgba(234, 247, 191, 0.5) 10%);
   margin-left: auto;
   margin-right: auto;
   max-width: 750px;
+  min-height: 450px;
   padding: 20px;
   border-radius: 5px; }
 
@@ -502,5 +503,13 @@ body {
         border-radius: 50%;
         width: 30px;
         height: 30px; }
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between; }
+  .nav-bar h1 {
+    margin: 0; }
+  .nav-bar .links a {
+    margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */
