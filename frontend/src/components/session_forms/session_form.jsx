@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
         super(props);
 
         this.state = {
+            
             email: '',
             password: '',
             errors: {}
@@ -17,9 +18,6 @@ class SessionForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // if (nextProps.currentUser === true) {
-        //     this.props.history.push('/');  <--- dashboard route will go here
-        // }
 
         this.setState({ errors: nextProps.errors });
     }
@@ -60,7 +58,7 @@ class SessionForm extends React.Component {
                         <h2 className='login-header'>Sign In</h2>
 
                         {this.props.modalStatus === null ? <p>{this.renderErrors()}</p> : null}
-
+                        
                         <input
                             type="text"
                             value={this.state.email}

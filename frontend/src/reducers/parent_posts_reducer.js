@@ -2,7 +2,7 @@ import {
     RECEIVE_DELETE_PARENT_POST,
     RECEIVE_PARENT_POST,
     RECEIVE_PARENT_POST_ERRORS,
-    RECEIVE_PARENT_POSTS
+    RECEIVE_PARENT_POSTS, RECEIVE_UPDATE_PARENT_POST
 } from '../actions/parent_post_actions';
 
 const initialState = {};
@@ -22,6 +22,8 @@ const ParentPostsReducer = (state = initialState, action) =>  {
                 ...state,
                 [action.post._id]: action.post
             };
+        case RECEIVE_UPDATE_PARENT_POST:
+            return Object.assign({}, state, {[action.post._id]: action.post})
         case RECEIVE_PARENT_POST_ERRORS:
             // TODO: add error code
             return state;

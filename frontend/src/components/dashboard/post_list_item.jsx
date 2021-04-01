@@ -6,14 +6,23 @@ import { connect } from "react-redux";
 class PostListItem extends React.Component {
     render() {
         const post = this.props.post;
+        const editAction = this.props.editAction;
+        const deleteAction = this.props.deleteAction;
+        const belongsToUser = this.props.userId === post.user;
+
         return (
             <li className='post-item-container'>
                 <Link to={`/thread/${post._id}`}>
                     {post.text}
                 </Link>
                 {
-                    (this.props.userId === post.user)
-                        ? <button onClick={() => this.props.deleteAction(post._id)}>Delete</button>
+                    (belongsToUser && !!editAction)
+                        ? <button onClick={() => editAction(post._id)}>Edit</button>
+                        : ""
+                }
+                {
+                    (belongsToUser && !!deleteAction)
+                        ? <button onClick={() => deleteAction(post._id)}>Delete</button>
                         : ""
                 }
             </li>
