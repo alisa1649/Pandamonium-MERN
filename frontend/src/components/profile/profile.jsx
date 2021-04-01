@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GoogleMap from '../googlemap/googlemap'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -25,13 +26,17 @@ class Profile extends React.Component {
                 </div>
                 <div className="profile-body">
                     <div className="location-box">
-                        <h3>Current Location:</h3> <h3>location goes here!</h3>
+                        <h3>Current Location:</h3> 
+                        <br/>
+                        <p>City: {currentUser.city}</p>
+                        <br/>
+                        <p>State: {currentUser.state}</p>
                     </div>
                     <div className="bio-box">
                         <h3>Bio: </h3>
                         <p>{currentUser.bio}</p>
                     </div>
-
+                    
                     <Link to="/profile/edit">Edit Profile</Link>
                 </div>
             </div>

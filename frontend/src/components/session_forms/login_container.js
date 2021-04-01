@@ -1,7 +1,7 @@
 import SessionForm from './session_form'
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -15,6 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps =  dispatch => {
     return {
         login: user => dispatch(login(user)),
+        closeModal: () => dispatch(closeModal()),
         otherForm: (
             <button className='btn-create-account' onClick= {(e) => {
                 e.preventDefault();
