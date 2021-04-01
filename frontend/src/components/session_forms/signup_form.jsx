@@ -12,7 +12,7 @@ class SignupForm extends React.Component {
             errors: {},
         };
 
-    
+        this.handleClose = this.handleClose.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.clearedErrors = false;
@@ -32,6 +32,10 @@ class SignupForm extends React.Component {
     }
 
 
+    handleClose() {
+      
+        this.props.closeModal();
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -91,7 +95,7 @@ class SignupForm extends React.Component {
                         <input type="submit" value="Submit" />
                  
                         {this.renderErrors()}
-                        
+                        {this.props.signedIn === true ? this.handleClose() : null}
                         {/* Location information goes here */}
                     </div>
                 </form>
