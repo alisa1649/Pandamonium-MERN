@@ -2,6 +2,7 @@ import * as APIUtil from '../util/post_api_util';
 
 export const RECEIVE_THREAD = "RECEIVE_THREAD";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const RECEIVE_DELETE_COMMENT = "RECEIVE_DELETE_COMMENT";
 
 export const receiveThread = posts => ({
     type: RECEIVE_THREAD,
@@ -12,6 +13,12 @@ export const receiveComment = comment => ({
     type: RECEIVE_COMMENT,
     comment
 });
+
+export const receiveDeleteComment = postId => ({
+    type: RECEIVE_DELETE_COMMENT,
+    postId
+});
+
 
 export const requestThread = (postId) => dispatch => (
     APIUtil.fetchThread(postId).then((posts) => (
@@ -24,3 +31,8 @@ export const createComment = (comment) => dispatch => (
         dispatch(receiveComment(comment))
     ))
 );
+export const deleteComment = (postId) => dispatch => {
+    return APIUtil.deletePost(postId).then(() => (
+        dispatch(receiveDeleteComment(postId))
+    ))
+};

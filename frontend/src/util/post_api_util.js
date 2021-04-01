@@ -26,3 +26,9 @@ export const fetchThread = (postId) => {
             return result.data
         });
 };
+
+export function deletePost(postId) {
+    return axios.delete(`api/posts/${postId}`)
+}
+
+

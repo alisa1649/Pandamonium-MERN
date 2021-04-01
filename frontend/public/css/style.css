@@ -351,7 +351,9 @@ ul.post-list {
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between; }
 
 .signup-form-container {
   width: 400px;

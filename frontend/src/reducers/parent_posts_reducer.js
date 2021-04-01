@@ -1,4 +1,9 @@
-import {RECEIVE_PARENT_POST, RECEIVE_PARENT_POST_ERRORS, RECEIVE_PARENT_POSTS} from '../actions/parent_post_actions';
+import {
+    RECEIVE_DELETE_PARENT_POST,
+    RECEIVE_PARENT_POST,
+    RECEIVE_PARENT_POST_ERRORS,
+    RECEIVE_PARENT_POSTS
+} from '../actions/parent_post_actions';
 
 const initialState = {};
 
@@ -20,6 +25,10 @@ const ParentPostsReducer = (state = initialState, action) =>  {
         case RECEIVE_PARENT_POST_ERRORS:
             // TODO: add error code
             return state;
+        case RECEIVE_DELETE_PARENT_POST:
+            const newState2 = Object.assign({}, state);
+            delete newState2[action.postId];
+            return newState2;
         default:
             return state;
     }
