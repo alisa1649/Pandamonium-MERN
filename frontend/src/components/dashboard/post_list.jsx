@@ -14,8 +14,8 @@ class PostList extends React.Component {
                 {
                     this.props.parent_posts.map(post => {
                         return (
-                            <li key={post.id} className='post-item-container'>
-                                <Link to={`/thread/${post.id}`}>
+                            <li key={post._id} className='post-item-container'>
+                                <Link to={`/thread/${post._id}`}>
                                     {post.text}
                                 </Link>
                             </li>

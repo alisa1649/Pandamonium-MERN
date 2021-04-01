@@ -33,20 +33,9 @@ export const createComment = (parentPost, post) => {
 };
 
 
-export const fetchThread = (forumId, postId) => {
-    // return axios.get(`api/forums/${forumId}/${postId}`);
-    return Promise.resolve({
-        // NOTE: when building backend, return results in this format
-        post: {
-            id: postId,
-            forumId: '6064e15dbc30e7788b2fb300',
-            text: "TODO: fill this in after connecting to server",
-            comments: {
-                [getRandomInt()]: { text: "Placeholder comment 1" },
-                [getRandomInt()]: { text: "Placeholder comment 2" },
-                [getRandomInt()]: { text: "Placeholder comment 3" },
-                [getRandomInt()]: { text: "Placeholder comment 4" },
-            }
-        }
-    })
+export const fetchThread = (postId) => {
+    return axios.get(`api/posts/${postId}`)
+        .then(result => {
+            return result.data
+        });
 };

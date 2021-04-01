@@ -6,9 +6,9 @@ const ParentPostsReducer = (state = initialState, action) =>  {
     switch (action.type) {
         case RECEIVE_PARENT_POSTS:
             const newState = {}
-            action.posts.forEach(action => {
-                if (!action.parent) {
-                    newState[action._id] = action
+            action.posts.forEach(post => {
+                if (!post.parent) {
+                    newState[post._id] = post
                 }
             })
             return newState;

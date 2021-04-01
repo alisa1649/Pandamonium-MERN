@@ -3,9 +3,9 @@ import * as APIUtil from '../util/post_api_util';
 export const RECEIVE_THREAD = "RECEIVE_THREAD";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 
-export const receiveThread = thread => ({
+export const receiveThread = posts => ({
     type: RECEIVE_THREAD,
-    thread
+    comments: posts
 });
 
 export const receiveComment = comment => ({
@@ -13,9 +13,9 @@ export const receiveComment = comment => ({
     comment
 });
 
-export const requestThread = (forumId, postId) => dispatch => (
-    APIUtil.fetchThread(forumId, postId).then((thread) => (
-        dispatch(receiveThread(thread.post))
+export const requestThread = (postId) => dispatch => (
+    APIUtil.fetchThread(postId).then((posts) => (
+        dispatch(receiveThread(posts))
     ))
 );
 

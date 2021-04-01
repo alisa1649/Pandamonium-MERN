@@ -8,9 +8,7 @@ class Thread extends React.Component {
 
     componentDidMount() {
         if (this.props.parentPost) {
-            this.props.requestThread(
-                this.props.parentPost.forumId,
-                this.props.parentPost.id);
+            this.props.requestThread(this.props.parentPost._id);
         }
     }
 
@@ -31,7 +29,7 @@ class Thread extends React.Component {
                         {
                             this.props.comments.map(comment => {
                                 return (
-                                    <li key={comment.id} className='post-item-container'>
+                                    <li key={comment._id} className='post-item-container'>
                                         {comment.text}
                                     </li>
                                 )
@@ -56,6 +54,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     createComment: (parentPost, comment) => dispatch(createComment(parentPost, comment)),
-    requestThread: (forumId, postId) => dispatch(requestThread(forumId, postId))
+    requestThread: (postId) => dispatch(requestThread(postId))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);
