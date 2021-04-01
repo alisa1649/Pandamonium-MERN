@@ -44,13 +44,13 @@ export const login = user => dispatch => (
     })
 );
 
-export const signup = user => dispatch => (
-    APIUtil.signup(user).then((user) => (
-        (login(user))
-    ), err => (
-        dispatch(receiveErrors(err.response.data))
-    ))
-);
+  export const signup = user => dispatch => (
+      APIUtil.signup(user).then(() => (
+          dispatch(receiveUserSignIn())
+      ), err => (
+          dispatch(receiveErrors(err.response.data))
+      ))
+  );
 
 export const logout = () => dispatch => {
     
