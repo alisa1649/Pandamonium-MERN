@@ -564,6 +564,13 @@ body {
     list-style-type: none;
     margin: 25px 0 0 0;
     padding: 0; }
+    .dashboard .post-list a {
+      text-decoration: none;
+      color: black; }
+      .dashboard .post-list a:visited {
+        color: black; }
+      .dashboard .post-list a:hover .post-item-container {
+        background-color: #fdeed7; }
     .dashboard .post-list .post-item-container {
       border: 1px solid black;
       padding: 10px;
@@ -571,11 +578,23 @@ body {
       margin-top: 15px;
       display: flex;
       justify-content: space-between; }
-      .dashboard .post-list .post-item-container .post-profile-pic {
-        width: 60px;
-        height: 60px; }
-        .dashboard .post-list .post-item-container .post-profile-pic img {
-          width: 60px;
-          height: 60px; }
+      .dashboard .post-list .post-item-container .post-body {
+        display: flex;
+        align-items: center; }
+        .dashboard .post-list .post-item-container .post-body .post-profile-pic {
+          width: 75px;
+          height: 75px;
+          border-radius: 50%;
+          position: relative; }
+          .dashboard .post-list .post-item-container .post-body .post-profile-pic img {
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            width: 60px;
+            height: 60px; }
+        .dashboard .post-list .post-item-container .post-body p {
+          margin: 0 20px; }
+      .dashboard .post-list .post-item-container .delete-button:hover {
+        cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

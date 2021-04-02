@@ -35,6 +35,18 @@
         list-style-type: none;
         margin: 25px 0 0 0;
         padding: 0;
+        a {
+            text-decoration: none;
+            color: black;
+            &:visited {
+                color: black;
+            }
+            &:hover {
+                .post-item-container {
+                    background-color: $top-bg-color;
+                }
+            }
+        }
         .post-item-container {
             border: 1px solid black;
             padding: 10px;
@@ -42,12 +54,30 @@
             margin-top: 15px;
             display: flex;
             justify-content: space-between;
-            .post-profile-pic {
-                width: 60px;
-                height: 60px;
-                img {
-                    width: 60px;
-                    height: 60px;
+
+            .post-body {
+                display: flex;
+                align-items: center;
+                .post-profile-pic {
+                    width: 75px;
+                    height: 75px;
+                    border-radius: 50%;
+                    position: relative;
+                    img {
+                        position: absolute;
+                        left: 8px;
+                        top: 8px;
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                p {
+                    margin: 0 20px;
+                }
+            }
+            .delete-button {
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }

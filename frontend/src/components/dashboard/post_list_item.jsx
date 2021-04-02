@@ -7,7 +7,6 @@ import { getOtherUserInfo } from '../../actions/user_actions';
 class PostListItem extends React.Component {
     componentDidMount() {
         this.props.getOtherUserInfo(this.props.post.user);
-        debugger;
     }
     render() {
         const post = this.props.post;
@@ -18,23 +17,30 @@ class PostListItem extends React.Component {
 
         let userId = post.user;
         const author = this.props.users[userId];
-        debugger;
+
         if (!post || !author) {
             return <div>No posts found</div>;
         }
         return (
-            <li className="post-item-container">
-                <Link to={`/thread/${post._id}`}>
+            <Link to={`/thread/${post._id}`}>
+                <li className="post-item-container">
                     <div className="post-body">
                         <div id={author.img_bg_color} className="post-profile-pic">
                             <img src={author.image_path} alt="profile-pic" />
                         </div>
                         <p>{post.text}</p>
                     </div>
-                </Link>
-                {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
-                {belongsToUser && !!deleteAction ? <button onClick={() => deleteAction(post._id)}>Delete</button> : ''}
-            </li>
+
+                    {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
+                    {belongsToUser && !!deleteAction ? (
+                        <button className="delete-button" onClick={() => deleteAction(post._id)}>
+                            Delete
+                        </button>
+                    ) : (
+                        ''
+                    )}
+                </li>
+            </Link>
         );
     }
 }
