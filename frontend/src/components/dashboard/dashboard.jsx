@@ -6,6 +6,10 @@ import { getCurrentUserInfo } from '../../actions/user_actions';
 import { connect } from 'react-redux';
 
 class Dashboard extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
     componentDidMount() {
         this.props.getCurrentUserInfo();
     }
@@ -19,7 +23,7 @@ class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
-                <h2>MIAMI</h2>
+                <h2>Current Location: {this.props.currentUser.city}, {this.props.currentUser.state}</h2>
                 <NewPostForm currentUser={this.props.currentUser} createPost={createPost} />
                 <PostList forumId={forumId} />
             </div>

@@ -34,6 +34,13 @@ const UserSchema = new Schema({
   })
 
   UserSchema.add({
+    forum: {
+        type: Schema.Types.ObjectId,
+        ref: 'Forum'
+    }
+  })
+
+  UserSchema.add({
     image_path: {
       type: String,
       default: "/panda.png"
