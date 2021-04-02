@@ -48,7 +48,9 @@ class SignupForm extends React.Component {
         };
         
         
-        this.props.signup(user)
+        this.props.signup(user).then(() => {
+            this.props.closeModal();
+        })
     }
 
 
@@ -65,33 +67,32 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-container">
+            <div className="signup-form-container session-form">
                 <h2 className='signup-header'>Sign Up</h2> 
                 <h3>It's quick and easy!</h3>
                 <button onClick={this.props.closeModal} className='btn-close'>X</button>
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
-                        
+                        <span className="errors">
+                            {this.renderErrors()}
+                        </span>
                         <label>
-                            Email:
-                            <input type="text" value={this.state.email} onChange={this.update('email')} />
+                            <input placeholder="Email" type="text" value={this.state.email} onChange={this.update('email')} />
                         </label>
                         <br />
                         <label>
-                            Username:
-                            <input type="text" value={this.state.username} onChange={this.update('username')} />
+                            <input placeholder="Username" type="text" value={this.state.username} onChange={this.update('username')} />
                         </label>
                         <br />
                         <label>
-                            Password:
-                            <input type="password" value={this.state.password} onChange={this.update('password')} />
+                            <input placeholder="Password" type="password" value={this.state.password} onChange={this.update('password')} />
                         </label>
                         <br />
                         <label>
-                            Re-Enter Password:
-                            <input type="password" value={this.state.password2} onChange={this.update('password2')} />
+                            <input placeholder="Confirm Password" type="password" value={this.state.password2} onChange={this.update('password2')} />
                         </label>
                         <br />
+
                         <label>
                             City:
                             <SearchBar type="text" value={this.state.city} onChange={this.update('city')} />
@@ -100,11 +101,8 @@ class SignupForm extends React.Component {
                             State:
                             <SearchBar type="text" value={this.state.state} onChange={this.update('state')} />
                         </label>
-                        <input type="submit" value="Submit" />
-                 
-                        {this.renderErrors()}
-                        
-                        {/* Location information goes here */}
+                       
+                        <input type="submit" value="Sign Up" />
                     </div>
                 </form>
             </div>

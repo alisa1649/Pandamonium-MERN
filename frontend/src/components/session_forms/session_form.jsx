@@ -55,32 +55,37 @@ class SessionForm extends React.Component {
                         <div className='welcome-body'>
                             Pandamonium is a location based social media application for members of the LGBTQ community and allies. We provide a community for individuals to communicate and provide one other with support, resources, and friendships.
                         </div>
-                        <h2 className='login-header'>Sign In</h2>
+                        <div className='session-form'>
+                            <h2 className='login-header'>Sign In</h2>
 
-                        {this.props.modalStatus === null ? <p>{this.renderErrors()}</p> : null}
-                        
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
-                        <br />
+                            <span className='errors'>
+                                {this.props.modalStatus === null ? <p>{this.renderErrors()}</p> : null}
+                            </span>
 
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
+                            <input
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                                placeholder="Email"
+                            />
+                            <br />
 
-                        <input type="submit" value="submit" />
+                            <input
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                placeholder="Password"
+                            />
+                            <br />
+
+                            <input type="submit" value="Log In" />
+                            <hr />
+                            <p className='createaccount-header'>New User? Create an Account</p>
+                            {this.props.otherForm}
+                        </div>
                     </div>
                 </form>
 
-                <h3 className='createaccount-header'>New User? Create an Account</h3>
-                {this.props.otherForm}
 
                 <footer>Copyright &copy; 2021 PandaCorp</footer>
             </div>

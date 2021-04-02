@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Open+Sans&family=Source+Sans+Pro:wght@600&display=swap');
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #1a1a1a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    color: var(--blue);
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
 #root {
     border: 2px solid black;
     background-image: radial-gradient($main-bg-color 90%, rgba(234, 247, 191, 0.5) 10%);
@@ -6,63 +30,113 @@
     // max-width: 800px;
     max-width: 750px;
     min-height: 450px;
+    border: 16px solid #fff5;
     padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
     border-radius: 5px;
 }
-
-.dashboard {
-    display: flex;
-    flex-direction: column;
-}
-
-.new-post-box {
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.post-user-avatar {
-    background-color: $blue;
-    width: 70px;
-    height: 50px;
-}
-.post-box-button {
-    background-color: $action-color;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.new-post-box > * {
-    margin-right: 15px;
-    border-radius: 5px;
-}
-
-.new-post-box textarea {
-    width: 100%;
-}
-
-ul.post-list {
-    list-style-type: none;
-    margin: 25px 0 0 0;
-    padding: 0;
-}
-
-.post-item-container {
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-}
-
 body {
     background-image: url(../bamboo_bg.jpg);
     background-position: center;
     background-size: cover;
+}
+#blue {
+    background-color: $blue;
+}
+#red {
+    background-color: $red;
+}
+#green {
+    background-color: $darkgreen;
+}
+#purple {
+    background-color: $purple;
+}
+#yellow {
+    background-color: $yellow;
+}
+#orange {
+    background-color: $orange;
+}
+#pink {
+    background-color: $pink;
+}
+#rainbow {
+    background-image: url(../LGBT_Rainbow_Flag.png);
+    background-size: cover;
+}
+#lesbian-pride {
+    background-image: url(../lesbian_pride_flag.png);
+    background-size: cover;
+}
+#bisexual-pride {
+    background-image: url(../bisexual_pride_flag.png);
+    background-size: cover;
+}
+#pansexual-pride {
+    background-image: url(../pansexual_pride_flag.png);
+    background-size: cover;
+}
+#transgender-pride {
+    background-image: url(../transgender_pride_flag.png);
+    background-size: cover;
+}
+#asexual-pride {
+    background-image: url(../asexual_pride_flag.png);
+    background-size: cover;
+}
+#nonbinary-pride {
+    background-image: url(../nonbinary_pride_flag.png);
+    background-size: cover;
+}
+#genderfluid-pride {
+    background-image: url(../genderfluid_pride_flag.png);
+    background-size: cover;
+}
+#genderqueer-pride {
+    background-image: url(../genderqueer_pride_flag.png);
+    background-size: cover;
+}
+#agender-pride {
+    background-image: url(../agender_pride_flag.png);
+    background-size: cover;
+}
+#intersex-pride {
+    background-image: url(../intersex_pride_flag.png);
+    background-size: cover;
+    background-position-x: 50%;
+}
+
+body {
+    background: url(../bamboo_bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+input[type='submit'],
+button {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 10px 10px;
+    background-color: $purple;
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+button.secondary {
+    background-color: $gray;
+    color: white;
+}
+
+.errors ul {
+    padding: 0;
+}
+.errors li {
+    color: $orange;
+    list-style: none;
+    line-height: 28px;
+    border-radius: 5px;
+    margin-top: 5px;
 }

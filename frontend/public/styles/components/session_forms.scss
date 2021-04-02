@@ -1,6 +1,5 @@
 .signup-form-container {
   width: 400px;
-  height: 300px;
   border-radius: 4px;
   border: 1px solid black;
   background: white;
@@ -13,9 +12,7 @@
     right: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    height: 500px;
-    
+    z-index: 1000;
   }
   
   .btn-close {
@@ -30,3 +27,38 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.session-form {
+  border-radius: 10px;
+  background: #fffe;
+  width: 400px;
+  padding: 10px 60px 25px;
+  margin: 40px auto 0;
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.session-form * {
+  box-sizing: border-box;
+}
+
+.session-form input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 13px 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+
+.session-form input[type="submit"] {
+  margin-top: 25px;
+}
+
+.session-form hr {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+

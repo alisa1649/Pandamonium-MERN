@@ -6,34 +6,57 @@ import { getOtherUserInfo } from '../../actions/user_actions';
 
 class PostListItem extends React.Component {
     componentDidMount() {
-        debugger;
         this.props.getOtherUserInfo(this.props.post.user);
     }
     render() {
         const post = this.props.post;
         const editAction = this.props.editAction;
         const deleteAction = this.props.deleteAction;
-        const belongsToUser = this.props.userId === post.user;
-        debugger;
+
+        const belongsToUser = this.props.currentUserId === post.user;
+
+        let userId = post.user;
+        const author = this.props.users[userId];
+
+        if (!post || !author) {
+            return <div>No posts found</div>;
+        }
         return (
-            <li className="post-item-container">
-                <Link to={`/thread/${post._id}`}>{post.text}</Link>
-                {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
-                {belongsToUser && !!deleteAction ? <button onClick={() => deleteAction(post._id)}>Delete</button> : ''}
-            </li>
+            <Link to={`/thread/${post._id}`}>
+                <li className="post-item-container">
+                    <div className="post-body">
+                        <div id={author.img_bg_color} className="post-profile-pic">
+                            <img src={author.image_path} alt="profile-pic" />
+                        </div>
+                        <div className="username-box">
+                            <p>{author.username} says</p>
+                        </div>
+
+                        <p>{post.text}</p>
+                    </div>
+
+                    {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
+                    {belongsToUser && !!deleteAction ? (
+                        <button className="delete-button" onClick={() => deleteAction(post._id)}>
+                            Delete
+                        </button>
+                    ) : (
+                        ''
+                    )}
+                </li>
+            </Link>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    debugger;
     return {
-        userId: state.session.user.id,
+        currentUserId: state.session.user.id,
+        users: state.entities.users,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    debugger;
     return {
         getOtherUserInfo: (userId) => dispatch(getOtherUserInfo(userId)),
     };

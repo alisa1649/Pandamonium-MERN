@@ -14,6 +14,7 @@
                 justify-content: space-between;
                 label {
                     margin: 10px;
+                    margin-left: 0;
                 }
                 input {
                     margin-left: 10px;
@@ -24,72 +25,6 @@
                 }
             }
             .right-half {
-                #blue {
-                    background-color: $blue;
-                }
-                #red {
-                    background-color: $red;
-                }
-                #green {
-                    background-color: $green;
-                }
-                #purple {
-                    background-color: $purple;
-                }
-                #yellow {
-                    background-color: $yellow;
-                }
-                #orange {
-                    background-color: $orange;
-                }
-                #pink {
-                    background-color: $pink;
-                }
-                #rainbow {
-                    background-image: url(../LGBT_Rainbow_Flag.png);
-                    background-size: cover;
-                }
-                #lesbian-pride {
-                    background-image: url(../lesbian_pride_flag.png);
-                    background-size: cover;
-                }
-                #bisexual-pride {
-                    background-image: url(../bisexual_pride_flag.png);
-                    background-size: cover;
-                }
-                #pansexual-pride {
-                    background-image: url(../pansexual_pride_flag.png);
-                    background-size: cover;
-                }
-                #transgender-pride {
-                    background-image: url(../transgender_pride_flag.png);
-                    background-size: cover;
-                }
-                #asexual-pride {
-                    background-image: url(../asexual_pride_flag.png);
-                    background-size: cover;
-                }
-                #nonbinary-pride {
-                    background-image: url(../nonbinary_pride_flag.png);
-                    background-size: cover;
-                }
-                #genderfluid-pride {
-                    background-image: url(../genderfluid_pride_flag.png);
-                    background-size: cover;
-                }
-                #genderqueer-pride {
-                    background-image: url(../genderqueer_pride_flag.png);
-                    background-size: cover;
-                }
-                #agender-pride {
-                    background-image: url(../agender_pride_flag.png);
-                    background-size: cover;
-                }
-                #intersex-pride {
-                    background-image: url(../intersex_pride_flag.png);
-                    background-size: cover;
-                    background-position-x: 50%;
-                }
                 .new-avatar-box {
                     display: flex;
                     align-items: center;
@@ -138,7 +73,7 @@
                 .color-box {
                     display: flex;
                     flex-wrap: wrap;
-                    margin: 20px 0;
+                    margin: 20px 0 10px 0;
                     width: 350px;
                     border: 1px solid black;
                     // justify-content: space-evenly;
