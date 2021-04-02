@@ -5,15 +5,20 @@ html {
     color: #1a1a1a;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
-    color:var(--blue);
+    color: var(--blue);
 }
 
-html, body {
+html,
+body {
     min-height: 100%;
 }
 
@@ -31,56 +36,76 @@ html, body {
     box-sizing: border-box;
     border-radius: 5px;
 }
-
-.dashboard {
-    display: flex;
-    flex-direction: column;
+body {
+    background-image: url(../bamboo_bg.jpg);
+    background-position: center;
+    background-size: cover;
 }
-
-.new-post-box {
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.post-user-avatar {
+#blue {
     background-color: $blue;
-    width: 70px;
-    height: 50px;
 }
-.post-box-button {
-    background-color: $action-color;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+#red {
+    background-color: $red;
 }
-
-.new-post-box > * {
-    margin-right: 15px;
-    border-radius: 5px;
+#green {
+    background-color: $darkgreen;
 }
-
-.new-post-box textarea {
-    width: 100%;
+#purple {
+    background-color: $purple;
 }
-
-ul.post-list {
-    list-style-type: none;
-    margin: 25px 0 0 0;
-    padding: 0;
+#yellow {
+    background-color: $yellow;
 }
-
-.post-item-container {
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
+#orange {
+    background-color: $orange;
+}
+#pink {
+    background-color: $pink;
+}
+#rainbow {
+    background-image: url(../LGBT_Rainbow_Flag.png);
+    background-size: cover;
+}
+#lesbian-pride {
+    background-image: url(../lesbian_pride_flag.png);
+    background-size: cover;
+}
+#bisexual-pride {
+    background-image: url(../bisexual_pride_flag.png);
+    background-size: cover;
+}
+#pansexual-pride {
+    background-image: url(../pansexual_pride_flag.png);
+    background-size: cover;
+}
+#transgender-pride {
+    background-image: url(../transgender_pride_flag.png);
+    background-size: cover;
+}
+#asexual-pride {
+    background-image: url(../asexual_pride_flag.png);
+    background-size: cover;
+}
+#nonbinary-pride {
+    background-image: url(../nonbinary_pride_flag.png);
+    background-size: cover;
+}
+#genderfluid-pride {
+    background-image: url(../genderfluid_pride_flag.png);
+    background-size: cover;
+}
+#genderqueer-pride {
+    background-image: url(../genderqueer_pride_flag.png);
+    background-size: cover;
+}
+#agender-pride {
+    background-image: url(../agender_pride_flag.png);
+    background-size: cover;
+}
+#intersex-pride {
+    background-image: url(../intersex_pride_flag.png);
+    background-size: cover;
+    background-position-x: 50%;
 }
 
 body {
@@ -88,7 +113,8 @@ body {
     background-size: cover;
 }
 
-input[type="submit"], button {
+input[type='submit'],
+button {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
@@ -111,6 +137,6 @@ button.secondary {
     color: $orange;
     list-style: none;
     line-height: 28px;
-    border-radius:5px;
+    border-radius: 5px;
     margin-top: 5px;
 }

@@ -25,9 +25,9 @@ export const editCurrentUserInfo = (newInfo) => dispatch => {
     )
 }
 
-export const getOtherUserInfo = () => dispatch => {
+export const getOtherUserInfo = (userId) => dispatch => {
     return (
-        APIUtil.getOtherUserInfo().then((otherUser) => dispatch(receiveOtherUser(otherUser)))
+        APIUtil.getOtherUserInfo(userId).then((otherUser) => dispatch(receiveOtherUser(otherUser)))
     )
 }
 

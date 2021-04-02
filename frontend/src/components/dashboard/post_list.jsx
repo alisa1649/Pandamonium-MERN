@@ -1,5 +1,5 @@
 import React from 'react';
-import { deleteParentPost, requestParentPosts } from '../../actions/parent_post_actions';
+import { deleteParentPost, requestParentPosts, updateParentPost } from '../../actions/parent_post_actions';
 import { connect } from 'react-redux';
 import PostListItem from './post_list_item';
 
@@ -9,11 +9,15 @@ class PostList extends React.Component {
     }
 
     render() {
-        debugger;
         return (
             <ul className="post-list">
                 {this.props.parent_posts.map((post) => (
-                    <PostListItem key={post._id} post={post} deleteAction={this.props.deletePost} />
+                    <PostListItem
+                        key={post._id}
+                        post={post}
+                        deleteAction={this.props.deletePost}
+                        // editAction={this.props.editPost}
+                    />
                 ))}
             </ul>
         );
@@ -30,5 +34,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     requestParentPosts: (forumId) => dispatch(requestParentPosts(forumId)),
     deletePost: (postId) => dispatch(deleteParentPost(postId)),
+    // editPost: (post) => dispatch(updateParentPost(post)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

@@ -124,6 +124,7 @@ router.get('/:id', (req, res) => {
 
   User.findById(req.params.id)
     .then((user) => res.json({
+      id: user._id,
       username: user.username,
       image_path: user.image_path,
       img_bg_color: user.img_bg_color

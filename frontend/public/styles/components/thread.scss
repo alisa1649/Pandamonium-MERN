@@ -1,0 +1,84 @@
+.thread-container {
+    a {
+        text-decoration: none;
+        color: black;
+        &:visited {
+            color: black;
+        }
+        &:hover {
+            .post-item-container {
+                background-color: $top-bg-color;
+                cursor: default;
+            }
+        }
+    }
+    .new-post-box {
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 5px;
+        .post-user-avatar {
+            width: 90px;
+            height: 90px;
+            margin-right: 15px;
+            border-radius: 50%;
+            position: relative;
+            img {
+                width: 70px;
+                height: 70px;
+                position: absolute;
+                top: 10px;
+                left: 12px;
+            }
+        }
+        textarea {
+            width: calc(90% - 150px);
+            margin-right: 15px;
+            border-radius: 5px;
+            background-color: $top-bg-color;
+        }
+        .post-box-button {
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+    }
+    .post-item-container {
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+
+        .post-body {
+            display: flex;
+            align-items: center;
+            .post-profile-pic {
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                position: relative;
+                img {
+                    position: absolute;
+                    left: 8px;
+                    top: 8px;
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+            .username-box {
+                align-self: flex-start;
+                font-size: 12px;
+            }
+            p {
+                margin: 0 20px;
+            }
+        }
+    }
+}
