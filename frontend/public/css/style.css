@@ -509,10 +509,8 @@ button.secondary {
         height: 70px; }
     .profile-page .profile-header h1 {
       margin: 0 20px; }
-  .profile-page .profile-body .location-box {
-    display: flex; }
-    .profile-page .profile-body .location-box h3 {
-      margin-right: 10px; }
+  .profile-page .profile-body .location-box h3 {
+    margin-right: 10px; }
 
 .edit-profile-form-container {
   text-align: center; }
