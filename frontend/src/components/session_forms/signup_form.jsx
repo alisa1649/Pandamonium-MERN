@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import SearchBar from '../googlemap/googlemap';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -9,6 +10,8 @@ class SignupForm extends React.Component {
             username: '',
             password: '',
             password2: '',
+            city: '',
+            state: '',
             errors: {},
         };
 
@@ -40,6 +43,8 @@ class SignupForm extends React.Component {
             username: this.state.username,
             password: this.state.password,
             password2: this.state.password2,
+            city: this.state.city,
+            state: this.state.state
         };
         
         
@@ -87,10 +92,17 @@ class SignupForm extends React.Component {
                             <input placeholder="Confirm Password" type="password" value={this.state.password2} onChange={this.update('password2')} />
                         </label>
                         <br />
-                        
-                        <input type="submit" value="Sign Up" />
 
-                        {/* Location information goes here */}
+                        <label>
+                            City:
+                            <SearchBar type="text" value={this.state.city} onChange={this.update('city')} />
+                        </label>
+                        <label>
+                            State:
+                            <SearchBar type="text" value={this.state.state} onChange={this.update('state')} />
+                        </label>
+                       
+                        <input type="submit" value="Sign Up" />
                     </div>
                 </form>
             </div>
