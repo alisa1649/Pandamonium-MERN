@@ -43,7 +43,9 @@ class SignupForm extends React.Component {
         };
         
         
-        this.props.signup(user)
+        this.props.signup(user).then(() => {
+            this.props.closeModal();
+        })
     }
 
 
@@ -86,7 +88,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br />
                         
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Sign Up" />
 
                         {/* Location information goes here */}
                     </div>
