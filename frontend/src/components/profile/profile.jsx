@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GoogleMap from '../googlemap/googlemap'
 
 class Profile extends React.Component {
     constructor(props) {

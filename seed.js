@@ -8,7 +8,6 @@ const data = [
         'model': 'Forum',
         'documents': [
             {
-                // '_id': '1',
                 'name': 'sampleForum'
             }
         ]
