@@ -34,8 +34,6 @@ class SignupForm extends React.Component {
             });
     }
 
-
-
     handleSubmit(e) {
         e.preventDefault();
         let user = {
