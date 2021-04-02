@@ -718,11 +718,22 @@ button.secondary {
       position: absolute;
       top: 10px;
       left: 12px; }
-  .thread-container .new-post-box textarea {
+  .thread-container .new-post-box .new-post-middle {
     width: calc(90% - 150px);
-    margin-right: 15px;
-    border-radius: 5px;
-    background-color: #fdeed7; }
+    display: flex;
+    flex-direction: column; }
+    .thread-container .new-post-box .new-post-middle .anonymous-box {
+      font-size: 12px;
+      margin-bottom: 5px;
+      align-self: flex-end; }
+      .thread-container .new-post-box .new-post-middle .anonymous-box input {
+        margin-left: 5px; }
+    .thread-container .new-post-box .new-post-middle textarea {
+      width: 100%;
+      height: 80%;
+      margin-right: 15px;
+      border-radius: 5px;
+      background-color: #fdeed7; }
   .thread-container .new-post-box .post-box-button {
     color: white;
     padding: 10px;

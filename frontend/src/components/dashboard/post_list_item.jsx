@@ -29,7 +29,7 @@ class PostListItem extends React.Component {
                             <img src={author.image_path} alt="profile-pic" />
                         </div>
                         <div className="username-box">
-                            <p>{author.username} says</p>
+                            {post.anonymity ? <p>Anonymous says</p> : <p>{author.username} says</p>}
                         </div>
 
                         <p>{post.text}</p>
