@@ -6,7 +6,7 @@ export default (oldState = {}, action) => {
             return Object.assign({}, oldState, {currentUser: action.currentUser.data})
         case RECEIVE_OTHER_USER_INFO:
            
-            return Object.assign({}, oldState, {author: action.user.data})
+            return Object.assign({}, oldState, {[action.user.data.id]: action.user.data})
         default:
             return oldState;
     }

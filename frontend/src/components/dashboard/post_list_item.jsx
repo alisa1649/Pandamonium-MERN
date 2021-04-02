@@ -13,20 +13,25 @@ class PostListItem extends React.Component {
         const post = this.props.post;
         const editAction = this.props.editAction;
         const deleteAction = this.props.deleteAction;
-        debugger;
+
         const belongsToUser = this.props.currentUserId === post.user;
-        const author = this.props.users.author;
+
+        let userId = post.user;
+        const author = this.props.users[userId];
+        debugger;
         if (!post || !author) {
             return <div>No posts found</div>;
         }
         return (
             <li className="post-item-container">
-                <div className="post-body">
-                    <div className="post-profile-pic">
-                        <img src={author.image_path} alt="profile-pic" />
+                <Link to={`/thread/${post._id}`}>
+                    <div className="post-body">
+                        <div id={author.img_bg_color} className="post-profile-pic">
+                            <img src={author.image_path} alt="profile-pic" />
+                        </div>
+                        <p>{post.text}</p>
                     </div>
-                    <Link to={`/thread/${post._id}`}>{post.text}</Link>
-                </div>
+                </Link>
                 {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
                 {belongsToUser && !!deleteAction ? <button onClick={() => deleteAction(post._id)}>Delete</button> : ''}
             </li>
