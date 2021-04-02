@@ -1,5 +1,18 @@
 .profile-page {
     background-color: $main-bg-color;
+    input, textarea {
+        cursor: not-allowed;
+    }
+    button {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .left-half {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .profile-header {
         display: flex;
         align-items: center;
