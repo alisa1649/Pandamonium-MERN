@@ -114,17 +114,26 @@ class EditProfileForm extends React.Component {
             <div className="edit-profile-form-container">
                 <h2>Edit Your Profile</h2>
                 <form className="edit-profile-form" onSubmit={this.handleSubmit}>
+                    <label>
+                        <input ref={this.autocompleteInput}  
+                        id="autocomplete" 
+                        placeholder="Enter your location"
+                        type="text"
+                        />
+                    </label>
                     <input
                         // name={"city"}
                         value={this.state.city}
                         placeholder={'city'}
                         onChange={this.update('city')}
+                        readOnly
                     />
                     <input
                         // name= {"state"}
                         value={this.state.state}
                         placeholder={'state'}
                         onChange={this.update('state')}
+                        readOnly
                     />
                     <div className="main-form-section">
                         <div className="left-half">
