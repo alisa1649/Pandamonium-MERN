@@ -81,14 +81,14 @@
                 display: flex;
                 align-items: center;
                 .post-profile-pic {
-                    width: 75px;
-                    height: 75px;
+                    width: 80px;
+                    height: 80px;
                     border-radius: 50%;
                     position: relative;
                     img {
                         position: absolute;
-                        left: 8px;
-                        top: 8px;
+                        left: 10px;
+                        top: 10px;
                         width: 60px;
                         height: 60px;
                     }
@@ -96,9 +96,12 @@
                 .username-box {
                     align-self: flex-start;
                     font-size: 12px;
+                    p {
+                        margin: 0;
+                    }
                 }
                 p {
-                    margin: 0 20px;
+                    margin: 0 10;
                 }
             }
             .delete-button {

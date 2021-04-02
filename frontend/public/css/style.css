@@ -674,21 +674,23 @@ button.secondary {
         display: flex;
         align-items: center; }
         .dashboard .post-list .post-item-container .post-body .post-profile-pic {
-          width: 75px;
-          height: 75px;
+          width: 80px;
+          height: 80px;
           border-radius: 50%;
           position: relative; }
           .dashboard .post-list .post-item-container .post-body .post-profile-pic img {
             position: absolute;
-            left: 8px;
-            top: 8px;
+            left: 10px;
+            top: 10px;
             width: 60px;
             height: 60px; }
         .dashboard .post-list .post-item-container .post-body .username-box {
           align-self: flex-start;
           font-size: 12px; }
+          .dashboard .post-list .post-item-container .post-body .username-box p {
+            margin: 0; }
         .dashboard .post-list .post-item-container .post-body p {
-          margin: 0 20px; }
+          margin: 0 10; }
       .dashboard .post-list .post-item-container .delete-button:hover {
         cursor: pointer; }
 
