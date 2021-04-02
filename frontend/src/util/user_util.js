@@ -8,6 +8,6 @@ export const editCurrentUserInfo = (newInfo) => {
     return axios.patch('/api/users/current', newInfo)
 }
 
-export const getOtherUserInfo = () => {
-    return axios.get('/api/users/:id')
+export const getOtherUserInfo = (userId) => {
+    return axios.get(`/api/users/${userId}`)
 }

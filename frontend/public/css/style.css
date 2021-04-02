@@ -313,50 +313,6 @@ template {
   padding: 20px;
   border-radius: 5px; }
 
-.dashboard {
-  display: flex;
-  flex-direction: column; }
-
-.new-post-box {
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid black;
-  padding: 10px;
-  border-radius: 5px; }
-
-.post-user-avatar {
-  background-color: #0075F2;
-  width: 70px;
-  height: 50px; }
-
-.post-box-button {
-  background-color: #06d6a0;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
-  display: flex;
-  align-items: center; }
-
-.new-post-box > * {
-  margin-right: 15px;
-  border-radius: 5px; }
-
-.new-post-box textarea {
-  width: 100%; }
-
-ul.post-list {
-  list-style-type: none;
-  margin: 25px 0 0 0;
-  padding: 0; }
-
-.post-item-container {
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between; }
-
 body {
   background-image: url(../bamboo_bg.jpg);
   background-position: center;
@@ -604,5 +560,52 @@ body {
       font-size: 48px; }
   .nav-bar .links a {
     margin: 0 10px; }
+
+.dashboard {
+  display: flex;
+  flex-direction: column; }
+  .dashboard .new-post-box {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px; }
+    .dashboard .new-post-box .post-user-avatar {
+      background-color: #0075f2;
+      width: 70px;
+      height: 50px;
+      margin-right: 15px;
+      border-radius: 5px; }
+    .dashboard .new-post-box textarea {
+      width: 100%;
+      margin-right: 15px;
+      border-radius: 5px;
+      background-color: #fdeed7; }
+    .dashboard .new-post-box .post-box-button {
+      background-color: #06d6a0;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      border-radius: 5px; }
+  .dashboard .post-list {
+    list-style-type: none;
+    margin: 25px 0 0 0;
+    padding: 0; }
+    .dashboard .post-list .post-item-container {
+      border: 1px solid black;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between; }
+      .dashboard .post-list .post-item-container .post-profile-pic {
+        width: 60px;
+        height: 60px; }
+        .dashboard .post-list .post-item-container .post-profile-pic img {
+          width: 60px;
+          height: 60px; }
 
 /*# sourceMappingURL=style.css.map */
