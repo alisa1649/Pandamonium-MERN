@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
             errors: {},
         };
 
+        this.handleClose = this.handleClose.bind(this);
         this.autocompleteInput = React.createRef();
         this.autocomplete = null;
         this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
@@ -37,6 +38,10 @@ class SignupForm extends React.Component {
 
         this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current, options);
         this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
+    }
+
+    handleClose() {
+        this.props.closeModal();
     }
 
     handlePlaceChanged = () => {
@@ -67,9 +72,7 @@ class SignupForm extends React.Component {
         };
         
         
-        this.props.signup(user).then(() => {
-            this.props.closeModal();
-        })
+        this.props.signup(user)
     }
 
 
@@ -137,6 +140,7 @@ class SignupForm extends React.Component {
                         />
                         </label>
                         <input type="submit" value="Sign Up" />
+                        {this.props.signedIn === true ? this.handleClose() : null }
                     </div>
                 </form>
             </div>

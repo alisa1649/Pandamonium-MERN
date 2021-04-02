@@ -126,7 +126,7 @@ class EditProfileForm extends React.Component {
                             />
                             </label>
                             <label>
-                                City:
+                                City: 
                             <input                                
                                 value={this.state.city}
                                 placeholder={'city'}
@@ -135,7 +135,7 @@ class EditProfileForm extends React.Component {
                             />
                             </label>
                             <label>
-                                State:
+                                State: 
                             <input
                                 value={this.state.state}
                                 placeholder={'state'}
