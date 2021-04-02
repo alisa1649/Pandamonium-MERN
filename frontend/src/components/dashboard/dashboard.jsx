@@ -1,21 +1,26 @@
 import React from 'react';
-import NewPostForm from "./new_post_form";
-import PostList from "./post_list";
-import { createParentPost } from "../../actions/parent_post_actions";
-import { connect } from "react-redux";
+import NewPostForm from './new_post_form';
+import PostList from './post_list';
+import { createParentPost } from '../../actions/parent_post_actions';
+import { getCurrentUserInfo } from '../../actions/user_actions';
+import { connect } from 'react-redux';
 
 class Dashboard extends React.Component {
+    componentDidMount() {
+        this.props.getCurrentUserInfo();
+    }
     render() {
         const forumId = '6064e15dbc30e7788b2fb300';
         const createPost = (post) => {
             post.forum = forumId;
             post.user = this.props.userId;
-            this.props.createPost(post)
+            this.props.createPost(post);
         };
+
         return (
-            <div className='dashboard'>
+            <div className="dashboard">
                 <h2>MIAMI</h2>
-                <NewPostForm createPost={createPost} />
+                <NewPostForm currentUser={this.props.currentUser} createPost={createPost} />
                 <PostList forumId={forumId} />
             </div>
         );
@@ -23,10 +28,12 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    userId: state.session.user.id
+    userId: state.session.user.id,
+    currentUser: state.entities.users.currentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
     createPost: (post) => dispatch(createParentPost(post)),
-})
+    getCurrentUserInfo: () => dispatch(getCurrentUserInfo()),
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

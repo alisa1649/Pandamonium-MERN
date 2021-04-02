@@ -6,6 +6,7 @@ import NewPostForm from '../../dashboard/new_post_form';
 import PostListItem from '../../dashboard/post_list_item';
 import EditPostModal from '../../dashboard/edit_post_modal';
 import { updateParentPost } from '../../../actions/parent_post_actions';
+import { getCurrentUserInfo } from '../../../actions/user_actions';
 
 class Thread extends React.Component {
     constructor(props) {
@@ -19,6 +20,8 @@ class Thread extends React.Component {
         if (this.props.parentPost) {
             this.props.requestThread(this.props.parentPost._id);
         }
+        this.props.getCurrentUserInfo();
+        debugger;
     }
 
     render() {
@@ -31,7 +34,7 @@ class Thread extends React.Component {
         };
         if (this.props.parentPost) {
             return (
-                <div>
+                <div className="thread-container">
                     {this.state.editModalVisible ? (
                         <EditPostModal
                             post={this.props.parentPost}
@@ -41,7 +44,7 @@ class Thread extends React.Component {
                     ) : (
                         ''
                     )}
-                    <NewPostForm createPost={createComment} />
+                    <NewPostForm currentUser={this.props.currentUser} createPost={createComment} />
                     <div>
                         <Link to="/dashboard">Back to Dashboard</Link>
                     </div>
@@ -72,6 +75,7 @@ const mapStateToProps = (state, ownProps) => ({
     userId: state.session.user.id,
     parentPost: state.entities.parent_posts[ownProps.match.params.postId],
     comments: Object.keys(state.entities.thread).length ? Object.values(state.entities.thread.comments) : [],
+    currentUser: state.entities.users.currentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -79,5 +83,6 @@ const mapDispatchToProps = (dispatch) => ({
     createComment: (comment) => dispatch(createComment(comment)),
     requestThread: (postId) => dispatch(requestThread(postId)),
     deleteComment: (postId) => dispatch(deleteComment(postId)),
+    getCurrentUserInfo: () => dispatch(getCurrentUserInfo()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);
