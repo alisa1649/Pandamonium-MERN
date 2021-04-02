@@ -10,4 +10,15 @@ const ForumSchema = new Schema({
     timestamps: true
 })
 
+ForumSchema.add({
+  city: {
+      type: String,
+      required: false
+  },
+  state: {
+      type: String,
+      required: false 
+  },
+})
+
 module.exports = Forum = mongoose.model('Forum', ForumSchema);
