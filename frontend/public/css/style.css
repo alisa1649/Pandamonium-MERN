@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Open+Sans&family=Source+Sans+Pro:wght@600&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -303,6 +304,24 @@ template {
 [hidden] {
   display: none; }
 
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #1a1a1a; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+a {
+  color: var(--blue); }
+
+html,
+body {
+  min-height: 100%; }
+
 #root {
   border: 2px solid black;
   background-image: radial-gradient(#eaf7bf 90%, rgba(234, 247, 191, 0.5) 10%);
@@ -310,7 +329,10 @@ template {
   margin-right: auto;
   max-width: 750px;
   min-height: 450px;
+  border: 16px solid #fff5;
   padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
   border-radius: 5px; }
 
 body {
@@ -319,22 +341,22 @@ body {
   background-size: cover; }
 
 #blue {
-  background-color: #0075f2; }
+  background-color: #2e86ab; }
 
 #red {
   background-color: #f71735; }
 
 #green {
-  background-color: #06d6a0; }
+  background-color: #0aad77; }
 
 #purple {
-  background-color: #631a86; }
+  background-color: #734b5e; }
 
 #yellow {
   background-color: #ffd275; }
 
 #orange {
-  background-color: #e37f37; }
+  background-color: #ef8354; }
 
 #pink {
   background-color: #fb8a9d; }
@@ -384,9 +406,37 @@ body {
   background-size: cover;
   background-position-x: 50%; }
 
+body {
+  background: url(../bamboo_bg.jpg) no-repeat center center fixed;
+  background-size: cover; }
+
+input[type='submit'],
+button {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 10px 10px;
+  background-color: #734b5e;
+  color: white;
+  box-sizing: border-box;
+  cursor: pointer; }
+
+button.secondary {
+  background-color: #9ba69e;
+  color: white; }
+
+.errors ul {
+  padding: 0; }
+
+.errors li {
+  color: #ef8354;
+  list-style: none;
+  line-height: 28px;
+  border-radius: 5px;
+  margin-top: 5px; }
+
 .signup-form-container {
   width: 400px;
-  height: 300px;
   border-radius: 4px;
   border: 1px solid black;
   background: white;
@@ -399,8 +449,7 @@ body {
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
-  height: 500px; }
+  z-index: 1000; }
 
 .btn-close {
   position: absolute;
@@ -412,6 +461,34 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+
+.session-form {
+  border-radius: 10px;
+  background: #fffe;
+  width: 400px;
+  padding: 10px 60px 25px;
+  margin: 40px auto 0;
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative; }
+
+.session-form * {
+  box-sizing: border-box; }
+
+.session-form input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 13px 10px;
+  margin-top: 10px;
+  width: 100%; }
+
+.session-form input[type="submit"] {
+  margin-top: 25px; }
+
+.session-form hr {
+  margin-top: 30px;
+  margin-bottom: 10px; }
 
 .profile-page {
   background-color: #eaf7bf; }
@@ -440,7 +517,7 @@ body {
 .edit-profile-form-container {
   text-align: center; }
   .edit-profile-form-container h2 {
-    text-decoration: underline wavy #631a86; }
+    text-decoration: underline wavy #734b5e; }
   .edit-profile-form-container .edit-profile-form .main-form-section {
     text-align: left;
     display: flex; }
@@ -558,7 +635,6 @@ body {
       border-radius: 5px;
       background-color: #fdeed7; }
     .dashboard .new-post-box .post-box-button {
-      background-color: #06d6a0;
       color: white;
       padding: 10px;
       font-weight: bold;
@@ -635,7 +711,6 @@ body {
     border-radius: 5px;
     background-color: #fdeed7; }
   .thread-container .new-post-box .post-box-button {
-    background-color: #06d6a0;
     color: white;
     padding: 10px;
     font-weight: bold;

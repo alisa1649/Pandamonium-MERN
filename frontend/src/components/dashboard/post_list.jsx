@@ -9,7 +9,6 @@ class PostList extends React.Component {
     }
 
     render() {
-        // debugger;
         return (
             <ul className="post-list">
                 {this.props.parent_posts.map((post) => (

@@ -21,7 +21,6 @@ class Thread extends React.Component {
             this.props.requestThread(this.props.parentPost._id);
         }
         this.props.getCurrentUserInfo();
-        debugger;
     }
 
     render() {
