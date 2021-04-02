@@ -20,7 +20,7 @@ class EditProfileForm extends React.Component {
         this.autocompleteInput = React.createRef();
         this.autocomplete = null;
         this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
-            this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -100,10 +100,6 @@ class EditProfileForm extends React.Component {
             redirect: true,
         });
     }
-
-    handleChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
 
     render() {
         if (this.state.redirect === true) {

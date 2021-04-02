@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import SearchBar from '../googlemap/googlemap';
+/* global google */
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -15,7 +15,9 @@ class SignupForm extends React.Component {
             errors: {},
         };
 
-    
+        this.autocompleteInput = React.createRef();
+        this.autocomplete = null;
+        this.handlePlaceChanged = this.handlePlaceChanged.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.clearedErrors = false;
@@ -25,6 +27,25 @@ class SignupForm extends React.Component {
 
         this.setState({ errors: nextProps.errors });
     }
+
+    componentDidMount() {
+
+        const options = {
+            types: ['(cities)'],
+            componentRestrictions: { country: 'us' },
+        };
+
+        this.autocomplete = new google.maps.places.Autocomplete(this.autocompleteInput.current, options);
+        this.autocomplete.addListener('place_changed', this.handlePlaceChanged);
+    }
+
+    handlePlaceChanged = () => {
+        const place = this.autocomplete.getPlace();
+        this.setState({
+            city: place.address_components[0].long_name,
+            state: place.address_components[2].long_name,
+        });
+    };
 
 
     update(field) {
@@ -92,16 +113,31 @@ class SignupForm extends React.Component {
                             <input placeholder="Confirm Password" type="password" value={this.state.password2} onChange={this.update('password2')} />
                         </label>
                         <br />
-
                         <label>
-                            City:
-                            <SearchBar type="text" value={this.state.city} onChange={this.update('city')} />
+                            <input ref={this.autocompleteInput}  
+                            id="autocomplete" 
+                            placeholder="Enter your location"
+                            type="text"
+                        />
                         </label>
+                        <br/>
                         <label>
-                            State:
-                            <SearchBar type="text" value={this.state.state} onChange={this.update('state')} />
+                        <input                                
+                            value={this.state.city}
+                            placeholder={'City'}
+                            onChange={this.update('city')}
+                            readOnly
+                        />
                         </label>
-                       
+                        <br/>
+                        <label>
+                        <input
+                            value={this.state.state}
+                            placeholder={'State'}
+                            onChange={this.update('state')}
+                            readOnly
+                        />
+                        </label>
                         <input type="submit" value="Sign Up" />
                     </div>
                 </form>
