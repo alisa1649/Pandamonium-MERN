@@ -767,8 +767,9 @@ button.secondary {
         height: 60px; }
     .thread-container .post-item-container .post-body .username-box {
       align-self: flex-start;
-      font-size: 12px; }
+      font-size: 12px;
+      margin: 0; }
     .thread-container .post-item-container .post-body p {
-      margin: 0 20px; }
+      margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */
