@@ -118,7 +118,7 @@ class EditProfileForm extends React.Component {
                             </label>
 
                             <label>
-                                Enter your location:
+                                Edit your location:
                                 <input ref={this.autocompleteInput}  
                                 id="autocomplete" 
                                 placeholder="Enter your location"
