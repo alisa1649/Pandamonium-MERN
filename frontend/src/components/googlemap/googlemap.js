@@ -24,14 +24,14 @@ class SearchBar extends React.Component {
   handlePlaceChanged(){
     const place = this.autocomplete.getPlace();
     this.setState ({
-        name: place.address_componments[0],
-        state: place.address_componments[1]
+        name: place.address_components[0],
+        state: place.address_components[1]
     })
   }
 
   render() {
     return (
-        <input ref={this.autocompleteInput}  id="autocomplete" placeholder="Enter your address"
+        <input ref={this.autocompleteInput}  id="autocomplete" placeholder="Enter your location"
          type="text"></input>
     );
   }
