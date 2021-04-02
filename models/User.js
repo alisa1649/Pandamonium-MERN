@@ -40,7 +40,7 @@ const UserSchema = new Schema({
     },
     img_bg_color: {
       type: String,
-      default: "white"
+      default: "rainbow"
     }
   })
   module.exports = User = mongoose.model('User', UserSchema);

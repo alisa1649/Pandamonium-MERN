@@ -39,7 +39,8 @@ router.post('/new',
       const newPost = new Post({
         text: req.body.text,
         user: req.body.user,
-        forum: req.body.forum
+        forum: req.body.forum,
+        anonymity: req.body.anonymity
       });
   
       newPost.save().then(post => res.json(post));
@@ -61,7 +62,8 @@ router.post('/new/:parent_id',
         text: req.body.text,
         user: req.body.user,
         forum: req.body.forum,
-        parent: req.body.parent
+        parent: req.body.parent,
+        anonymity: req.body.anonymity
       });
   
       newPost.save().then(post => res.json(post));
