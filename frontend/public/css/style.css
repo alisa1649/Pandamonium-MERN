@@ -527,7 +527,8 @@ button.secondary {
       width: 50%;
       justify-content: space-between; }
       .edit-profile-form-container .edit-profile-form .main-form-section .left-half label {
-        margin: 10px; }
+        margin: 10px;
+        margin-left: 0; }
       .edit-profile-form-container .edit-profile-form .main-form-section .left-half input {
         margin-left: 10px;
         background-color: #fdeed7; }
@@ -571,7 +572,7 @@ button.secondary {
     .edit-profile-form-container .edit-profile-form .main-form-section .right-half .color-box {
       display: flex;
       flex-wrap: wrap;
-      margin: 20px 0;
+      margin: 20px 0 10px 0;
       width: 350px;
       border: 1px solid black; }
       .edit-profile-form-container .edit-profile-form .main-form-section .right-half .color-box .color {
@@ -674,6 +675,9 @@ button.secondary {
             top: 8px;
             width: 60px;
             height: 60px; }
+        .dashboard .post-list .post-item-container .post-body .username-box {
+          align-self: flex-start;
+          font-size: 12px; }
         .dashboard .post-list .post-item-container .post-body p {
           margin: 0 20px; }
       .dashboard .post-list .post-item-container .delete-button:hover {

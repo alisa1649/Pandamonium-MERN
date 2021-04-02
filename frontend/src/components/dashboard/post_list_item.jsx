@@ -28,6 +28,10 @@ class PostListItem extends React.Component {
                         <div id={author.img_bg_color} className="post-profile-pic">
                             <img src={author.image_path} alt="profile-pic" />
                         </div>
+                        <div className="username-box">
+                            <p>{author.username} says</p>
+                        </div>
+
                         <p>{post.text}</p>
                     </div>
 
