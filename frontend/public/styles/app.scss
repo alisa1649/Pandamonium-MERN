@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Open+Sans&family=Source+Sans+Pro:wght@600&display=swap');
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #1a1a1a;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    color:var(--blue);
+}
+
+html, body {
+    min-height: 100%;
+}
+
 #root {
     border: 2px solid black;
     background-image: radial-gradient($main-bg-color 90%, rgba(234, 247, 191, 0.5) 10%);
@@ -6,7 +25,10 @@
     // max-width: 800px;
     max-width: 750px;
     min-height: 450px;
+    border: 16px solid #fff5;
     padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
     border-radius: 5px;
 }
 
@@ -62,7 +84,33 @@ ul.post-list {
 }
 
 body {
-    background-image: url(../bamboo_bg.jpg);
-    background-position: center;
+    background: url(../bamboo_bg.jpg) no-repeat center center fixed;
     background-size: cover;
+}
+
+input[type="submit"], button {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 10px 10px;
+    background-color: $purple;
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+button.secondary {
+    background-color: $gray;
+    color: white;
+}
+
+.errors ul {
+    padding: 0;
+}
+.errors li {
+    color: $orange;
+    list-style: none;
+    line-height: 28px;
+    border-radius:5px;
+    margin-top: 5px;
 }
