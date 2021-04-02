@@ -6,8 +6,8 @@ import { getCurrentUserInfo } from '../../actions/user_actions';
 import { connect } from 'react-redux';
 
 class Dashboard extends React.Component {
-    constructor(props){
-        super(props)
+    constructor(props) {
+        super(props);
     }
 
     componentDidMount() {
@@ -20,10 +20,12 @@ class Dashboard extends React.Component {
             post.user = this.props.userId;
             this.props.createPost(post);
         };
-
+        if (!this.props.currentUser) return <div>User not found</div>;
         return (
             <div className="dashboard">
-                <h2>Current Location: {this.props.currentUser.city}, {this.props.currentUser.state}</h2>
+                <h2>
+                    Current Location: {this.props.currentUser.city}, {this.props.currentUser.state}
+                </h2>
                 <NewPostForm currentUser={this.props.currentUser} createPost={createPost} />
                 <PostList forumId={forumId} />
             </div>
