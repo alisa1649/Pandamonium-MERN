@@ -3,29 +3,29 @@
   border-radius: 4px;
   border: 1px solid black;
   background: white;
-  padding: 20px 
+  padding: 20px;
 }
 .modal-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-  }
-  
-  .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .modal-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .session-form {
@@ -44,16 +44,11 @@
 }
 
 .session-form input {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  padding: 13px 10px;
   margin-top: 10px;
   width: 100%;
 }
 
-
-.session-form input[type="submit"] {
+.session-form input[type='submit'] {
   margin-top: 25px;
 }
 
@@ -61,4 +56,3 @@
   margin-top: 30px;
   margin-bottom: 10px;
 }
-

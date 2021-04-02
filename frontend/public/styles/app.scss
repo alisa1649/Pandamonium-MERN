@@ -130,6 +130,16 @@ button.secondary {
     color: white;
 }
 
+input[type='text'],
+input[type='password'],
+textarea,
+input:read-only {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 13px 10px;
+}
+
 .errors ul {
     padding: 0;
 }
