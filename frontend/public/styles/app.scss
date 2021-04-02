@@ -3,6 +3,13 @@
 html {
     font-family: 'Noto Sans JP', sans-serif;
     color: #1a1a1a;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    overflow-y: scroll;
+    height: 100%;
 }
 
 h1,
@@ -29,10 +36,9 @@ body {
     margin-right: auto;
     // max-width: 800px;
     max-width: 750px;
-    min-height: 450px;
+    min-height: 100%;
     border: 16px solid #fff5;
     padding: 20px;
-    height: 100%;
     box-sizing: border-box;
     border-radius: 5px;
 }
