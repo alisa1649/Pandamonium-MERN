@@ -628,11 +628,22 @@ button.secondary {
         position: absolute;
         top: 10px;
         left: 12px; }
-    .dashboard .new-post-box textarea {
+    .dashboard .new-post-box .new-post-middle {
       width: calc(90% - 150px);
-      margin-right: 15px;
-      border-radius: 5px;
-      background-color: #fdeed7; }
+      display: flex;
+      flex-direction: column; }
+      .dashboard .new-post-box .new-post-middle .anonymous-box {
+        font-size: 12px;
+        margin-bottom: 5px;
+        align-self: flex-end; }
+        .dashboard .new-post-box .new-post-middle .anonymous-box input {
+          margin-left: 5px; }
+      .dashboard .new-post-box .new-post-middle textarea {
+        width: 100%;
+        height: 80%;
+        margin-right: 15px;
+        border-radius: 5px;
+        background-color: #fdeed7; }
     .dashboard .new-post-box .post-box-button {
       color: white;
       padding: 10px;
