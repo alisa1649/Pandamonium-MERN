@@ -743,6 +743,9 @@ button.secondary {
         top: 8px;
         width: 60px;
         height: 60px; }
+    .thread-container .post-item-container .post-body .username-box {
+      align-self: flex-start;
+      font-size: 12px; }
     .thread-container .post-item-container .post-body p {
       margin: 0 20px; }
 
