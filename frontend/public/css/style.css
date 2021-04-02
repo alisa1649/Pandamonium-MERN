@@ -628,11 +628,22 @@ button.secondary {
         position: absolute;
         top: 10px;
         left: 12px; }
-    .dashboard .new-post-box textarea {
+    .dashboard .new-post-box .new-post-middle {
       width: calc(90% - 150px);
-      margin-right: 15px;
-      border-radius: 5px;
-      background-color: #fdeed7; }
+      display: flex;
+      flex-direction: column; }
+      .dashboard .new-post-box .new-post-middle .anonymous-box {
+        font-size: 12px;
+        margin-bottom: 5px;
+        align-self: flex-end; }
+        .dashboard .new-post-box .new-post-middle .anonymous-box input {
+          margin-left: 5px; }
+      .dashboard .new-post-box .new-post-middle textarea {
+        width: 100%;
+        height: 80%;
+        margin-right: 15px;
+        border-radius: 5px;
+        background-color: #fdeed7; }
     .dashboard .new-post-box .post-box-button {
       color: white;
       padding: 10px;
@@ -663,21 +674,23 @@ button.secondary {
         display: flex;
         align-items: center; }
         .dashboard .post-list .post-item-container .post-body .post-profile-pic {
-          width: 75px;
-          height: 75px;
+          width: 80px;
+          height: 80px;
           border-radius: 50%;
           position: relative; }
           .dashboard .post-list .post-item-container .post-body .post-profile-pic img {
             position: absolute;
-            left: 8px;
-            top: 8px;
+            left: 10px;
+            top: 10px;
             width: 60px;
             height: 60px; }
         .dashboard .post-list .post-item-container .post-body .username-box {
           align-self: flex-start;
           font-size: 12px; }
+          .dashboard .post-list .post-item-container .post-body .username-box p {
+            margin: 0; }
         .dashboard .post-list .post-item-container .post-body p {
-          margin: 0 20px; }
+          margin: 0 10; }
       .dashboard .post-list .post-item-container .delete-button:hover {
         cursor: pointer; }
 
@@ -707,11 +720,22 @@ button.secondary {
       position: absolute;
       top: 10px;
       left: 12px; }
-  .thread-container .new-post-box textarea {
+  .thread-container .new-post-box .new-post-middle {
     width: calc(90% - 150px);
-    margin-right: 15px;
-    border-radius: 5px;
-    background-color: #fdeed7; }
+    display: flex;
+    flex-direction: column; }
+    .thread-container .new-post-box .new-post-middle .anonymous-box {
+      font-size: 12px;
+      margin-bottom: 5px;
+      align-self: flex-end; }
+      .thread-container .new-post-box .new-post-middle .anonymous-box input {
+        margin-left: 5px; }
+    .thread-container .new-post-box .new-post-middle textarea {
+      width: 100%;
+      height: 80%;
+      margin-right: 15px;
+      border-radius: 5px;
+      background-color: #fdeed7; }
   .thread-container .new-post-box .post-box-button {
     color: white;
     padding: 10px;
@@ -743,8 +767,9 @@ button.secondary {
         height: 60px; }
     .thread-container .post-item-container .post-body .username-box {
       align-self: flex-start;
-      font-size: 12px; }
+      font-size: 12px;
+      margin: 0; }
     .thread-container .post-item-container .post-body p {
-      margin: 0 20px; }
+      margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */

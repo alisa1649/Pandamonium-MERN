@@ -22,4 +22,11 @@ const PostSchema = new Schema({
     timestamps: true
 })
 
+PostSchema.add({
+  anonymity: {
+    type: Boolean,
+    default: false,
+  }
+})
+
 module.exports = Post = mongoose.model('Post', PostSchema);
