@@ -101,10 +101,6 @@ class EditProfileForm extends React.Component {
         });
     }
 
-    handleChange = (event) => {
-        this.setState({ [event.target.name]: event.target.value });
-    };
-
     render() {
         if (this.state.redirect === true) {
             return <Redirect to="/profile" />;
@@ -116,39 +112,37 @@ class EditProfileForm extends React.Component {
                 <form className="edit-profile-form" onSubmit={this.handleSubmit}>
                     <div className="main-form-section">
                         <div className="left-half">
-                        <label>
-                            Username:
-                            <input type="text" value={this.state.username} onChange={this.update('username')} />
-                        </label>
+                            <label>
+                                Username:
+                                <input type="text" value={this.state.username} onChange={this.update('username')} />
+                            </label>
 
-                        <label>
-                            Enter your location:
-                            <input ref={this.autocompleteInput}  
-                            id="autocomplete" 
-                            placeholder="Enter your location"
-                            type="text"
-                        />
-                        </label>
-                        <label>
-                            City:
-                        <input
-                            // name={"city"}
-                            value={this.state.city}
-                            placeholder={'city'}
-                            onChange={this.update('city')}
-                            readOnly
-                        />
-                        </label>
-                        <label>
-                            State:
-                        <input
-                            // name= {"state"}
-                            value={this.state.state}
-                            placeholder={'state'}
-                            onChange={this.update('state')}
-                            readOnly
-                        />
-                        </label>
+                            <label>
+                                Edit your location:
+                                <input ref={this.autocompleteInput}  
+                                id="autocomplete" 
+                                placeholder="Enter your location"
+                                type="text"
+                            />
+                            </label>
+                            <label>
+                                City:
+                            <input                                
+                                value={this.state.city}
+                                placeholder={'city'}
+                                onChange={this.update('city')}
+                                readOnly
+                            />
+                            </label>
+                            <label>
+                                State:
+                            <input
+                                value={this.state.state}
+                                placeholder={'state'}
+                                onChange={this.update('state')}
+                                readOnly
+                            />
+                            </label>
 
                             <label>
                                 Bio: <br />
