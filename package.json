@@ -13,6 +13,10 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "seed": "node seed.js"
   },
+  "engines": {
+    "node": "14.16.0",
+    "npm": "6.14.11"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alisa1649/Pandamonium-MERN.git"
