@@ -833,14 +833,12 @@ input:read-only {
     .about-us-page .about-us-item .left .about-us-pic {
       width: 100px;
       height: 100px;
-      border: 1px solid blue;
       margin: 5px; }
       .about-us-page .about-us-item .left .about-us-pic img {
         width: 100px;
         height: 100px; }
     .about-us-page .about-us-item .left .about-us-info {
-      margin: 5px 0;
-      border: 1px solid red; }
+      margin: 5px 0; }
       .about-us-page .about-us-item .left .about-us-info h3 {
         margin: 0; }
       .about-us-page .about-us-item .left .about-us-info p {
@@ -854,5 +852,10 @@ input:read-only {
     justify-content: flex-end; }
     .about-us-page .about-us-item .link-box i {
       margin: 0 5px; }
+      .about-us-page .about-us-item .link-box i:hover {
+        color: #734b5e; }
+  .about-us-page .about-us-item #lane-pic {
+    width: 80px;
+    margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */
