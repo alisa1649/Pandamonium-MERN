@@ -8,9 +8,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        // debugger;
         if (this.props.profileType === 'CurrentUserProfile') {
-            debugger;
             this.props.getCurrentUserInfo();
         } else if (this.props.profileType === 'OtherUserProfile') {
             console.log('Profileee: ', this.props.userId);
@@ -29,7 +27,8 @@ class Profile extends React.Component {
         if (!user) {
             return <div>User not found</div>;
         }
-        debugger;
+        // TODO: make the city/state links to forums;
+
         return (
             <div className="profile-page">
                 <div className="profile-header">
@@ -39,14 +38,23 @@ class Profile extends React.Component {
                     <h1>{user.username}'s Profile</h1>
                 </div>
                 <div className="main-profile-section">
-                    <h3>Bio:</h3>
-                    <div className="bio-box">
-                        <p>{user.bio}</p>
+                    <div className="profile-left">
+                        <div className="location-area">
+                            <h3>
+                                City: <span>{user.city}</span>
+                            </h3>
+                            <h3>
+                                State: <span>{user.state}</span>
+                            </h3>
+                        </div>
+                        <h3>Bio:</h3>
+                        <div className="bio-box">
+                            <p>{user.bio}</p>
+                        </div>
                     </div>
-
-                    <div className="location-area">
-                        <h3>City: {user.city}</h3>
-                        <h3>State: {user.state}</h3>
+                    <div className="profile-right">
+                        <h3>Posts by {user.username}</h3>
+                        <div className="posts-box">posts go here!</div>
                     </div>
                 </div>
                 <button>

@@ -1,18 +1,48 @@
 .profile-page {
     background-color: $main-bg-color;
-    input, textarea {
+    display: flex;
+    flex-direction: column;
+    input,
+    textarea {
         cursor: not-allowed;
     }
     button {
         width: 50%;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
+        align-self: center;
     }
-    .left-half {
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
+    .main-profile-section {
+        display: flex;
+        justify-content: space-between;
+        .profile-left {
+            width: 48%;
+            margin: 20px auto;
+            background-color: #fff5;
+            border: 1px inset $green;
+            h3 {
+                span {
+                    color: $darkgreen;
+                    font-weight: normal;
+                }
+            }
+            .bio-box {
+                margin-left: 15px;
+            }
+        }
+        .profile-right {
+            margin: 20px auto;
+            width: 48%;
+            background-color: #fff5;
+            border: 1px inset $green;
+            h3 {
+                margin: 0;
+            }
+            .posts-box {
+                margin-left: 15px;
+            }
+        }
     }
+
     .profile-header {
         display: flex;
         align-items: center;
@@ -33,15 +63,6 @@
         }
         h1 {
             margin: 0 20px;
-        }
-    }
-    .profile-body {
-        .location-box {
-            h3 {
-                margin-right: 10px;
-            }
-        }
-        .bio-box {
         }
     }
 }

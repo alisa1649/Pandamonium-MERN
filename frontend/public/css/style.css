@@ -501,17 +501,38 @@ input:read-only {
   margin-bottom: 10px; }
 
 .profile-page {
-  background-color: #eaf7bf; }
-  .profile-page input, .profile-page textarea {
+  background-color: #eaf7bf;
+  display: flex;
+  flex-direction: column; }
+  .profile-page input,
+  .profile-page textarea {
     cursor: not-allowed; }
   .profile-page button {
     width: 50%;
-    margin-left: auto;
-    margin-right: auto; }
-  .profile-page .left-half {
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto; }
+    margin: 0 auto;
+    align-self: center; }
+  .profile-page .main-profile-section {
+    display: flex;
+    justify-content: space-between; }
+    .profile-page .main-profile-section .profile-left {
+      width: 48%;
+      margin: 20px auto;
+      background-color: #fff5;
+      border: 1px inset #eaf7bf; }
+      .profile-page .main-profile-section .profile-left h3 span {
+        color: #0aad77;
+        font-weight: normal; }
+      .profile-page .main-profile-section .profile-left .bio-box {
+        margin-left: 15px; }
+    .profile-page .main-profile-section .profile-right {
+      margin: 20px auto;
+      width: 48%;
+      background-color: #fff5;
+      border: 1px inset #eaf7bf; }
+      .profile-page .main-profile-section .profile-right h3 {
+        margin: 0; }
+      .profile-page .main-profile-section .profile-right .posts-box {
+        margin-left: 15px; }
   .profile-page .profile-header {
     display: flex;
     align-items: center;
@@ -529,8 +550,6 @@ input:read-only {
         height: 70px; }
     .profile-page .profile-header h1 {
       margin: 0 20px; }
-  .profile-page .profile-body .location-box h3 {
-    margin-right: 10px; }
 
 .edit-profile-form-container {
   text-align: center; }

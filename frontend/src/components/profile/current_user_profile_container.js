@@ -5,7 +5,7 @@ import { getCurrentUserInfo } from '../../actions/user_actions';
 const mapStateToProps = (state) => {
     return {
         currentUser: state.entities.users.currentUser,
-        profileType: 'currentUserProfile',
+        profileType: 'CurrentUserProfile',
     };
 };
 
