@@ -30,10 +30,12 @@ class NavBar extends React.Component {
         return (
             <div className="nav-bar">
                 <div className="left-nav-bar">
-                    <div className="panda">
-                        <img src="/panda.png" alt="panda icon" />
-                    </div>
-                    <h1>Pandamonium</h1>
+                    <Link to={"/dashboard"} className="heading" >
+                        <div className="panda">
+                            <img src="/panda.png" alt="panda icon" />
+                        </div>
+                    </Link>
+                    <Link to={"/dashboard"} className="heading" ><h1>Pandamonium</h1></Link>
                 </div>
                 {this.getLinks()}
             </div>
