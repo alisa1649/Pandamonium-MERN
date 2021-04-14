@@ -30,6 +30,9 @@ class NewPostForm extends React.Component {
     }
 
     render() {
+        const placeholder = this.props.parentPost
+            ? "Leave a comment..."
+            : "Create a post...";
         const { currentUser } = this.props;
         if (!currentUser) {
             return <div>You're not logged in!</div>;
@@ -46,7 +49,7 @@ class NewPostForm extends React.Component {
                             <input type="checkbox" id="anonymous-checkbox" onChange={() => this.toggleAnonymous()} />
                         </label>
                     </div>
-                    <textarea onChange={this.handleChange} value={this.state.text}></textarea>
+                    <textarea onChange={this.handleChange} value={this.state.text} placeholder={placeholder}></textarea>
                 </div>
                 <input type="submit" className="post-box-button" value="Post" />
             </form>

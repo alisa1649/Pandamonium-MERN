@@ -61,7 +61,7 @@ class Thread extends React.Component {
                                 />
                             );
                         })}
-                        <li><NewPostForm currentUser={this.props.currentUser} createPost={createComment} /></li>
+                        <li><NewPostForm currentUser={this.props.currentUser} createPost={createComment} parentPost={this.props.parentPost} /></li>
                     </ul>
                 </div>
             );
