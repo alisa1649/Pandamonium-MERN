@@ -20,6 +20,10 @@ h5 {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+a.heading {
+    text-decoration: none;
+}
+
 a {
     color: var(--blue);
 }
@@ -156,3 +160,4 @@ input:read-only {
     border-radius: 5px;
     margin-top: 5px;
 }
+

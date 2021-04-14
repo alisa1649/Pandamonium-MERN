@@ -321,6 +321,9 @@ h4,
 h5 {
   font-family: 'Source Sans Pro', sans-serif; }
 
+a.heading {
+  text-decoration: none; }
+
 a {
   color: var(--blue); }
 
@@ -551,6 +554,51 @@ input:read-only {
     .profile-page .profile-header h1 {
       margin: 0 20px; }
 
+.new-post-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffffCC;
+  border: none; }
+  .new-post-box .post-user-avatar {
+    width: 90px;
+    height: 90px;
+    margin-right: 15px;
+    border-radius: 50%;
+    position: relative; }
+    .new-post-box .post-user-avatar img {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 10px;
+      left: 12px; }
+  .new-post-box .new-post-middle {
+    width: calc(90% - 150px);
+    display: flex;
+    flex-direction: column; }
+    .new-post-box .new-post-middle .anonymous-box {
+      font-size: 12px;
+      margin-bottom: 5px;
+      align-self: flex-end; }
+      .new-post-box .new-post-middle .anonymous-box input {
+        margin-left: 5px; }
+    .new-post-box .new-post-middle textarea {
+      width: 100%;
+      height: 80%;
+      margin-right: 15px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: #ffffffbd; }
+  .new-post-box .post-box-button {
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    border-radius: 5px; }
+
 .edit-profile-form-container {
   text-align: center; }
   .edit-profile-form-container .edit-profile-form {
@@ -651,7 +699,8 @@ input:read-only {
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  position: relative; }
   .nav-bar .left-nav-bar {
     display: flex;
     align-items: center; }
@@ -673,98 +722,67 @@ input:read-only {
       margin: 0;
       margin-left: 20px;
       font-size: 48px; }
-  .nav-bar .links a {
-    margin: 0 10px; }
+  .nav-bar .links {
+    position: absolute;
+    right: 0; }
+    .nav-bar .links a {
+      margin: 0 10px; }
 
 .dashboard {
   display: flex;
   flex-direction: column; }
-  .dashboard .new-post-box {
+
+.post-list {
+  list-style-type: none;
+  margin: 25px 0 0 0;
+  padding: 0; }
+  .post-list li {
+    list-style: none;
+    border-top: 2px solid #849e30; }
+  .post-list a {
+    text-decoration: none;
+    color: black; }
+    .post-list a:visited {
+      color: black; }
+    .post-list a:hover .post-item-container {
+      background-color: #ffffffbd; }
+
+.post-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px; }
+  .post-details .username-box {
+    color: #777; }
+
+.post-item-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffffbb; }
+  .post-item-container .post-body {
     display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 5px; }
-    .dashboard .new-post-box .post-user-avatar {
-      width: 90px;
-      height: 90px;
-      margin-right: 15px;
+    align-items: center; }
+    .post-item-container .post-body .post-profile-pic {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       position: relative; }
-      .dashboard .new-post-box .post-user-avatar img {
-        width: 70px;
-        height: 70px;
+      .post-item-container .post-body .post-profile-pic img {
         position: absolute;
+        left: 10px;
         top: 10px;
-        left: 12px; }
-    .dashboard .new-post-box .new-post-middle {
-      width: calc(90% - 150px);
-      display: flex;
-      flex-direction: column; }
-      .dashboard .new-post-box .new-post-middle .anonymous-box {
-        font-size: 12px;
-        margin-bottom: 5px;
-        align-self: flex-end; }
-        .dashboard .new-post-box .new-post-middle .anonymous-box input {
-          margin-left: 5px; }
-      .dashboard .new-post-box .new-post-middle textarea {
-        width: 100%;
-        height: 80%;
-        margin-right: 15px;
-        border-radius: 5px;
-        box-sizing: border-box;
-        background-color: #ffffffbd; }
-    .dashboard .new-post-box .post-box-button {
-      color: white;
-      padding: 10px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      margin-right: 15px;
-      border-radius: 5px; }
-  .dashboard .post-list {
-    list-style-type: none;
-    margin: 25px 0 0 0;
-    padding: 0; }
-    .dashboard .post-list a {
-      text-decoration: none;
-      color: black; }
-      .dashboard .post-list a:visited {
-        color: black; }
-      .dashboard .post-list a:hover .post-item-container {
-        background-color: #ffffffbd; }
-    .dashboard .post-list .post-item-container {
-      border: 1px solid black;
-      padding: 10px;
-      border-radius: 5px;
-      margin-top: 15px;
-      display: flex;
-      justify-content: space-between; }
-      .dashboard .post-list .post-item-container .post-body {
-        display: flex;
-        align-items: center; }
-        .dashboard .post-list .post-item-container .post-body .post-profile-pic {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          position: relative; }
-          .dashboard .post-list .post-item-container .post-body .post-profile-pic img {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            width: 60px;
-            height: 60px; }
-        .dashboard .post-list .post-item-container .post-body .username-box {
-          align-self: flex-start;
-          font-size: 14px; }
-          .dashboard .post-list .post-item-container .post-body .username-box p {
-            margin: 0; }
-          .dashboard .post-list .post-item-container .post-body .username-box #author-link:hover {
-            color: blue; }
-        .dashboard .post-list .post-item-container .post-body p {
-          margin: 0 10; }
-      .dashboard .post-list .post-item-container .delete-button:hover {
-        cursor: pointer; }
+        width: 60px;
+        height: 60px; }
+    .post-item-container .post-body .username-box {
+      align-self: flex-start;
+      font-size: 12px; }
+      .post-item-container .post-body .username-box p {
+        margin: 0; }
+    .post-item-container .post-body p {
+      margin: 0 10; }
+  .post-item-container .delete-button:hover {
+    cursor: pointer; }
 
 .thread-container a {
   text-decoration: none;
@@ -774,76 +792,42 @@ input:read-only {
   .thread-container a:hover .post-item-container {
     background-color: #ffffffbd;
     cursor: default; }
-.thread-container .new-post-box {
+.thread-container .post-list {
+  margin-left: 35px; }
+
+.about-us-page .about-us-item {
+  margin: 20px 0;
   display: flex;
-  justify-content: space-between;
-  border: 2px solid black;
-  padding: 10px;
-  border-radius: 5px; }
-  .thread-container .new-post-box .post-user-avatar {
-    width: 90px;
-    height: 90px;
-    margin-right: 15px;
-    border-radius: 50%;
-    position: relative; }
-    .thread-container .new-post-box .post-user-avatar img {
-      width: 70px;
-      height: 70px;
-      position: absolute;
-      top: 10px;
-      left: 12px; }
-  .thread-container .new-post-box .new-post-middle {
-    width: calc(90% - 150px);
-    display: flex;
-    flex-direction: column; }
-    .thread-container .new-post-box .new-post-middle .anonymous-box {
-      font-size: 12px;
-      margin-bottom: 5px;
-      align-self: flex-end; }
-      .thread-container .new-post-box .new-post-middle .anonymous-box input {
-        margin-left: 5px; }
-    .thread-container .new-post-box .new-post-middle textarea {
-      width: 100%;
-      height: 80%;
-      margin-right: 15px;
-      border-radius: 5px;
-      background-color: #ffffffbd; }
-  .thread-container .new-post-box .post-box-button {
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-    border-radius: 5px; }
-.thread-container .post-item-container {
   border: 1px solid black;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 15px;
-  display: flex;
   justify-content: space-between; }
-  .thread-container .post-item-container .post-body {
+  .about-us-page .about-us-item .left {
+    display: flex; }
+    .about-us-page .about-us-item .left .about-us-pic {
+      width: 100px;
+      height: 100px;
+      margin: 5px; }
+      .about-us-page .about-us-item .left .about-us-pic img {
+        width: 100px;
+        height: 100px; }
+    .about-us-page .about-us-item .left .about-us-info {
+      margin: 5px 0; }
+      .about-us-page .about-us-item .left .about-us-info h3 {
+        margin: 0; }
+      .about-us-page .about-us-item .left .about-us-info p {
+        font-size: 14px; }
+  .about-us-page .about-us-item .link-box {
+    font-size: 26px;
+    margin: 5px 0;
+    width: 100px;
     display: flex;
-    align-items: center; }
-    .thread-container .post-item-container .post-body .post-profile-pic {
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      position: relative; }
-      .thread-container .post-item-container .post-body .post-profile-pic img {
-        position: absolute;
-        left: 8px;
-        top: 8px;
-        width: 60px;
-        height: 60px; }
-    .thread-container .post-item-container .post-body .username-box {
-      align-self: flex-start;
-      font-size: 12px;
-      margin: 0; }
-    .thread-container .post-item-container .post-body p {
-      margin: 0 10px; }
-    .thread-container .post-item-container .post-body #author-link:hover {
-      color: blue; }
+    align-items: flex-end;
+    justify-content: flex-end; }
+    .about-us-page .about-us-item .link-box i {
+      margin: 0 5px; }
+      .about-us-page .about-us-item .link-box i:hover {
+        color: #734b5e; }
+  .about-us-page .about-us-item #lane-pic {
+    width: 80px;
+    margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */

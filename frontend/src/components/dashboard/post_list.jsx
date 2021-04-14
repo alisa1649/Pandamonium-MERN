@@ -9,9 +9,12 @@ class PostList extends React.Component {
     }
 
     render() {
+        const sortedPosts = this.props.parent_posts.sort((a, b) =>
+            a.createdAt < b.createdAt ? 1 : -1
+        )
         return (
             <ul className="post-list">
-                {this.props.parent_posts.map((post) => (
+                {sortedPosts.map((post) => (
                     <PostListItem
                         key={post._id}
                         post={post}
