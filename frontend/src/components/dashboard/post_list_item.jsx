@@ -12,6 +12,7 @@ class PostListItem extends React.Component {
         const post = this.props.post;
         const editAction = this.props.editAction;
         const deleteAction = this.props.deleteAction;
+        const isParentPost = !post.parent;
 
         const belongsToUser = this.props.currentUserId === post.user;
 
@@ -22,7 +23,7 @@ class PostListItem extends React.Component {
             return <div>No posts found</div>;
         }
         return (
-            <Link to={`/thread/${post._id}`}>
+            <Link to={isParentPost ? `/thread/${post._id}` : null}>
                 <li className="post-item-container">
                     <div className="post-body">
                         <div id={author.img_bg_color} className="post-profile-pic">
