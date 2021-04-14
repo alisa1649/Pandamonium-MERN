@@ -123,6 +123,8 @@ router.get('/:id', (req, res) => {
                 image_path: user.image_path,
                 img_bg_color: user.img_bg_color,
                 bio: user.bio,
+                state: user.state,
+                city: user.city,
             })
             .catch((err) => res.send(err))
     );
