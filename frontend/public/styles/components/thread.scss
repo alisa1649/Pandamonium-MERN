@@ -96,6 +96,11 @@
             p {
                 margin: 0 10px;
             }
+            #author-link {
+                &:hover {
+                    color: blue;
+                }
+            }
         }
     }
 }

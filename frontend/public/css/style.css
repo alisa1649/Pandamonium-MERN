@@ -756,9 +756,11 @@ input:read-only {
             height: 60px; }
         .dashboard .post-list .post-item-container .post-body .username-box {
           align-self: flex-start;
-          font-size: 12px; }
+          font-size: 14px; }
           .dashboard .post-list .post-item-container .post-body .username-box p {
             margin: 0; }
+          .dashboard .post-list .post-item-container .post-body .username-box #author-link:hover {
+            color: blue; }
         .dashboard .post-list .post-item-container .post-body p {
           margin: 0 10; }
       .dashboard .post-list .post-item-container .delete-button:hover {
@@ -841,5 +843,7 @@ input:read-only {
       margin: 0; }
     .thread-container .post-item-container .post-body p {
       margin: 0 10px; }
+    .thread-container .post-item-container .post-body #author-link:hover {
+      color: blue; }
 
 /*# sourceMappingURL=style.css.map */

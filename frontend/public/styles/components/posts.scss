@@ -96,9 +96,14 @@
                 }
                 .username-box {
                     align-self: flex-start;
-                    font-size: 12px;
+                    font-size: 14px;
                     p {
                         margin: 0;
+                    }
+                    #author-link {
+                        &:hover {
+                            color: blue;
+                        }
                     }
                 }
                 p {
