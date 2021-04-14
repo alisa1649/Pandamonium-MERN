@@ -5,7 +5,7 @@ import { createComment, deleteComment, requestThread } from '../../../actions/th
 import NewPostForm from '../../dashboard/new_post_form';
 import PostListItem from '../../dashboard/post_list_item';
 import EditPostModal from '../../dashboard/edit_post_modal';
-import { updateParentPost } from '../../../actions/parent_post_actions';
+import {deleteParentPost, updateParentPost} from '../../../actions/parent_post_actions';
 import { getCurrentUserInfo } from '../../../actions/user_actions';
 
 class Thread extends React.Component {
@@ -50,6 +50,7 @@ class Thread extends React.Component {
                     <PostListItem
                         post={this.props.parentPost}
                         editAction={() => this.setState({ editModalVisible: true })}
+                        deleteAction={this.props.deleteParentPost}
                     />
                     <ul className="post-list">
                         {this.props.comments.map((comment) => {
@@ -79,6 +80,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     updateParentPost: (post) => dispatch(updateParentPost(post)),
+    deleteParentPost: (postId) => dispatch(deleteParentPost(postId)),
     createComment: (comment) => dispatch(createComment(comment)),
     requestThread: (postId) => dispatch(requestThread(postId)),
     deleteComment: (postId) => dispatch(deleteComment(postId)),

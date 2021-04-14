@@ -35,14 +35,16 @@ class PostListItem extends React.Component {
                         <p>{post.text}</p>
                     </div>
 
-                    {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
-                    {belongsToUser && !!deleteAction ? (
-                        <button className="delete-button" onClick={() => deleteAction(post._id)}>
-                            Delete
-                        </button>
-                    ) : (
-                        ''
-                    )}
+                    <div className="post-body-buttons">
+                        {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
+                        {belongsToUser && !!deleteAction ? (
+                            <button className="delete-button" onClick={() => deleteAction(post._id)}>
+                                Delete
+                            </button>
+                        ) : (
+                            ''
+                        )}
+                    </div>
                 </li>
             </Link>
         );

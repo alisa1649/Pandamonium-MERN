@@ -64,38 +64,44 @@
             border-radius: 5px;
         }
     }
-    .post-item-container {
-        border: 1px solid black;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 15px;
-        display: flex;
-        justify-content: space-between;
+}
 
-        .post-body {
-            display: flex;
-            align-items: center;
-            .post-profile-pic {
-                width: 75px;
-                height: 75px;
-                border-radius: 50%;
-                position: relative;
-                img {
-                    position: absolute;
-                    left: 8px;
-                    top: 8px;
-                    width: 60px;
-                    height: 60px;
-                }
-            }
-            .username-box {
-                align-self: flex-start;
-                font-size: 12px;
-                margin: 0;
-            }
-            p {
-                margin: 0 10px;
+.post-item-container {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .post-body {
+        display: flex;
+        align-items: center;
+        .post-profile-pic {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            position: relative;
+            img {
+                position: absolute;
+                left: 8px;
+                top: 8px;
+                width: 60px;
+                height: 60px;
             }
         }
+        .username-box {
+            align-self: flex-start;
+            font-size: 12px;
+            margin: 0;
+        }
+        p {
+            margin: 0 10px;
+        }
+    }
+    .post-body-buttons {
+        display: flex;
+        align-items: center;
     }
 }
