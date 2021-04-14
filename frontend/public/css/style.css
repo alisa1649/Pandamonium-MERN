@@ -796,11 +796,14 @@ input:read-only {
     margin-right: 15px;
     border-radius: 5px; }
 
+.post-list li {
+  margin-top: 15px;
+  list-style: none; }
+
 .post-item-container {
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center; }

@@ -43,7 +43,6 @@ class Thread extends React.Component {
                     ) : (
                         ''
                     )}
-                    <NewPostForm currentUser={this.props.currentUser} createPost={createComment} />
                     <div>
                         <Link to="/dashboard">Back to Dashboard</Link>
                     </div>
@@ -62,6 +61,7 @@ class Thread extends React.Component {
                                 />
                             );
                         })}
+                        <li><NewPostForm currentUser={this.props.currentUser} createPost={createComment} /></li>
                     </ul>
                 </div>
             );
