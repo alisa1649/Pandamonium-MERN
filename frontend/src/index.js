@@ -6,34 +6,37 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+import { getOtherUserInfo } from './actions/user_actions';
+
 document.addEventListener('DOMContentLoaded', () => {
-  let store;
+    let store;
 
-  if (localStorage.jwtToken) {
-    setAuthToken(localStorage.jwtToken);
+    if (localStorage.jwtToken) {
+        setAuthToken(localStorage.jwtToken);
 
-    const decodedUser = jwt_decode(localStorage.jwtToken);
-    const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
+        const decodedUser = jwt_decode(localStorage.jwtToken);
+        const preloadedState = { session: { isAuthenticated: true, user: decodedUser } };
 
-    store = configureStore(preloadedState);
+        store = configureStore(preloadedState);
 
-    const currentTime = Date.now() / 1000;
+        const currentTime = Date.now() / 1000;
 
-
-    if (decodedUser.exp < currentTime) {
-      store.dispatch(logout());
-      window.location.href = '/login';
+        if (decodedUser.exp < currentTime) {
+            store.dispatch(logout());
+            window.location.href = '/login';
+        }
+    } else {
+        store = configureStore({});
     }
-  } else {
-    store = configureStore({});
-  }
 
-  // Make state accessible during development
-  if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    // Make state accessible during development
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+        window.getState = store.getState;
+    }
     window.getState = store.getState;
-  }
-  window.getState = store.getState;
-  const root = document.getElementById('root');
+    window.store = store;
+    window.getOtherUserInfo = getOtherUserInfo;
+    const root = document.getElementById('root');
 
-  ReactDOM.render(<Root store={store} />, root);
+    ReactDOM.render(<Root store={store} />, root);
 });

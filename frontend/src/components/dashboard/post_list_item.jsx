@@ -31,14 +31,27 @@ class PostListItem extends React.Component {
                         </div>
                         <div className="post-details">
                             <div className="username-box">
-                                {post.anonymity ? <p>Anonymous says</p> : <p>{author.username} says</p>}
+                                {post.anonymity ? (
+                                    <p>Anonymous says</p>
+                                ) : (
+                                    <p>
+                                        <Link id="author-link" to={`/users/${author.id}`}>
+                                            {author.username}{' '}
+                                        </Link>
+                                        says
+                                    </p>
+                                )}
                             </div>
                             <p>{post.text}</p>
                         </div>
                     </div>
 
                     <div className="post-body-buttons">
-                        {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
+                        {belongsToUser && !!editAction ? (
+                            <button onClick={() => editAction(post._id)}>Edit</button>
+                        ) : (
+                            ''
+                        )}
                         {belongsToUser && !!deleteAction ? (
                             <button className="delete-button" onClick={() => deleteAction(post._id)}>
                                 Delete

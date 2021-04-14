@@ -38,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffffBB;
+    background-color: #ffffffbb;
 
     .post-body {
         display: flex;
@@ -61,6 +61,11 @@
             font-size: 12px;
             p {
                 margin: 0;
+            }
+            #author-link {
+                &:hover {
+                    color: blue;
+                }
             }
         }
         p {
