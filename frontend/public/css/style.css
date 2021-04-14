@@ -632,7 +632,8 @@ input:read-only {
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  position: relative; }
   .nav-bar .left-nav-bar {
     display: flex;
     align-items: center; }
@@ -654,8 +655,11 @@ input:read-only {
       margin: 0;
       margin-left: 20px;
       font-size: 48px; }
-  .nav-bar .links a {
-    margin: 0 10px; }
+  .nav-bar .links {
+    position: absolute;
+    right: 0; }
+    .nav-bar .links a {
+      margin: 0 10px; }
 
 .dashboard {
   display: flex;
@@ -830,5 +834,40 @@ input:read-only {
   .post-item-container .post-body-buttons {
     display: flex;
     align-items: center; }
+
+.about-us-page .about-us-item {
+  margin: 20px 0;
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between; }
+  .about-us-page .about-us-item .left {
+    display: flex; }
+    .about-us-page .about-us-item .left .about-us-pic {
+      width: 100px;
+      height: 100px;
+      margin: 5px; }
+      .about-us-page .about-us-item .left .about-us-pic img {
+        width: 100px;
+        height: 100px; }
+    .about-us-page .about-us-item .left .about-us-info {
+      margin: 5px 0; }
+      .about-us-page .about-us-item .left .about-us-info h3 {
+        margin: 0; }
+      .about-us-page .about-us-item .left .about-us-info p {
+        font-size: 14px; }
+  .about-us-page .about-us-item .link-box {
+    font-size: 26px;
+    margin: 5px 0;
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; }
+    .about-us-page .about-us-item .link-box i {
+      margin: 0 5px; }
+      .about-us-page .about-us-item .link-box i:hover {
+        color: #734b5e; }
+  .about-us-page .about-us-item #lane-pic {
+    width: 80px;
+    margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */
