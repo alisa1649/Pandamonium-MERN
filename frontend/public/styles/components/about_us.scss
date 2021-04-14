@@ -1,0 +1,54 @@
+.about-us-page {
+    .about-us-top {
+    }
+    .about-us-item {
+        margin: 20px 0;
+        display: flex;
+        border: 1px solid black;
+        justify-content: space-between;
+        .left {
+            display: flex;
+            .about-us-pic {
+                width: 100px;
+                height: 100px;
+
+                margin: 5px;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            .about-us-info {
+                margin: 5px 0;
+
+                h3 {
+                    margin: 0;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .link-box {
+            font-size: 26px;
+            margin: 5px 0;
+            width: 100px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            // color: $purple;
+            i {
+                margin: 0 5px;
+                &:hover {
+                    color: $purple;
+                }
+            }
+        }
+        #lane-pic {
+            width: 80px;
+            margin: 0 10px;
+        }
+    }
+}
