@@ -5,7 +5,6 @@ export default (oldState = {}, action) => {
         case RECEIVE_CURRENT_USER_INFO:
             return Object.assign({}, oldState, { currentUser: action.currentUser.data });
         case RECEIVE_OTHER_USER_INFO:
-            debugger;
             return Object.assign({}, oldState, { [action.user.data.id]: action.user.data });
         default:
             return oldState;

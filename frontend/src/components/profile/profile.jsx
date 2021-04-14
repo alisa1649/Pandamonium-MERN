@@ -11,13 +11,13 @@ class Profile extends React.Component {
         if (this.props.profileType === 'CurrentUserProfile') {
             this.props.getCurrentUserInfo();
         } else if (this.props.profileType === 'OtherUserProfile') {
-            console.log(this.props.userId);
-
+            console.log('Profileee: ', this.props.userId);
             this.props.getOtherUserInfo(this.props.userId);
         }
     }
 
     render() {
+        debugger;
         const { currentUser } = this.props;
         if (!currentUser) {
             return <div>User not found</div>;
