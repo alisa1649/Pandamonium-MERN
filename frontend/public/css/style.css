@@ -823,4 +823,36 @@ input:read-only {
     .thread-container .post-item-container .post-body p {
       margin: 0 10px; }
 
+.about-us-page .about-us-item {
+  margin: 20px 0;
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between; }
+  .about-us-page .about-us-item .left {
+    display: flex; }
+    .about-us-page .about-us-item .left .about-us-pic {
+      width: 100px;
+      height: 100px;
+      border: 1px solid blue;
+      margin: 5px; }
+      .about-us-page .about-us-item .left .about-us-pic img {
+        width: 100px;
+        height: 100px; }
+    .about-us-page .about-us-item .left .about-us-info {
+      margin: 5px 0;
+      border: 1px solid red; }
+      .about-us-page .about-us-item .left .about-us-info h3 {
+        margin: 0; }
+      .about-us-page .about-us-item .left .about-us-info p {
+        font-size: 14px; }
+  .about-us-page .about-us-item .link-box {
+    font-size: 26px;
+    margin: 5px 0;
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; }
+    .about-us-page .about-us-item .link-box i {
+      margin: 0 5px; }
+
 /*# sourceMappingURL=style.css.map */

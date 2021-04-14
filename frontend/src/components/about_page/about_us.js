@@ -10,12 +10,14 @@ const AboutUs = (props) => {
             </div>
 
             <div className="about-us-item">
-                <div className="about-us-pic"></div>
-                <div>
-                    <h3 className="name">
-                        Alisa Cheadle- <i>Role</i>
-                    </h3>
-                    <p className="bio">Write something nice here! What did you work on??</p>
+                <div className="left">
+                    <div className="about-us-pic"></div>
+                    <div className="about-us-info">
+                        <h3 className="name">
+                            Alisa Cheadle- <i>Role</i>
+                        </h3>
+                        <p className="bio">Write something nice here! What did you work on??</p>
+                    </div>
                 </div>
                 <div className="link-box">
                     <i className="fab fa-github"></i>
@@ -24,12 +26,14 @@ const AboutUs = (props) => {
                 </div>
             </div>
             <div className="about-us-item">
-                <div className="about-us-pic"></div>
-                <div>
-                    <h3 className="name">
-                        Danny Ho- <i>Role</i>
-                    </h3>
-                    <p className="bio">Write something nice here! What did you work on??</p>
+                <div className="left">
+                    <div className="about-us-pic"></div>
+                    <div className="about-us-info">
+                        <h3 className="name">
+                            Danny Ho- <i>Role</i>
+                        </h3>
+                        <p className="bio">Write something nice here! What did you work on??</p>
+                    </div>
                 </div>
                 <div className="link-box">
                     <i className="fab fa-github"></i>
@@ -38,12 +42,14 @@ const AboutUs = (props) => {
                 </div>
             </div>
             <div className="about-us-item">
-                <div className="about-us-pic"></div>
-                <div>
-                    <h3 className="name">
-                        Lane Harris- <i>Role</i>
-                    </h3>
-                    <p className="bio">Write something nice here! What did you work on??</p>
+                <div className="left">
+                    <div className="about-us-pic"></div>
+                    <div className="about-us-info">
+                        <h3 className="name">
+                            Lane Harris- <i>Role</i>
+                        </h3>
+                        <p className="bio">Write something nice here! What did you work on??</p>
+                    </div>
                 </div>
                 <div className="link-box">
                     <i className="fab fa-github"></i>
@@ -52,12 +58,14 @@ const AboutUs = (props) => {
                 </div>
             </div>
             <div className="about-us-item">
-                <div className="about-us-pic"></div>
-                <div>
-                    <h3 className="name">
-                        Yohan Oh- <i>Role</i>
-                    </h3>
-                    <p className="bio">Write something nice here! What did you work on??</p>
+                <div className="left">
+                    <div className="about-us-pic"></div>
+                    <div className="about-us-info">
+                        <h3 className="name">
+                            Yohan Oh- <i>Role</i>
+                        </h3>
+                        <p className="bio">Write something nice here! What did you work on??</p>
+                    </div>
                 </div>
                 <div className="link-box">
                     <i className="fab fa-github"></i>
