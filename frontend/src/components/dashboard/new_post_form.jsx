@@ -20,6 +20,9 @@ class NewPostForm extends React.Component {
 
     handleSubmit() {
         this.props.createPost(this.state);
+        this.setState({
+            text: "",
+        });
     }
 
     toggleAnonymous() {
