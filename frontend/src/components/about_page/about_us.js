@@ -12,7 +12,7 @@ const AboutUs = (props) => {
             <div id="alisa" className="about-us-item">
                 <div className="left">
                     <div className="about-us-pic">
-                        <img src="https://avatars.githubusercontent.com/u/74744805?v=4"></img>
+                        <img src="/alisa200px.jpg" alt="picture of Alisa"></img>
                     </div>
                     <div className="about-us-info">
                         <h3 className="name">
@@ -35,7 +35,9 @@ const AboutUs = (props) => {
             </div>
             <div id="danny" className="about-us-item">
                 <div className="left">
-                    <div className="about-us-pic"></div>
+                    <div className="about-us-pic">
+                        <img src="./danny_profile_photo.jpg" alt="picture of Danny"></img>
+                    </div>
                     <div className="about-us-info">
                         <h3 className="name">
                             Danny Ho- <i>Role</i>
@@ -44,14 +46,14 @@ const AboutUs = (props) => {
                     </div>
                 </div>
                 <div className="link-box">
-                    <a href="" target="_blank">
+                    <a href="https://github.com/dannyho77" target="_blank">
                         <i className="fab fa-github"></i>
                     </a>
-                    <a href="" target="_blank">
+                    <a href="https://www.linkedin.com/in/danny-ho-a4988360/" target="_blank">
                         <i className="fab fa-linkedin"></i>
                     </a>
                     {/* personal site goes here */}
-                    <a href="" target="_blank">
+                    <a href="https://dannyho77.github.io/Danny-Ho-dev.bio/" target="_blank">
                         <i className="fas fa-user-circle"></i>
                     </a>
                 </div>
@@ -61,6 +63,7 @@ const AboutUs = (props) => {
                     <div className="about-us-pic">
                         <img
                             id="lane-pic"
+                            alt="picture of Lane"
                             src="https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/906/medium/Lane_Harris.jpg?1610668094"></img>
                     </div>
                     <div className="about-us-info">
@@ -85,7 +88,12 @@ const AboutUs = (props) => {
             </div>
             <div id="yohan" className="about-us-item">
                 <div className="left">
-                    <div className="about-us-pic"></div>
+                    <div className="about-us-pic">
+                        <img
+                            src="https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/920/medium/Yohan_Oh.jpg?1610668266"
+                            alt="picture of Yohan"
+                        />
+                    </div>
                     <div className="about-us-info">
                         <h3 className="name">
                             Yohan Oh- <i>Role</i>
@@ -94,10 +102,10 @@ const AboutUs = (props) => {
                     </div>
                 </div>
                 <div className="link-box">
-                    <a href="" target="_blank">
+                    <a href="https://github.com/yohan546" target="_blank">
                         <i className="fab fa-github"></i>
                     </a>
-                    <a href="" target="_blank">
+                    <a href="https://www.linkedin.com/in/yohan-oh-94a74020b/" target="_blank">
                         <i className="fab fa-linkedin"></i>
                     </a>
                     {/* personal site goes here */}

@@ -632,7 +632,8 @@ input:read-only {
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  position: relative; }
   .nav-bar .left-nav-bar {
     display: flex;
     align-items: center; }
@@ -654,8 +655,11 @@ input:read-only {
       margin: 0;
       margin-left: 20px;
       font-size: 48px; }
-  .nav-bar .links a {
-    margin: 0 10px; }
+  .nav-bar .links {
+    position: absolute;
+    right: 0; }
+    .nav-bar .links a {
+      margin: 0 10px; }
 
 .dashboard {
   display: flex;
