@@ -25,6 +25,14 @@
         }
     }
 }
+.post-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    .username-box {
+        color: #777;
+    }
+}
 .post-item-container {
     padding: 10px;
     display: flex;
