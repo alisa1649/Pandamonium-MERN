@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getOtherUserInfo } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
+    // debugger;
     const userId = ownProps.match.params.userId;
     return {
         currentUser: state.entities.users.currentUser,

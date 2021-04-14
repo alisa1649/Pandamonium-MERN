@@ -8,7 +8,13 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getCurrentUserInfo();
+        if (this.props.profileType === 'CurrentUserProfile') {
+            this.props.getCurrentUserInfo();
+        } else if (this.props.profileType === 'OtherUserProfile') {
+            console.log(this.props.userId);
+
+            this.props.getOtherUserInfo(this.props.userId);
+        }
     }
 
     render() {
