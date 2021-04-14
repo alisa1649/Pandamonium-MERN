@@ -12,6 +12,7 @@ class PostListItem extends React.Component {
         const post = this.props.post;
         const editAction = this.props.editAction;
         const deleteAction = this.props.deleteAction;
+        const isParentPost = !post.parent;
 
         const belongsToUser = this.props.currentUserId === post.user;
 
@@ -22,27 +23,30 @@ class PostListItem extends React.Component {
             return <div>No posts found</div>;
         }
         return (
-            <Link to={`/thread/${post._id}`}>
+            <Link to={isParentPost ? `/thread/${post._id}` : null}>
                 <li className="post-item-container">
                     <div className="post-body">
                         <div id={author.img_bg_color} className="post-profile-pic">
                             <img src={author.image_path} alt="profile-pic" />
                         </div>
-                        <div className="username-box">
-                            {post.anonymity ? <p>Anonymous says</p> : <p>{author.username} says</p>}
+                        <div className="post-details">
+                            <div className="username-box">
+                                {post.anonymity ? <p>Anonymous says</p> : <p>{author.username} says</p>}
+                            </div>
+                            <p>{post.text}</p>
                         </div>
-
-                        <p>{post.text}</p>
                     </div>
 
-                    {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
-                    {belongsToUser && !!deleteAction ? (
-                        <button className="delete-button" onClick={() => deleteAction(post._id)}>
-                            Delete
-                        </button>
-                    ) : (
-                        ''
-                    )}
+                    <div className="post-body-buttons">
+                        {belongsToUser && !!editAction ? <button onClick={() => editAction(post._id)}>Edit</button> : ''}
+                        {belongsToUser && !!deleteAction ? (
+                            <button className="delete-button" onClick={() => deleteAction(post._id)}>
+                                Delete
+                            </button>
+                        ) : (
+                            ''
+                        )}
+                    </div>
                 </li>
             </Link>
         );

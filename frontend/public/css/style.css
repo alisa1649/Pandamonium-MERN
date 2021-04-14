@@ -799,33 +799,41 @@ input:read-only {
     align-items: center;
     margin-right: 15px;
     border-radius: 5px; }
-.thread-container .post-item-container {
+
+.post-list li {
+  margin-top: 15px;
+  list-style: none; }
+
+.post-item-container {
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 15px;
   display: flex;
-  justify-content: space-between; }
-  .thread-container .post-item-container .post-body {
+  justify-content: space-between;
+  align-items: center; }
+  .post-item-container .post-body {
     display: flex;
     align-items: center; }
-    .thread-container .post-item-container .post-body .post-profile-pic {
+    .post-item-container .post-body .post-profile-pic {
       width: 75px;
       height: 75px;
       border-radius: 50%;
       position: relative; }
-      .thread-container .post-item-container .post-body .post-profile-pic img {
+      .post-item-container .post-body .post-profile-pic img {
         position: absolute;
         left: 8px;
         top: 8px;
         width: 60px;
         height: 60px; }
-    .thread-container .post-item-container .post-body .username-box {
+    .post-item-container .post-body .username-box {
       align-self: flex-start;
       font-size: 12px;
       margin: 0; }
-    .thread-container .post-item-container .post-body p {
+    .post-item-container .post-body p {
       margin: 0 10px; }
+  .post-item-container .post-body-buttons {
+    display: flex;
+    align-items: center; }
 
 .about-us-page .about-us-item {
   margin: 20px 0;
