@@ -1,6 +1,6 @@
 import React from 'react';
 import NewPostForm from './new_post_form';
-import PostList from './post_list';
+import PostList from './dashboard_post_list_container';
 import { createParentPost } from '../../actions/parent_post_actions';
 import { getCurrentUserInfo } from '../../actions/user_actions';
 import { connect } from 'react-redux';
