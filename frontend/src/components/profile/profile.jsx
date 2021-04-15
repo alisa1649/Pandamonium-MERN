@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfilePostList from './profile_post_list_container';
 import GoogleMap from '../googlemap/googlemap';
 
 class Profile extends React.Component {
@@ -54,7 +55,9 @@ class Profile extends React.Component {
                     </div>
                     <div className="profile-right">
                         <h3>Posts by {user.username}</h3>
-                        <div className="posts-box">posts go here!</div>
+                        <div className="posts-box">
+                            <ProfilePostList requestId={user.id} />
+                        </div>
                     </div>
                 </div>
                 <button>

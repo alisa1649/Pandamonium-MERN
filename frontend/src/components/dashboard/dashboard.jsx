@@ -27,7 +27,7 @@ class Dashboard extends React.Component {
                     Current Location: {this.props.currentUser.city}, {this.props.currentUser.state}
                 </h2>
                 <NewPostForm currentUser={this.props.currentUser} createPost={createPost} />
-                <PostList forumId={forumId} />
+                <PostList requestId={forumId} />
             </div>
         );
     }
