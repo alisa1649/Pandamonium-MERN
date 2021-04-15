@@ -5,6 +5,7 @@ const mapStateToProps = (state) => {
     return {
         userId: state.session.user.id,
         parent_posts: Object.values(state.entities.parent_posts),
+        klassName: 'post-item-container',
     };
 };
 

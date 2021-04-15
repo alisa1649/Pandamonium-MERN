@@ -61,11 +61,10 @@ export const deleteParentPost = (postId) => (dispatch) =>
         (err) => dispatch(receiveErrors(err.response.data))
     );
 
-export const requestUsersParentPosts = (userId) => (dispatch) => {
-    return APIUtil.fetchUsersPosts(userId).then(
+export const requestUsersParentPosts = (userId) => (dispatch) =>
+    APIUtil.fetchUsersPosts(userId).then(
         (posts) => {
             return dispatch(receiveParentPosts(posts));
         },
         (err) => dispatch(receiveErrors(err.response.data))
     );
-};

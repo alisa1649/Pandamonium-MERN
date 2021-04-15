@@ -24,7 +24,7 @@ class PostListItem extends React.Component {
         }
         return (
             <Link to={isParentPost ? `/thread/${post._id}` : null}>
-                <li className="post-item-container">
+                <li className={this.props.klassName}>
                     <div className="post-body">
                         <div id={author.img_bg_color} className="post-profile-pic">
                             <img src={author.image_path} alt="profile-pic" />

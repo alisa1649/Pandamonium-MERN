@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {
         parent_posts: Object.values(state.entities.parent_posts),
+        klassName: 'profile-post-item',
     };
 };
 

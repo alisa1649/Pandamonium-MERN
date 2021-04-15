@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.getState = store.getState;
     }
     window.getState = store.getState;
-
+    window.store = store;
+    window.requestUsersParentPosts = requestUsersParentPosts;
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);

@@ -19,6 +19,7 @@ class PostList extends React.Component {
                         key={post._id}
                         post={post}
                         deleteAction={this.props.deletePost}
+                        klassName={this.props.klassName}
                         // editAction={this.props.editPost}
                     />
                 ))}
