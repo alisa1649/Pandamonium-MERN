@@ -836,7 +836,8 @@ input:read-only {
     margin: 0 10px; }
 
 .profile-post-item {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  background-color: #ffffffbb; }
   .profile-post-item .post-body {
     display: flex; }
     .profile-post-item .post-body .post-profile-pic {
