@@ -1,6 +1,6 @@
 const Validator = require('validator');
 
-export const validateVotes = (data) => {
+module.exports = function validateVotes(data) {
     let voteTypes = ['upvote', 'downvote'];
     let errors = {};
     if (!Validator.contains(voteTypes, data.type)) {
