@@ -27,7 +27,10 @@ const mapDispatchToProps =  dispatch => {
         demoForm: (
             <button className='btn-demo-user secondary' onClick= {(e) => {
                 e.preventDefault();
-                dispatch(openModal('sign-up'))
+                dispatch(login({
+                    email: "erlich@aviato.io",
+                    password: "erlich@aviato.io"
+                }))
             }} >
                 Login as Demo User
             </button>
