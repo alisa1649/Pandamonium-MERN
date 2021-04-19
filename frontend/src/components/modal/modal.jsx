@@ -5,7 +5,7 @@ import SignUpForm from '../session_forms/signup_container';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 
-function Modal ({modal}) {
+function Modal ({modal, closeModal}) {
     if (!modal) {
         return null;
     };
@@ -20,7 +20,7 @@ function Modal ({modal}) {
     }
 
     return (
-        <div className="modal-background">
+        <div className="modal-background" onClick={e => closeModal()}>
           <div className="modal-child" onClick={e => e.stopPropagation()}>
             { component }
           </div>
@@ -34,9 +34,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dipsatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        closeModal: () => dipsatch(closeModal())
+        closeModal: () => dispatch(closeModal())
     }
 }
 
