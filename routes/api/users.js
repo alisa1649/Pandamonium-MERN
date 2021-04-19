@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
+const Forum = require('../../models/Forum');
 const keys = require('../../config/keys');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
@@ -22,6 +23,19 @@ router.post('/signup', (req, res) => {
             return res.status(400).json({ email: 'A user has already signed up with this address' });
         } else {
             // Otherwise create a new user
+            Forum.find({city: req.body.city, state: req.body.state}).then((newForumArray) => {
+                let newForum = newForumArray[0];
+                console.log('newForum1', newForum);
+            if (!newForum) {
+                newForum = new Forum({
+                    name: req.body.city + ', ' + req.body.state,
+                    city: req.body.city,
+                    state: req.body.state
+                });
+                console.log('newForum2', newForum);
+                newForum.save();
+            }
+
             const newUser = new User({
                 username: req.body.username,
                 email: req.body.email,
@@ -29,6 +43,7 @@ router.post('/signup', (req, res) => {
                 bio: req.body.bio,
                 city: req.body.city,
                 state: req.body.state,
+                forum: newForum.id
             });
 
             bcrypt.genSalt(10, (err, salt) => {
@@ -41,6 +56,30 @@ router.post('/signup', (req, res) => {
                         .catch((err) => console.log(err));
                 });
             });
+            })
+            
+
+
+            // const newUser = new User({
+            //     username: req.body.username,
+            //     email: req.body.email,
+            //     password: req.body.password,
+            //     bio: req.body.bio,
+            //     city: req.body.city,
+            //     state: req.body.state,
+            //     forum: newForum.id
+            // });
+
+            // bcrypt.genSalt(10, (err, salt) => {
+            //     bcrypt.hash(newUser.password, salt, (err, hash) => {
+            //         if (err) throw err;
+            //         newUser.password = hash;
+            //         newUser
+            //             .save()
+            //             .then((user) => res.json(user))
+            //             .catch((err) => console.log(err));
+            //     });
+            // });
         }
     });
 });
@@ -85,6 +124,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         bio: req.user.bio,
         city: req.user.city,
         state: req.user.state,
+        forum: req.user.forum,
         image_path: req.user.image_path,
         img_bg_color: req.user.img_bg_color,
     });

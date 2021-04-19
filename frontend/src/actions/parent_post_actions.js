@@ -32,6 +32,7 @@ export const receiveDeleteParentPost = (postId) => ({
 });
 
 export const requestParentPosts = (forumId) => (dispatch) => {
+    // debugger
     return APIUtil.fetchParentPosts(forumId).then((posts) => {
         return dispatch(receiveParentPosts(posts));
     });
