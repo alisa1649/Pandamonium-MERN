@@ -61,6 +61,14 @@ export const deleteParentPost = (postId) => (dispatch) =>
         },
         (err) => dispatch(receiveErrors(err.response.data))
     );
+export const deleteAllParentPostsForUser = (userId) => (dispatch) =>
+    APIUtil.fetchUsersPosts(userId).then(
+        (posts) => {
+            posts.forEach(post => {
+                dispatch(deleteParentPost(post._id));
+            })
+        },
+    );
 
 export const requestUsersParentPosts = (userId) => (dispatch) =>
     APIUtil.fetchUsersPosts(userId).then(

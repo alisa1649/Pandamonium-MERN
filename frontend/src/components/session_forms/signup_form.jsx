@@ -72,7 +72,9 @@ class SignupForm extends React.Component {
         };
         
         
-        this.props.signup(user)
+        this.props.signup(user).then(() => {
+            this.props.login(user)
+        })
     }
 
 
@@ -117,7 +119,7 @@ class SignupForm extends React.Component {
                         <label>
                             <input ref={this.autocompleteInput}  
                             id="autocomplete" 
-                            placeholder="Enter your location"
+                            placeholder="Enter your city and state"
                             type="text"
                         />
                         </label>

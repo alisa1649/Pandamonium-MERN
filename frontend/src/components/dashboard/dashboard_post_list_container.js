@@ -1,5 +1,10 @@
 import PostList from './post_list';
-import { deleteParentPost, requestParentPosts, updateParentPost } from '../../actions/parent_post_actions';
+import {
+    deleteAllParentPostsForUser,
+    deleteParentPost,
+    requestParentPosts,
+    updateParentPost
+} from '../../actions/parent_post_actions';
 import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
     return {

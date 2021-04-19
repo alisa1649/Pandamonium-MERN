@@ -1,4 +1,6 @@
 import * as APIUtil from '../util/user_util';
+import { deleteAllParentPostsForUser} from "./parent_post_actions";
+import {logoutUser} from "./session_actions";
 
 export const RECEIVE_CURRENT_USER_INFO = 'RECEIVE_CURRENT_USER_INFO';
 export const RECEIVE_OTHER_USER_INFO = 'RECEIVE_OTHER_USER_INFO';
@@ -25,3 +27,10 @@ export const getOtherUserInfo = (userId) => (dispatch) => {
     console.log('getOtherUserInfo: ' + userId);
     return APIUtil.getOtherUserInfo(userId).then((otherUser) => dispatch(receiveOtherUser(otherUser)));
 };
+export const deleteUser = (userId) => (dispatch) => {
+    dispatch(deleteAllParentPostsForUser(userId)).then( () => {
+        APIUtil.deleteUser(userId).then(() => {
+            dispatch(logoutUser());
+        })
+    })
+}
