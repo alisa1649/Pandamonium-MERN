@@ -16,7 +16,7 @@ router.post('/new', (req, res) => {
       const newForum = new Forum({
         name: req.body.name,
         city: req.body.city,
-        state: req.body.city
+        state: req.body.state
       });
   
       newForum.save().then(forum => res.json(forum));

@@ -14,13 +14,14 @@ class Dashboard extends React.Component {
         this.props.getCurrentUserInfo();
     }
     render() {
-        const forumId = '6064e15dbc30e7788b2fb300';
+        if (!this.props.currentUser) return <div>User not found</div>;
+        const forumId = this.props.currentUser.forum;
         const createPost = (post) => {
             post.forum = forumId;
             post.user = this.props.userId;
             this.props.createPost(post);
         };
-        if (!this.props.currentUser) return <div>User not found</div>;
+        
         return (
             <div className="dashboard">
                 <h2>
