@@ -29,7 +29,6 @@
 }
 
 .session-form {
-  display: flex;
   border-radius: 10px;
   background: #fffe;
   width: 400px;
@@ -60,9 +59,10 @@
 
 .login-buttons {
   display: flex;
-}
-.button {
-  display: flex;
   flex-direction: column;
-
+  margin-top: 10px;
+  button {
+    margin-top: 10px;
+  }
 }
+

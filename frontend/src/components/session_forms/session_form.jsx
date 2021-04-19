@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
                             <hr />
                             <div className='login-buttons'>
                                 <div className='createaccount-header'>New User?</div>
-                                <div className='demo-user-text'>Live Demo</div>
+
                                 {this.props.demoForm}
                                 {this.props.otherForm}
                             </div>
