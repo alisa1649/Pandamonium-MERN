@@ -5,13 +5,13 @@ const passport = require('passport');
 const validateVotes = require('../../validation/votes');
 const Vote = require('../../models/Vote');
 
-router.get('/:post_id/votes', (req, res) => {
+router.get('/:post_id', (req, res) => {
     Vote.find({ post: req.params.post_id })
         .then((votes) => res.json(votes))
         .catch((err) => res.status(404).json({ nopostvotes: 'Post not found' }));
 });
 
-router.post('/:post_id/votes', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.post('/:post_id', passport.authenticate('jwt', { session: false }), (req, res) => {
     const { errors, isValid } = validateVotes(req.body);
     if (!isValid) {
         return res.status(400).json(errors);
