@@ -29,6 +29,7 @@
 }
 
 .session-form {
+  display: flex;
   border-radius: 10px;
   background: #fffe;
   width: 400px;
@@ -55,4 +56,13 @@
 .session-form hr {
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.login-buttons {
+  display: flex;
+}
+.button {
+  display: flex;
+  flex-direction: column;
+
 }
