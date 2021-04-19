@@ -1,0 +1,35 @@
+.profile-post-item {
+    margin-bottom: 10px;
+    background-color: #ffffffbb;
+    .post-body {
+        display: flex;
+        .post-profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: relative;
+            img {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+        .post-details {
+            width: 60%;
+            font-size: 12px;
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+    .post-body-buttons {
+        display: flex;
+        justify-content: center;
+        .delete-button {
+            width: 30%;
+            margin: 0;
+        }
+    }
+}

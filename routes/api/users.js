@@ -115,9 +115,9 @@ router.patch('/current', passport.authenticate('jwt', { session: false }), (req,
 });
 
 router.get('/:id', (req, res) => {
-    User.findById(req.params.id).then((user) =>
-        res
-            .json({
+    User.findById(req.params.id)
+        .then((user) =>
+            res.json({
                 id: user._id,
                 username: user.username,
                 image_path: user.image_path,
@@ -126,8 +126,8 @@ router.get('/:id', (req, res) => {
                 state: user.state,
                 city: user.city,
             })
-            .catch((err) => res.send(err))
-    );
+        )
+        .catch((err) => res.send(err));
 });
 
 module.exports = router;
