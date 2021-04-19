@@ -130,4 +130,15 @@ router.get('/:id', (req, res) => {
         .catch((err) => res.send(err));
 });
 
+router.delete('/:id', (req, res) => {
+    // TODO: make this only work for current user
+    User.findByIdAndDelete(req.params.id)
+        .then(() =>
+            res.json({
+                deleted: req.params.id
+            })
+        )
+        .catch((err) => res.send(err));
+});
+
 module.exports = router;
