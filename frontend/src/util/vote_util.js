@@ -9,3 +9,7 @@ export const createNewVote = (vote) => {
         return result.data;
     });
 };
+
+export const deleteVote = (voteId) => {
+    return axios.delete(`api/votes/${voteId}`);
+};
