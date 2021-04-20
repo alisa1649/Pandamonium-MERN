@@ -9,6 +9,10 @@ class PostListItem extends React.Component {
     constructor(props) {
         super(props);
         this.votes = [];
+        this.upvotes = [];
+        this.downvotes = [];
+        this.upvoteNum = 0;
+        this.downvoteNum = 0;
         this.toggleUpvoteClick = this.toggleUpvoteClick.bind(this);
         this.toggleDownvoteClick = this.toggleDownvoteClick.bind(this);
     }
@@ -18,7 +22,10 @@ class PostListItem extends React.Component {
     }
     componentDidUpdate() {
         this.votes = this.props.votes.filter((vote) => vote.post === this.props.post._id);
-        debugger;
+        this.upvotes = this.votes.filter((vote) => vote.type === 'upvote');
+        this.downvotes = this.votes.filter((vote) => vote.type === 'downvote');
+        this.upvoteNum = this.upvotes.length;
+        this.downvoteNum = this.downvotes.length;
     }
     handleUpvote() {
         this.props.createNewVote({
@@ -110,9 +117,11 @@ class PostListItem extends React.Component {
                             <div className="vote-box">
                                 <div className="unpressed" id="upvote" onClick={() => this.toggleUpvoteClick()}>
                                     <i className="fas fa-arrow-alt-circle-up"></i>
+                                    <p>{this.upvoteNum}</p>
                                 </div>
                                 <div className="unpressed" id="downvote" onClick={() => this.toggleDownvoteClick()}>
                                     <i className="fas fa-arrow-alt-circle-down"></i>
+                                    <p>{this.downvoteNum}</p>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +148,6 @@ class PostListItem extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    // debugger;
     return {
         currentUserId: state.session.user.id,
         users: state.entities.users,
