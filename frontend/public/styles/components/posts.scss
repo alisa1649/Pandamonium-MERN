@@ -72,6 +72,26 @@
         p {
             margin: 0 10;
         }
+        .vote-box {
+            border: 1px solid black;
+            display: flex;
+            #upvote {
+                display: flex;
+                align-items: center;
+                border: 1px solid green;
+                i {
+                    font-size: 24px;
+                }
+            }
+            #downvote {
+                display: flex;
+                align-items: center;
+                border: 1px solid red;
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
     }
     .delete-button {
         &:hover {

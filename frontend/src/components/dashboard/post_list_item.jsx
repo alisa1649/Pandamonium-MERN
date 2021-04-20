@@ -69,7 +69,8 @@ class PostListItem extends React.Component {
             post: this.props.post._id,
         });
     }
-    toggleUpvoteClick() {
+    toggleUpvoteClick(e) {
+        e.preventDefault();
         let upvoteButton = document.getElementById('upvote');
         let downvoteButton = document.getElementById('downvote');
 
@@ -104,7 +105,8 @@ class PostListItem extends React.Component {
         }
     }
 
-    toggleDownvoteClick() {
+    toggleDownvoteClick(e) {
+        e.preventDefault();
         let upvoteButton = document.getElementById('upvote');
         let downvoteButton = document.getElementById('downvote');
         if (downvoteButton.className === 'unpressed') {
@@ -179,14 +181,14 @@ class PostListItem extends React.Component {
                                 <div
                                     className={this.isUpvoted ? 'pressed' : 'unpressed'}
                                     id="upvote"
-                                    onClick={() => this.toggleUpvoteClick()}>
+                                    onClick={(e) => this.toggleUpvoteClick(e)}>
                                     <i className="fas fa-arrow-alt-circle-up"></i>
                                     <p>{this.state.upvoteNum}</p>
                                 </div>
                                 <div
                                     className={this.isDownvoted ? 'pressed' : 'unpressed'}
                                     id="downvote"
-                                    onClick={() => this.toggleDownvoteClick()}>
+                                    onClick={(e) => this.toggleDownvoteClick(e)}>
                                     <i className="fas fa-arrow-alt-circle-down"></i>
                                     <p>{this.state.downvoteNum}</p>
                                 </div>
