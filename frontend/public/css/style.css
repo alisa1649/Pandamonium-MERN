@@ -803,6 +803,21 @@ input:read-only {
         color: blue; }
     .post-item-container .post-body p {
       margin: 0 10; }
+    .post-item-container .post-body .vote-box {
+      border: 1px solid black;
+      display: flex; }
+      .post-item-container .post-body .vote-box #upvote {
+        display: flex;
+        align-items: center;
+        border: 1px solid green; }
+        .post-item-container .post-body .vote-box #upvote i {
+          font-size: 24px; }
+      .post-item-container .post-body .vote-box #downvote {
+        display: flex;
+        align-items: center;
+        border: 1px solid red; }
+        .post-item-container .post-body .vote-box #downvote i {
+          font-size: 24px; }
   .post-item-container .delete-button:hover {
     cursor: pointer; }
 

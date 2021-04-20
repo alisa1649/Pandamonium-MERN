@@ -83,6 +83,6 @@ router.get('/users/:user_id', (req, res) => {
         .where({ anonymity: false })
         .sort({ createdAt: 'desc' })
         .then((posts) => res.json(posts))
-        .catch((err) => res.status(404).json({ nopostsdount: "This user doesn't appear to have any posts" }));
+        .catch((err) => res.status(404).json({ nopostscount: "This user doesn't appear to have any posts" }));
 });
 module.exports = router;

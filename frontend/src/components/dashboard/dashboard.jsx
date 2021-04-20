@@ -21,7 +21,6 @@ class Dashboard extends React.Component {
             post.user = this.props.userId;
             this.props.createPost(post);
         };
-        
         return (
             <div className="dashboard">
                 <h2>

@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
-import { requestUsersParentPosts } from './actions/parent_post_actions';
+import { deleteVote } from './util/vote_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.getState = store.getState;
     window.store = store;
-    window.requestUsersParentPosts = requestUsersParentPosts;
+    window.deleteVote = deleteVote;
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);
