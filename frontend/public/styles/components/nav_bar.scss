@@ -4,6 +4,8 @@
     margin-bottom: 20px;
     position: relative;
     .left-nav-bar {
+        margin-top: 10px;
+        margin-left: 10px;
         display: flex;
         align-items: center;
         .panda {
@@ -22,7 +24,6 @@
             }
         }
         h1 {
-            // font-family: 'Barriecito';
             font-family: 'Fredericka the Great';
             margin: 0;
             margin-left: 20px;
