@@ -15,37 +15,38 @@
     }
     .main-profile-section {
         display: flex;
-        //justify-content: space-between;
         max-height: 400px;
         gap: 40px;
+        margin-bottom: 50px;
         .profile-left {
             display: flex;
             flex-direction: column;
-            //justify-content: space-between;
-            padding-right: 10px;
             width: 48%;
             background-color: #fff5;
             border-radius: 6px;
+            min-height: 300px;
             .profile-city, .profile-state, .bio-box {
                 margin: 20px;
+                font-size: 20px;
                 span {
                     color: $darkgreen;
                     font-weight: normal;
                 }
             }
             .bio-header {
-                font-size: 18px;
+                font-size: 20px;
                 text-align: center;
                 .bio-text {
-                    text-align: left;
+                    text-align: center;
+                    font-size: 18px;
                 }
             }
         }
         .profile-right {
-            margin: 20px auto;
+            min-height: 340px;
             width: 48%;
             background-color: #fff5;
-            overflow-y: scroll;
+            overflow-y: auto;
             border-radius: 6px;
             h3 {
                 text-align: center;
@@ -61,7 +62,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
         .profile-pic {
             width: 100px;
             height: 100px;

@@ -36,7 +36,7 @@ class PostListItem extends React.Component {
                                 ) : (
                                     <p>
                                         <Link id="author-link" to={`/users/${author.id}`}>
-                                            {author.username}{' '}
+                                            {author.username}{'  '}
                                         </Link>
                                         says
                                     </p>
