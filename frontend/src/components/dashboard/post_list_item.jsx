@@ -8,12 +8,17 @@ import { createNewVote, deleteVote, requestVotesOnPost } from '../../actions/vot
 class PostListItem extends React.Component {
     constructor(props) {
         super(props);
+        this.votes = [];
         this.toggleUpvoteClick = this.toggleUpvoteClick.bind(this);
         this.toggleDownvoteClick = this.toggleDownvoteClick.bind(this);
     }
     componentDidMount() {
         this.props.getOtherUserInfo(this.props.post.user);
         this.props.requestVotesOnPost(this.props.post._id);
+    }
+    componentDidUpdate() {
+        this.votes = this.props.votes.filter((vote) => vote.post === this.props.post._id);
+        debugger;
     }
     handleUpvote() {
         this.props.createNewVote({
@@ -134,6 +139,7 @@ class PostListItem extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    // debugger;
     return {
         currentUserId: state.session.user.id,
         users: state.entities.users,

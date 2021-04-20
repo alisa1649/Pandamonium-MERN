@@ -32,9 +32,7 @@ export const requestVotesOnPost = (postId) => (dispatch) => {
 };
 
 export const createNewVote = (vote) => (dispatch) => {
-    debugger;
     VoteUtil.createNewVote(vote).then((vote) => {
-        debugger;
         return dispatch(receiveVote(vote));
     });
 };
