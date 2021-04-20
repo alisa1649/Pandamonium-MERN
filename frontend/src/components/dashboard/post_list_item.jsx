@@ -8,11 +8,13 @@ import { createNewVote, deleteVote, requestVotesOnPost } from '../../actions/vot
 class PostListItem extends React.Component {
     constructor(props) {
         super(props);
-        this.votes = [];
-        this.upvotes = [];
-        this.downvotes = [];
-        this.upvoteNum = 0;
-        this.downvoteNum = 0;
+        this.state = {
+            votes: [],
+            upvotes: [],
+            downvotes: [],
+            upvoteNum: 0,
+            downvoteNum: 0,
+        };
         this.toggleUpvoteClick = this.toggleUpvoteClick.bind(this);
         this.toggleDownvoteClick = this.toggleDownvoteClick.bind(this);
     }
@@ -20,12 +22,18 @@ class PostListItem extends React.Component {
         this.props.getOtherUserInfo(this.props.post.user);
         this.props.requestVotesOnPost(this.props.post._id);
     }
-    componentDidUpdate() {
-        this.votes = this.props.votes.filter((vote) => vote.post === this.props.post._id);
-        this.upvotes = this.votes.filter((vote) => vote.type === 'upvote');
-        this.downvotes = this.votes.filter((vote) => vote.type === 'downvote');
-        this.upvoteNum = this.upvotes.length;
-        this.downvoteNum = this.downvotes.length;
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.votes !== this.props.votes) {
+            // debugger;
+            this.setState({
+                upvotes: this.props.votes.filter((vote) => vote.type === 'upvote' && vote.post === this.props.post._id),
+                downvotes: this.props.votes.filter(
+                    (vote) => vote.type === 'downvote' && vote.post === this.props.post._id
+                ),
+                upvoteNum: this.state.upvotes.length,
+                downvoteNum: this.state.downvotes.length,
+            });
+        }
     }
     handleUpvote() {
         this.props.createNewVote({
@@ -47,6 +55,15 @@ class PostListItem extends React.Component {
 
         if (upvoteButton.className === 'unpressed') {
             this.handleUpvote();
+            this.setState({
+                upvoteNum: this.state.upvoteNum + 1,
+            });
+            //checks if user already downvoted, takes away if they have.
+            if (downvoteButton.className === 'pressed') {
+                this.setState({
+                    downvoteNum: this.state.downvoteNum - 1,
+                });
+            }
             upvoteButton.className = 'pressed';
             downvoteButton.className = 'unpressed';
         } else {
@@ -56,7 +73,13 @@ class PostListItem extends React.Component {
                     return true;
                 }
             });
-            this.props.deleteVote(delVote.id);
+            if (delVote) {
+                this.props.deleteVote(delVote.id);
+                this.setState({
+                    upvoteNum: this.state.upvoteNum - 1,
+                });
+            }
+
             upvoteButton.className = 'unpressed';
         }
     }
@@ -66,6 +89,17 @@ class PostListItem extends React.Component {
         let downvoteButton = document.getElementById('downvote');
         if (downvoteButton.className === 'unpressed') {
             this.handleDownvote();
+            // increases downvoteNum by one
+            this.setState({
+                downvoteNum: this.state.downvoteNum + 1,
+            });
+            //checks if user has already voted, takes away upvote if they have.
+            if (upvoteButton.className === 'pressed') {
+                this.setState({
+                    upvoteNum: this.state.upvoteNum - 1,
+                });
+            }
+
             upvoteButton.className = 'unpressed';
             downvoteButton.className = 'pressed';
         } else {
@@ -75,7 +109,13 @@ class PostListItem extends React.Component {
                     return true;
                 }
             });
-            this.props.deleteVote(delVote.id);
+            if (delVote) {
+                this.props.deleteVote(delVote.id);
+
+                this.setState({
+                    downvoteNum: this.state.downvoteNum - 1,
+                });
+            }
             downvoteButton.className = 'unpressed';
         }
     }
@@ -117,11 +157,11 @@ class PostListItem extends React.Component {
                             <div className="vote-box">
                                 <div className="unpressed" id="upvote" onClick={() => this.toggleUpvoteClick()}>
                                     <i className="fas fa-arrow-alt-circle-up"></i>
-                                    <p>{this.upvoteNum}</p>
+                                    <p>{this.state.upvoteNum}</p>
                                 </div>
                                 <div className="unpressed" id="downvote" onClick={() => this.toggleDownvoteClick()}>
                                     <i className="fas fa-arrow-alt-circle-down"></i>
-                                    <p>{this.downvoteNum}</p>
+                                    <p>{this.state.downvoteNum}</p>
                                 </div>
                             </div>
                         </div>
