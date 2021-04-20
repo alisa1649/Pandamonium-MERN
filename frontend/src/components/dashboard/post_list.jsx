@@ -12,7 +12,7 @@ class PostList extends React.Component {
         
         if (sortedPosts.length < 1) {
             return (
-                <div className='emptyForumMessage'>No active users here...try updating your location to Miami, FL, or Redwood City, CA (or login as a demo user to look around!)</div>
+                <div className='emptyForumMessage'><img src="/emptyForum_panda.png"/></div>
             )
         }
         return (
