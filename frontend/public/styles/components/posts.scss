@@ -75,6 +75,12 @@
         .vote-box {
             border: 1px solid black;
             display: flex;
+            .pressed {
+                border: 1px inset black;
+            }
+            .unpressed {
+                border: 1px outset black;
+            }
             #upvote {
                 display: flex;
                 align-items: center;
