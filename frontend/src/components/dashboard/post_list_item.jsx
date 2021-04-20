@@ -44,9 +44,11 @@ class PostListItem extends React.Component {
             if (this.state.upvotes.filter((vote) => vote.user === this.props.currentUserId).length > 0) {
                 console.log('is upvoted!');
                 this.isUpvoted = true;
+                this.isDownvoted = false;
             } else if (this.state.downvotes.filter((vote) => vote.user === this.props.currentUserId).length > 0) {
                 console.log('is downvoted!');
-                this.isUpvoted = true;
+                this.isDownvoted = true;
+                this.isUpvoted = false;
             } else {
                 console.log('no votes');
             }
@@ -174,11 +176,17 @@ class PostListItem extends React.Component {
                             </div>
                             <p>{post.text}</p>
                             <div className="vote-box">
-                                <div className="unpressed" id="upvote" onClick={() => this.toggleUpvoteClick()}>
+                                <div
+                                    className={this.isUpvoted ? 'pressed' : 'unpressed'}
+                                    id="upvote"
+                                    onClick={() => this.toggleUpvoteClick()}>
                                     <i className="fas fa-arrow-alt-circle-up"></i>
                                     <p>{this.state.upvoteNum}</p>
                                 </div>
-                                <div className="unpressed" id="downvote" onClick={() => this.toggleDownvoteClick()}>
+                                <div
+                                    className={this.isDownvoted ? 'pressed' : 'unpressed'}
+                                    id="downvote"
+                                    onClick={() => this.toggleDownvoteClick()}>
                                     <i className="fas fa-arrow-alt-circle-down"></i>
                                     <p>{this.state.downvoteNum}</p>
                                 </div>
