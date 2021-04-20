@@ -1,9 +1,8 @@
-import { RECEIVE_USER_LOGOUT, RECEIVE_USER_SIGN_IN, RECEIVE_CURRENT_USER, RECEIVE_CURRENT_FORUM } from '../actions/session_actions';
+import { RECEIVE_USER_LOGOUT, RECEIVE_USER_SIGN_IN, RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const initialState = {
   isAuthenticated: false,
-  user: {},
-  forum: {}
+  user: {}
 };
 
 export default function(state = initialState, action) {
@@ -13,12 +12,6 @@ export default function(state = initialState, action) {
         ...state,
         isAuthenticated: !!action.currentUser,
         user: action.currentUser
-      };
-    case RECEIVE_CURRENT_FORUM: 
-     return {
-        ...state,
-        isAuthenticated: !!action.currentForum,
-        forum: action.currentForum
       };
     case RECEIVE_USER_SIGN_IN: 
      return {

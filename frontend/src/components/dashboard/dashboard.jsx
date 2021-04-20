@@ -22,18 +22,6 @@ class Dashboard extends React.Component {
             this.props.createPost(post);
         };
         
-        if (this.props.forumPosts === undefined){
-            return (
-                <div className="dashboard">
-                    <h2>
-                        Current Location: {this.props.currentUser.city}, {this.props.currentUser.state}
-                    </h2>
-                    <NewPostForm currentUser={this.props.currentUser} createPost={createPost} />
-                    <PostList requestId={forumId} />
-                    <div>No active users here...try updating your location to Miami, FL, or Redwood City, CA (or login as a demo user to look around!)</div>
-                </div>
-            );
-        } else {
             return (
             <div className="dashboard">
                 <h2>
@@ -42,7 +30,7 @@ class Dashboard extends React.Component {
                 <NewPostForm currentUser={this.props.currentUser} createPost={createPost} />
                 <PostList requestId={forumId} />
             </div>
-            );}
+            );
     }
 }
 

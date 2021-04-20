@@ -9,6 +9,12 @@ class PostList extends React.Component {
 
     render() {
         const sortedPosts = this.props.parent_posts.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
+        
+        if (sortedPosts.length < 1) {
+            return (
+                <div className='emptyForumMessage'>No active users here...try updating your location to Miami, FL, or Redwood City, CA (or login as a demo user to look around!)</div>
+            )
+        }
         return (
             <ul className="post-list">
                 {sortedPosts.map((post) => (
