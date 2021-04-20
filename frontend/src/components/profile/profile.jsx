@@ -41,16 +41,18 @@ class Profile extends React.Component {
                 <div className="main-profile-section">
                     <div className="profile-left">
                         <div className="location-area">
-                            <h3>
+                            <div className="profile-city">
                                 City: <span>{user.city}</span>
-                            </h3>
-                            <h3>
+                            </div>
+                            <div className="profile-state">
                                 State: <span>{user.state}</span>
-                            </h3>
+                            </div>
                         </div>
-                        <h3>Bio:</h3>
-                        <div className="bio-box">
-                            <p>{user.bio}</p>
+                        <div className="bio-header">
+                            <p>My Bio:</p>
+                            <div className="bio-box">
+                                <p className="bio-text">{user.bio}</p>
+                            </div>
                         </div>
                     </div>
                     <div className="profile-right">

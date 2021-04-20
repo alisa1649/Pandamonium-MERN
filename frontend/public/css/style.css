@@ -514,8 +514,7 @@ input:read-only {
   background-color: #eaf7bf;
   display: flex;
   flex-direction: column;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600; }
+  font-family: 'Source Sans Pro', sans-serif; }
   .profile-page input,
   .profile-page textarea {
     cursor: not-allowed; }
@@ -530,17 +529,20 @@ input:read-only {
     .profile-page .main-profile-section .profile-left {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       padding-right: 10px;
       width: 48%;
-      margin: 20px auto;
       background-color: #fff5;
       border-radius: 6px; }
-      .profile-page .main-profile-section .profile-left h3 span {
-        color: #0aad77;
-        font-weight: normal; }
-      .profile-page .main-profile-section .profile-left .bio-box {
-        margin-left: 15px; }
+      .profile-page .main-profile-section .profile-left .profile-city, .profile-page .main-profile-section .profile-left .profile-state, .profile-page .main-profile-section .profile-left .bio-box {
+        margin: 20px; }
+        .profile-page .main-profile-section .profile-left .profile-city span, .profile-page .main-profile-section .profile-left .profile-state span, .profile-page .main-profile-section .profile-left .bio-box span {
+          color: #0aad77;
+          font-weight: normal; }
+      .profile-page .main-profile-section .profile-left .bio-header {
+        font-size: 18px;
+        text-align: center; }
+        .profile-page .main-profile-section .profile-left .bio-header .bio-text {
+          text-align: left; }
     .profile-page .main-profile-section .profile-right {
       margin: 20px auto;
       width: 48%;
@@ -874,11 +876,13 @@ input:read-only {
       width: 60%;
       font-size: 12px; }
       .profile-post-item .post-body .post-details p {
-        margin-top: 0; }
+        margin-top: 0;
+        margin-left: 5px; }
   .profile-post-item .post-body-buttons {
     display: flex;
     justify-content: center; }
     .profile-post-item .post-body-buttons .delete-button {
+      display: none;
       width: 30%;
       margin-left: calc(35% + 15px); }
 
