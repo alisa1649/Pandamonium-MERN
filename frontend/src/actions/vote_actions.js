@@ -26,19 +26,21 @@ export const removeVote = (voteId) => {
 };
 
 export const requestVotesOnPost = (postId) => (dispatch) => {
-    return VoteUtil.getVotesOnPost(postId).then((votes) => {
+    VoteUtil.getVotesOnPost(postId).then((votes) => {
         return dispatch(receiveVotes(votes));
     });
 };
 
 export const createNewVote = (vote) => (dispatch) => {
-    return VoteUtil.createNewVote(vote).then((vote) => {
+    debugger;
+    VoteUtil.createNewVote(vote).then((vote) => {
+        debugger;
         return dispatch(receiveVote(vote));
     });
 };
 
 export const deleteVote = (voteId) => (dispatch) => {
-    return VoteUtil.deleteVote(voteId).then(() => {
+    VoteUtil.deleteVote(voteId).then(() => {
         return dispatch(removeVote(voteId));
     });
 };

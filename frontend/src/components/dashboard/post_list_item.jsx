@@ -3,10 +3,69 @@ import { Link } from 'react-router-dom';
 import { deleteParentPost } from '../../actions/parent_post_actions';
 import { connect } from 'react-redux';
 import { getOtherUserInfo } from '../../actions/user_actions';
+import { createNewVote, deleteVote, requestVotesOnPost } from '../../actions/vote_actions';
 
 class PostListItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.toggleUpvoteClick = this.toggleUpvoteClick.bind(this);
+        this.toggleDownvoteClick = this.toggleDownvoteClick.bind(this);
+    }
     componentDidMount() {
         this.props.getOtherUserInfo(this.props.post.user);
+        this.props.requestVotesOnPost(this.props.post._id);
+    }
+    handleUpvote() {
+        this.props.createNewVote({
+            type: 'upvote',
+            user: this.props.currentUserId,
+            post: this.props.post._id,
+        });
+    }
+    handleDownvote() {
+        this.props.createNewVote({
+            type: 'downvote',
+            user: this.props.currentUserId,
+            post: this.props.post._id,
+        });
+    }
+    toggleUpvoteClick() {
+        let upvoteButton = document.getElementById('upvote');
+        let downvoteButton = document.getElementById('downvote');
+
+        if (upvoteButton.className === 'unpressed') {
+            this.handleUpvote();
+            upvoteButton.className = 'pressed';
+            downvoteButton.className = 'unpressed';
+        } else {
+            //delete vote here
+            let delVote = this.props.votes.find((vote) => {
+                if (vote.user === this.props.currentUserId && vote.post === this.props.post.id) {
+                    return true;
+                }
+            });
+            this.props.deleteVote(delVote.id);
+            upvoteButton.className = 'unpressed';
+        }
+    }
+
+    toggleDownvoteClick() {
+        let upvoteButton = document.getElementById('upvote');
+        let downvoteButton = document.getElementById('downvote');
+        if (downvoteButton.className === 'unpressed') {
+            this.handleDownvote();
+            upvoteButton.className = 'unpressed';
+            downvoteButton.className = 'pressed';
+        } else {
+            //delete vote here
+            let delVote = this.props.votes.find((vote) => {
+                if (vote.user === this.props.currentUserId && vote.post === this.props.post.id) {
+                    return true;
+                }
+            });
+            this.props.deleteVote(delVote.id);
+            downvoteButton.className = 'unpressed';
+        }
     }
     render() {
         const post = this.props.post;
@@ -43,6 +102,14 @@ class PostListItem extends React.Component {
                                 )}
                             </div>
                             <p>{post.text}</p>
+                            <div className="vote-box">
+                                <div className="unpressed" id="upvote" onClick={() => this.toggleUpvoteClick()}>
+                                    <i className="fas fa-arrow-alt-circle-up"></i>
+                                </div>
+                                <div className="unpressed" id="downvote" onClick={() => this.toggleDownvoteClick()}>
+                                    <i className="fas fa-arrow-alt-circle-down"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -70,12 +137,16 @@ const mapStateToProps = (state) => {
     return {
         currentUserId: state.session.user.id,
         users: state.entities.users,
+        votes: Object.values(state.entities.votes),
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getOtherUserInfo: (userId) => dispatch(getOtherUserInfo(userId)),
+        createNewVote: (vote) => dispatch(createNewVote(vote)),
+        deleteVote: (voteId) => dispatch(deleteVote(voteId)),
+        requestVotesOnPost: (postId) => dispatch(requestVotesOnPost(postId)),
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(PostListItem);

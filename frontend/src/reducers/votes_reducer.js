@@ -5,7 +5,7 @@ export default (oldState = {}, action) => {
         case RECEIVE_VOTES:
             return Object.assign({}, oldState, action.votes);
         case RECEIVE_VOTE:
-            return Object.assign({}, oldState, action.vote);
+            return Object.assign({}, oldState, { [action.vote._id]: action.vote });
         case REMOVE_VOTE:
             let newState = Object.assign({}, oldState);
             delete newState[action.voteId];
