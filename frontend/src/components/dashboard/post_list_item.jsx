@@ -21,6 +21,13 @@ class PostListItem extends React.Component {
     componentDidMount() {
         this.props.getOtherUserInfo(this.props.post.user);
         this.props.requestVotesOnPost(this.props.post._id);
+
+        this.setState({
+            upvotes: this.props.votes.filter((vote) => vote.type === 'upvote' && vote.post === this.props.post._id),
+            downvotes: this.props.votes.filter((vote) => vote.type === 'downvote' && vote.post === this.props.post._id),
+            upvoteNum: this.state.upvotes.length,
+            downvoteNum: this.state.downvotes.length,
+        });
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.votes !== this.props.votes) {
@@ -33,6 +40,17 @@ class PostListItem extends React.Component {
                 upvoteNum: this.state.upvotes.length,
                 downvoteNum: this.state.downvotes.length,
             });
+
+            if (this.state.upvotes.filter((vote) => vote.user === this.props.currentUserId).length > 0) {
+                console.log('is upvoted!');
+                this.isUpvoted = true;
+            } else if (this.state.downvotes.filter((vote) => vote.user === this.props.currentUserId).length > 0) {
+                console.log('is downvoted!');
+                this.isUpvoted = true;
+            } else {
+                console.log('no votes');
+            }
+            console.log(this.state.upvoteNum, ' ', this.state.downvoteNum);
         }
     }
     handleUpvote() {
@@ -133,6 +151,7 @@ class PostListItem extends React.Component {
         if (!post || !author) {
             return <div>No posts found</div>;
         }
+
         return (
             <Link to={isParentPost ? `/thread/${post._id}` : null}>
                 <li className={this.props.klassName}>
