@@ -30,6 +30,7 @@
         display: flex;
         justify-content: center;
         .delete-button {
+            display: none;
             width: 30%;
             margin-left: calc(35% + 15px);
         }
