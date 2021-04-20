@@ -80,8 +80,12 @@ class SessionForm extends React.Component {
 
                             <input type="submit" value="Log In" />
                             <hr />
-                            <p className='createaccount-header'>New User? Create an Account</p>
-                            {this.props.otherForm}
+                            <div className='login-buttons'>
+                                <div className='createaccount-header'>New User?</div>
+
+                                {this.props.demoForm}
+                                {this.props.otherForm}
+                            </div>
                         </div>
                     </div>
                 </form>
