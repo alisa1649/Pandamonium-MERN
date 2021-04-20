@@ -2,6 +2,8 @@
     background-color: $main-bg-color;
     display: flex;
     flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
     input,
     textarea {
         cursor: not-allowed;
@@ -13,13 +15,18 @@
     }
     .main-profile-section {
         display: flex;
-        justify-content: space-between;
+        //justify-content: space-between;
         max-height: 400px;
+        gap: 40px;
         .profile-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-right: 10px;
             width: 48%;
             margin: 20px auto;
             background-color: #fff5;
-            border: 1px inset $green;
+            border-radius: 6px;
             h3 {
                 span {
                     color: $darkgreen;
@@ -34,13 +41,14 @@
             margin: 20px auto;
             width: 48%;
             background-color: #fff5;
-            border: 1px inset $green;
             overflow-y: scroll;
+            border-radius: 6px;
             h3 {
-                margin: 0;
+                text-align: center;
             }
             .posts-box {
                 margin-left: 15px;
+                margin-right: 15px;
             }
         }
     }
@@ -49,6 +57,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 10px;
         .profile-pic {
             width: 100px;
             height: 100px;
