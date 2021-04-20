@@ -28,8 +28,8 @@ const mapDispatchToProps =  dispatch => {
             <button className='btn-demo-user secondary' onClick= {(e) => {
                 e.preventDefault();
                 dispatch(login({
-                    email: "erlich@aviato.io",
-                    password: "erlich@aviato.io"
+                    email: "miamidude@gmail.com",
+                    password: "miamidude"
                 }))
             }} >
                 Login as Demo User
