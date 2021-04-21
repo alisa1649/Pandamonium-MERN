@@ -17,7 +17,7 @@ class PostList extends React.Component {
                         post={post}
                         deleteAction={this.props.deletePost}
                         klassName={this.props.klassName}
-                        // editAction={this.props.editPost}
+                        editAction={this.props.editAction}
                     />
                 ))}
             </ul>
