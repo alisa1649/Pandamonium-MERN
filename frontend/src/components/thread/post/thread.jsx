@@ -5,8 +5,9 @@ import { createComment, deleteComment, requestThread } from '../../../actions/th
 import NewPostForm from '../../dashboard/new_post_form';
 import PostListItem from '../../dashboard/post_list_item';
 import EditPostModal from '../../dashboard/edit_post_modal';
-import { deleteParentPost, updateParentPost } from '../../../actions/parent_post_actions';
+import { deleteParentPost, updateParentPost, createNewVoteOnPost } from '../../../actions/parent_post_actions';
 import { getCurrentUserInfo } from '../../../actions/user_actions';
+import { createNewVoteOnComment } from '../../../actions/thread_actions';
 
 class Thread extends React.Component {
     constructor(props) {
@@ -51,6 +52,7 @@ class Thread extends React.Component {
                         editAction={() => this.setState({ editModalVisible: true })}
                         deleteAction={this.props.deleteParentPost}
                         klassName="post-item-container"
+                        voteAction={this.props.parentVoteAction}
                     />
                     <ul className="post-list">
                         {this.props.comments.map((comment) => {
@@ -60,6 +62,7 @@ class Thread extends React.Component {
                                     post={comment}
                                     deleteAction={this.props.deleteComment}
                                     klassName="post-item-container"
+                                    voteAction={this.props.voteAction}
                                 />
                             );
                         })}
@@ -93,5 +96,7 @@ const mapDispatchToProps = (dispatch) => ({
     requestThread: (postId) => dispatch(requestThread(postId)),
     deleteComment: (postId) => dispatch(deleteComment(postId)),
     getCurrentUserInfo: () => dispatch(getCurrentUserInfo()),
+    voteAction: (postId, vote) => dispatch(createNewVoteOnComment(postId, vote)),
+    parentVoteAction: (postId, vote) => dispatch(createNewVoteOnPost(postId, vote)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);

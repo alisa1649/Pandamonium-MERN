@@ -37,3 +37,9 @@ export const fetchUsersPosts = (userId) => {
         return result.data;
     });
 };
+
+export const createNewVote = (postId, vote) => {
+    return axios.post(`api/posts/${postId}/vote`, vote).then((result) => {
+        return result.data;
+    });
+};
