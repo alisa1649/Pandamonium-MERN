@@ -74,3 +74,11 @@ export const requestUsersParentPosts = (userId) => (dispatch) =>
         },
         (err) => dispatch(receiveErrors(err.response.data))
     );
+
+export const createNewVoteOnPost = (postId, vote) => (dispatch) =>
+    APIUtil.createNewVote(postId, vote).then(
+        (post) => {
+            return dispatch(receiveParentPost(post));
+        },
+        (err) => dispatch(receiveErrors(err.response.data))
+    );

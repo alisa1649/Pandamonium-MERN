@@ -9,7 +9,6 @@ const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
 const forums = require('./routes/api/forums');
 const posts = require('./routes/api/posts');
-const votes = require('./routes/api/votes');
 const passport = require('passport');
 
 mongoose
@@ -34,5 +33,4 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 app.use('/api/users', users);
 app.use('/api/forums', forums);
 app.use('/api/posts', posts);
-app.use('/api/votes', votes);
 app.use(express.static('frontend/public'));
