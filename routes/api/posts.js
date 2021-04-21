@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const Post = require('../../models/Post');
 const validatePostInput = require('../../validation/posts');
+const validateVotes = require('../../validation/votes');
 const { post } = require('./forums');
 
 router.get('/forums/:forum_id', (req, res) => {
@@ -85,4 +86,25 @@ router.get('/users/:user_id', (req, res) => {
         .then((posts) => res.json(posts))
         .catch((err) => res.status(404).json({ nopostscount: "This user doesn't appear to have any posts" }));
 });
+
+router.post('/:postId/vote', (req, res) => {
+    const { errors, isValid } = validateVotes(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+    Post.findOne({ _id: req.params.postId })
+        .then((post) => {
+            if (post.votes.get(req.body.userId) === req.body.type) {
+                post.votes.delete(req.body.userId);
+            } else {
+                post.votes.set(req.body.userId, req.body.type);
+            }
+
+            post.save();
+            return post;
+        })
+        .then((response) => res.json(response))
+        .catch((err) => res.status(400).json({ error: 'Error' }));
+});
+
 module.exports = router;
