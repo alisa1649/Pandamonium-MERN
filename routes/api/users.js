@@ -138,20 +138,32 @@ router.patch('/current', passport.authenticate('jwt', { session: false }), (req,
     let newState = req.body.state;
     let newImgPath = req.body.image_path;
     let newImgColor = req.body.img_bg_color;
-
-    User.findByIdAndUpdate(
-        { _id },
-        {
-            username: newUsername,
-            bio: newBio,
-            city: newCity,
-            state: newState,
-            image_path: newImgPath,
-            img_bg_color: newImgColor,
+    Forum.find({city: req.body.city, state: req.body.state}).then((newForumArray) => {
+        let newForum = newForumArray[0];
+        if (!newForum) {
+            newForum = new Forum({
+                name: req.body.city + ', ' + req.body.state,
+                city: req.body.city,
+                state: req.body.state
+            });
+            newForum.save();
         }
-    )
-        .then((result) => res.send(result))
-        .catch((err) => res.send(err));
+        User.findByIdAndUpdate(
+            { _id },
+            {
+                username: newUsername,
+                bio: newBio,
+                city: newCity,
+                state: newState,
+                image_path: newImgPath,
+                img_bg_color: newImgColor,
+                forum: newForum._id,
+            }
+        )
+            .then((result) => res.send(result))
+            .catch((err) => res.send(err));
+    })
+
 });
 
 router.get('/:id', (req, res) => {
