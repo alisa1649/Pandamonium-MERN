@@ -7,6 +7,7 @@ import PostListItem from '../../dashboard/post_list_item';
 import EditPostModal from '../../dashboard/edit_post_modal';
 import { deleteParentPost, updateParentPost } from '../../../actions/parent_post_actions';
 import { getCurrentUserInfo } from '../../../actions/user_actions';
+import { createNewVoteOnComment } from '../../../actions/thread_actions';
 
 class Thread extends React.Component {
     constructor(props) {
@@ -60,6 +61,7 @@ class Thread extends React.Component {
                                     post={comment}
                                     deleteAction={this.props.deleteComment}
                                     klassName="post-item-container"
+                                    voteAction={this.props.voteAction}
                                 />
                             );
                         })}
@@ -93,5 +95,6 @@ const mapDispatchToProps = (dispatch) => ({
     requestThread: (postId) => dispatch(requestThread(postId)),
     deleteComment: (postId) => dispatch(deleteComment(postId)),
     getCurrentUserInfo: () => dispatch(getCurrentUserInfo()),
+    voteAction: (postId, vote) => dispatch(createNewVoteOnComment(postId, vote)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);

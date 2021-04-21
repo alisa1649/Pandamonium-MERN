@@ -1,4 +1,5 @@
 import React from 'react';
+import { createNewVoteOnPost } from '../../actions/parent_post_actions';
 
 import PostListItem from './post_list_item';
 
@@ -18,6 +19,7 @@ class PostList extends React.Component {
                         deleteAction={this.props.deletePost}
                         klassName={this.props.klassName}
                         // editAction={this.props.editPost}
+                        voteAction={this.props.voteAction}
                     />
                 ))}
             </ul>
