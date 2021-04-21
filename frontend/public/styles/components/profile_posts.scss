@@ -25,6 +25,52 @@
                 margin-top: 0;
                 margin-left: 5px;
             }
+            .vote-box {
+                display: flex;
+                #upvote {
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    //border: 1px solid green;
+                    &:hover {
+                        color: $darkgreen;
+                    }
+                    p {
+                        margin: 0;
+                    }
+                    i {
+                        font-size: 20px;
+                    }
+                    &.pressed {
+                        color: $darkgreen !important;
+                    }
+                    & i {
+                        margin-right: 5px;
+                    }
+                }
+                #downvote {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 15px;
+                    font-size: 16px;
+                    //border: 1px solid red;
+                    p {
+                        margin: 0;
+                    }
+                    i {
+                        font-size: 20px;
+                    }
+                    &:hover {
+                        color: $red;
+                    }
+                    &.pressed {
+                        color: $red !important;
+                    }
+                    & i {
+                        margin-right: 5px;
+                    }
+                }
+            }
         }
     }
     .post-body-buttons {

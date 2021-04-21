@@ -82,6 +82,9 @@
                 i {
                     font-size: 24px;
                 }
+                &:hover {
+                    color: $darkgreen;
+                }
                 &.pressed {
                     color: $darkgreen !important;
                 }
@@ -96,6 +99,9 @@
                 //border: 1px solid red;
                 i {
                     font-size: 24px;
+                }
+                &:hover {
+                    color: $red;
                 }
                 &.pressed {
                     color: $red !important;
