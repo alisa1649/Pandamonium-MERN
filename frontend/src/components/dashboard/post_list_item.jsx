@@ -27,6 +27,15 @@ class PostListItem extends React.Component {
                 downvoteNum: downvotes.length,
             };
         });
+        if (this.props.currentUserId in this.props.post.votes) {
+            if (this.props.post.votes[this.props.currentUserId] === 'upvote') {
+                this.isUpvoted = true;
+                this.isDownvoted = false;
+            } else if (this.props.post.votes[this.props.currentUserId] === 'downvote') {
+                this.isDownvoted = true;
+                this.isUpvoted = false;
+            }
+        }
     }
     componentDidUpdate(oldProps) {
         if (oldProps !== this.props) {
@@ -40,6 +49,16 @@ class PostListItem extends React.Component {
                 upvoteNum: upvotes.length,
                 downvoteNum: downvotes.length,
             });
+
+            if (this.props.currentUserId in this.props.post.votes) {
+                if (this.props.post.votes[this.props.currentUserId] === 'upvote') {
+                    this.isUpvoted = true;
+                    this.isDownvoted = false;
+                } else if (this.props.post.votes[this.props.currentUserId] === 'downvote') {
+                    this.isDownvoted = true;
+                    this.isUpvoted = false;
+                }
+            }
         }
     }
     handleUpvote(e) {
