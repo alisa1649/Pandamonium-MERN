@@ -25,7 +25,6 @@ class Dashboard extends React.Component {
             post.user = this.props.userId;
             this.props.createPost(post);
         };
-
         return (
             <div className="dashboard">
                 {this.state.editModalVisible ? (
@@ -52,6 +51,7 @@ class Dashboard extends React.Component {
 const mapStateToProps = (state) => ({
     userId: state.session.user.id,
     currentUser: state.entities.users.currentUser,
+    forumPosts: state.session.forum,
 });
 
 const mapDispatchToProps = (dispatch) => ({

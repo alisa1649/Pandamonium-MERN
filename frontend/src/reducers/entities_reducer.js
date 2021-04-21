@@ -8,4 +8,4 @@ export default combineReducers({
     users: UsersReducer,
     parent_posts: ParentPostsReducer,
     thread: ThreadReducer,
-})
+});

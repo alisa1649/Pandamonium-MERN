@@ -32,7 +32,6 @@ export const receiveDeleteParentPost = (postId) => ({
 });
 
 export const requestParentPosts = (forumId) => (dispatch) => {
-    // debugger
     return APIUtil.fetchParentPosts(forumId).then((posts) => {
         return dispatch(receiveParentPosts(posts));
     });
@@ -62,18 +61,24 @@ export const deleteParentPost = (postId) => (dispatch) =>
         (err) => dispatch(receiveErrors(err.response.data))
     );
 export const deleteAllParentPostsForUser = (userId) => (dispatch) =>
-    APIUtil.fetchUsersPosts(userId).then(
-        (posts) => {
-            posts.forEach(post => {
-                dispatch(deleteParentPost(post._id));
-            })
-        },
-    );
+    APIUtil.fetchUsersPosts(userId).then((posts) => {
+        posts.forEach((post) => {
+            dispatch(deleteParentPost(post._id));
+        });
+    });
 
 export const requestUsersParentPosts = (userId) => (dispatch) =>
     APIUtil.fetchUsersPosts(userId).then(
         (posts) => {
             return dispatch(receiveParentPosts(posts));
+        },
+        (err) => dispatch(receiveErrors(err.response.data))
+    );
+
+export const createNewVoteOnPost = (postId, vote) => (dispatch) =>
+    APIUtil.createNewVote(postId, vote).then(
+        (post) => {
+            return dispatch(receiveParentPost(post));
         },
         (err) => dispatch(receiveErrors(err.response.data))
     );

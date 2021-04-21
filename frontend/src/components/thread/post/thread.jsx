@@ -5,8 +5,9 @@ import {createComment, deleteComment, requestThread, updateComment} from '../../
 import NewPostForm from '../../dashboard/new_post_form';
 import PostListItem from '../../dashboard/post_list_item';
 import EditPostModal from '../../dashboard/edit_post_modal';
-import { deleteParentPost, updateParentPost } from '../../../actions/parent_post_actions';
+import { deleteParentPost, updateParentPost, createNewVoteOnPost } from '../../../actions/parent_post_actions';
 import { getCurrentUserInfo } from '../../../actions/user_actions';
+import { createNewVoteOnComment } from '../../../actions/thread_actions';
 
 class Thread extends React.Component {
     constructor(props) {
@@ -53,6 +54,7 @@ class Thread extends React.Component {
                         editAction={(post) => this.setState({ editModalVisible: true, editModalPost: post })}
                         deleteAction={this.props.deleteParentPost}
                         klassName="post-item-container"
+                        voteAction={this.props.parentVoteAction}
                     />
                     <ul className="post-list">
                         {this.props.comments.map((comment) => {
@@ -63,6 +65,7 @@ class Thread extends React.Component {
                                     deleteAction={this.props.deleteComment}
                                     editAction={(post) => this.setState({ editModalVisible: true, editModalPost: post })}
                                     klassName="post-item-container"
+                                    voteAction={this.props.voteAction}
                                 />
                             );
                         })}
@@ -97,5 +100,8 @@ const mapDispatchToProps = (dispatch) => ({
     deleteComment: (postId) => dispatch(deleteComment(postId)),
     getCurrentUserInfo: () => dispatch(getCurrentUserInfo()),
     updateComment: (post) => dispatch(updateComment(post)),
+    voteAction: (postId, vote) => dispatch(createNewVoteOnComment(postId, vote)),
+    parentVoteAction: (postId, vote) => dispatch(createNewVoteOnPost(postId, vote)),
+
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);
