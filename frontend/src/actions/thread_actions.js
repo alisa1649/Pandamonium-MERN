@@ -30,6 +30,5 @@ export const deleteComment = (postId) => (dispatch) => {
 
 export const createNewVoteOnComment = (postId, vote) => (dispatch) =>
     APIUtil.createNewVote(postId, vote).then((post) => {
-        debugger;
         return dispatch(receiveComment(post));
     });

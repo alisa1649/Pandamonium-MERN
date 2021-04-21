@@ -8,29 +8,52 @@ class PostListItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            votes: this.props.post.votes,
+            votes: Object.values(this.props.post.votes),
             upvotes: [],
             downvotes: [],
-            upvoteNum: 0,
-            downvoteNum: 0,
         };
         this.handleUpvote = this.handleUpvote.bind(this);
         this.handleDownvote = this.handleDownvote.bind(this);
     }
     componentDidMount() {
         this.props.getOtherUserInfo(this.props.post.user);
+        this.setState((oldState) => {
+            const upvotes = oldState.votes.filter((vote) => vote === 'upvote');
+            const downvotes = oldState.votes.filter((vote) => vote === 'downvote');
+            return {
+                upvotes,
+                downvotes,
+                upvoteNum: upvotes.length,
+                downvoteNum: downvotes.length,
+            };
+        });
+    }
+    componentDidUpdate(oldProps) {
+        if (oldProps !== this.props) {
+            const votes = Object.values(this.props.post.votes);
+            const upvotes = votes.filter((vote) => vote === 'upvote');
+            const downvotes = votes.filter((vote) => vote === 'downvote');
+            this.setState({
+                votes,
+                upvotes,
+                downvotes,
+                upvoteNum: upvotes.length,
+                downvoteNum: downvotes.length,
+            });
+        }
     }
     handleUpvote(e) {
         e.preventDefault();
-        debugger;
+
         this.props.voteAction(this.props.post._id, {
             userId: this.props.currentUserId,
             type: 'upvote',
         });
-        debugger;
     }
 
-    handleDownvote() {
+    handleDownvote(e) {
+        e.preventDefault();
+
         this.props.voteAction(this.props.post._id, {
             userId: this.props.currentUserId,
             type: 'downvote',
@@ -84,8 +107,7 @@ class PostListItem extends React.Component {
                                 <div
                                     className={this.isDownvoted ? 'pressed' : 'unpressed'}
                                     id="downvote"
-                                    // onClick={(e) => this.toggleDownvoteClick(e)}
-                                >
+                                    onClick={(e) => this.handleDownvote(e)}>
                                     <i className="fas fa-arrow-alt-circle-down"></i>
                                     <p>{this.state.downvoteNum}</p>
                                 </div>
