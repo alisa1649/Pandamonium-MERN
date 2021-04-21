@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { createComment, deleteComment, requestThread } from '../../../actions/thread_actions';
+import {createComment, deleteComment, requestThread, updateComment} from '../../../actions/thread_actions';
 import NewPostForm from '../../dashboard/new_post_form';
 import PostListItem from '../../dashboard/post_list_item';
 import EditPostModal from '../../dashboard/edit_post_modal';
@@ -36,9 +36,11 @@ class Thread extends React.Component {
                 <div className="thread-container">
                     {this.state.editModalVisible ? (
                         <EditPostModal
-                            post={this.props.parentPost}
+                            post={this.state.editModalPost}
                             closeAction={() => this.setState({ editModalVisible: false })}
-                            submitAction={(post) => this.props.updateParentPost(post)}
+                            submitAction={(post) => post.parent
+                                ? this.props.updateComment(post)
+                                : this.props.updateParentPost(post)}
                         />
                     ) : (
                         ''
@@ -48,7 +50,7 @@ class Thread extends React.Component {
                     </div>
                     <PostListItem
                         post={this.props.parentPost}
-                        editAction={() => this.setState({ editModalVisible: true })}
+                        editAction={(post) => this.setState({ editModalVisible: true, editModalPost: post })}
                         deleteAction={this.props.deleteParentPost}
                         klassName="post-item-container"
                     />
@@ -59,6 +61,7 @@ class Thread extends React.Component {
                                     key={comment._id}
                                     post={comment}
                                     deleteAction={this.props.deleteComment}
+                                    editAction={(post) => this.setState({ editModalVisible: true, editModalPost: post })}
                                     klassName="post-item-container"
                                 />
                             );
@@ -93,5 +96,6 @@ const mapDispatchToProps = (dispatch) => ({
     requestThread: (postId) => dispatch(requestThread(postId)),
     deleteComment: (postId) => dispatch(deleteComment(postId)),
     getCurrentUserInfo: () => dispatch(getCurrentUserInfo()),
+    updateComment: (post) => dispatch(updateComment(post)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Thread);

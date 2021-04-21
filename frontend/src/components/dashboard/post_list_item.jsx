@@ -48,7 +48,7 @@ class PostListItem extends React.Component {
 
                     <div className="post-body-buttons">
                         {belongsToUser && !!editAction ? (
-                            <button onClick={() => editAction(post._id)}>Edit</button>
+                            <button onClick={() => editAction(post)}>Edit</button>
                         ) : (
                             ''
                         )}
