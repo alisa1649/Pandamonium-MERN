@@ -21,8 +21,7 @@ class Dashboard extends React.Component {
             post.user = this.props.userId;
             this.props.createPost(post);
         };
-        
-            return (
+        return (
             <div className="dashboard">
                 <h2>
                     Current Location: {this.props.currentUser.city}, {this.props.currentUser.state}
@@ -30,14 +29,14 @@ class Dashboard extends React.Component {
                 <NewPostForm currentUser={this.props.currentUser} createPost={createPost} />
                 <PostList requestId={forumId} />
             </div>
-            );
+        );
     }
 }
 
 const mapStateToProps = (state) => ({
     userId: state.session.user.id,
     currentUser: state.entities.users.currentUser,
-    forumPosts: state.session.forum
+    forumPosts: state.session.forum,
 });
 
 const mapDispatchToProps = (dispatch) => ({

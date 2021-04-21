@@ -3,7 +3,8 @@ import {
     deleteAllParentPostsForUser,
     deleteParentPost,
     requestParentPosts,
-    updateParentPost
+    updateParentPost,
+    createNewVoteOnPost,
 } from '../../actions/parent_post_actions';
 import { connect } from 'react-redux';
 const mapStateToProps = (state) => {
@@ -18,5 +19,6 @@ const mapDispatchToProps = (dispatch) => ({
     requestParentPosts: (forumId) => dispatch(requestParentPosts(forumId)),
     deletePost: (postId) => dispatch(deleteParentPost(postId)),
     // editPost: (post) => dispatch(updateParentPost(post)),
+    voteAction: (postId, vote) => dispatch(createNewVoteOnPost(postId, vote)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);

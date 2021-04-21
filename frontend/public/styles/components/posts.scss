@@ -72,6 +72,45 @@
         p {
             margin: 0 10;
         }
+        .vote-box {
+            //border: 1px solid black;
+            display: flex;
+            .pressed {
+                //border: 1px inset black;
+            }
+            .unpressed {
+                //border: 1px outset black;
+            }
+            #upvote {
+                display: flex;
+                align-items: center;
+                //border: 1px solid green;
+                i {
+                    font-size: 24px;
+                }
+                &.pressed {
+                    color: $darkgreen !important;
+                }
+                & i {
+                    margin-right: 5px;
+                }
+            }
+            #downvote {
+                display: flex;
+                align-items: center;
+                margin-left: 15px;
+                //border: 1px solid red;
+                i {
+                    font-size: 24px;
+                }
+                &.pressed {
+                    color: $red !important;
+                }
+                & i {
+                    margin-right: 5px;
+                }
+            }
+        }
     }
     .delete-button {
         &:hover {
