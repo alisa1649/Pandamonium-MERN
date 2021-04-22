@@ -98,7 +98,7 @@ const AboutUs = (props) => {
                         <h3 className="name">
                             Yohan Oh- <i>Role</i>
                         </h3>
-                        <p className="bio">Write something nice here! What did you work on??</p>
+                        <p className="bio">Yohan focused primarily on implementing the Google Maps API to Pandamonium's location-based forums, connecting users and forums to a specific region. Yohan also assisted with design aspects on the frontend.</p>
                     </div>
                 </div>
                 <div className="link-box">
