@@ -18,7 +18,7 @@ const AboutUs = (props) => {
                         <h3 className="name">
                             Alisa Cheadle- <i>Role</i>
                         </h3>
-                        <p className="bio">Write something nice here! What did you work on??</p>
+                        <p className="bio">Alisa focused primarily on our site's frontend, including styling of the landing, dashboard, profile, and thread pages as well as the frontend CRUD functionality for posts and comments. Alisa also integrated the frontend of posts, threads and comments to the backend.</p>
                     </div>
                 </div>
                 <div className="link-box">
