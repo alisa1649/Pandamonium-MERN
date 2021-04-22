@@ -4,8 +4,13 @@
 # Background
 
 # Technologies
+- MongoDB
+- Mongoose ODM
+- React
+- Webpack
+- Google Maps API
 
-# Feautures
+# Features
 
 # Credits
 
