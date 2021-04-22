@@ -1,4 +1,11 @@
-# Pandamonium MERN Project
+# Pandamonium (MERN Stack)  
+[Live Link](https://pandamonium-mern.herokuapp.com/)
+
+# Background
+
+# Technologies
+
+# Feautures
 
 # Credits
 
