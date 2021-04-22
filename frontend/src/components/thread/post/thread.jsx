@@ -38,6 +38,7 @@ class Thread extends React.Component {
                     {this.state.editModalVisible ? (
                         <EditPostModal
                             post={this.state.editModalPost}
+                            currentUser={this.props.currentUser}
                             closeAction={() => this.setState({ editModalVisible: false })}
                             submitAction={(post) => post.parent
                                 ? this.props.updateComment(post)

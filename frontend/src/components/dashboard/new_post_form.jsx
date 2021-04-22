@@ -39,8 +39,10 @@ class NewPostForm extends React.Component {
         }
         return (
             <form className="new-post-box" onSubmit={this.handleSubmit}>
-                <div id={currentUser.img_bg_color} className="post-user-avatar">
-                    <img src={currentUser.image_path} />
+                <div className="avatar-container">
+                    <div id={currentUser.img_bg_color} className="post-user-avatar">
+                        <img src={currentUser.image_path} />
+                    </div>
                 </div>
                 <div className="new-post-middle">
                     <div className="anonymous-box">
