@@ -40,9 +40,9 @@ const AboutUs = (props) => {
                     </div>
                     <div className="about-us-info">
                         <h3 className="name">
-                            Danny Ho- <i>Role</i>
+                            Danny Ho- <i>Backend Developer</i>
                         </h3>
-                        <p className="bio">Write something nice here! What did you work on??</p>
+                        <p className="bio">Danny focused primarily on Pandamonium's backend, including implementation of its user authentication, and structuring the models, validations and routes for location-based forums, posts/comments, and user data. Danny also assisted in connecting the location-based forum to the frontend.</p>
                     </div>
                 </div>
                 <div className="link-box">
