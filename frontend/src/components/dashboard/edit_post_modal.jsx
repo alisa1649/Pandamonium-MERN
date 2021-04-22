@@ -28,7 +28,9 @@ class EditPostModal extends React.Component {
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     <form className='new-post-box' onSubmit={this.handleSubmit}>
                         <div className='post-user-avatar'> </div>
-                        <textarea onChange={this.handleChange}>{this.state.text}</textarea>
+                        <div className="text-container">
+                            <textarea onChange={this.handleChange}>{this.state.text}</textarea>
+                        </div>
                         <input type='submit' className='post-box-button' value='Post' />
                     </form>
                 </div>
