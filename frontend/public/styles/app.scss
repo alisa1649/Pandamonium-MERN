@@ -12,6 +12,11 @@ body {
     height: 100%;
 }
 
+input:read-only {
+    background-color: #EEE;
+    cursor: not-allowed;
+}
+
 h1,
 h2,
 h3,
