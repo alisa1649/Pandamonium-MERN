@@ -117,7 +117,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br />
                         <label>
-                            <input ref={this.autocompleteInput}  
+                            <input ref={this.autocompleteInput}
                             id="autocomplete" 
                             placeholder="Enter your city and state"
                             type="text"
@@ -125,7 +125,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br/>
                         <label>
-                        <input                                
+                        <input
                             value={this.state.city}
                             placeholder={'City'}
                             onChange={this.update('city')}
