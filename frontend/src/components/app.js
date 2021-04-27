@@ -25,7 +25,7 @@ const App = () => (
             <ProtectedRoute exact path="/" component={Dashboard} />
             <ProtectedRoute exact path="/dashboard" component={Dashboard} />
             <ProtectedRoute exact path="/thread/:postId" component={Thread} />
-            <Route exact path="/about" component={AboutUs} />
+            <ProtectedRoute exact path="/about" component={AboutUs} />
         </Switch>
     </div>
 );

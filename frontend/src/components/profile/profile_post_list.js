@@ -1,21 +1,20 @@
 import React from 'react';
 import { createNewVoteOnPost } from '../../actions/parent_post_actions';
+import PostListItem from "../dashboard/post_list_item";
 
-import PostListItem from './post_list_item';
-
-class PostList extends React.Component {
+class profilePostList extends React.Component {
     componentDidMount() {
         this.props.requestParentPosts(this.props.requestId);
     }
 
     render() {
         const sortedPosts = this.props.parent_posts.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
-        
+
         if (sortedPosts.length < 1) {
             return (
                 <div className='emptyForumMessage'>
                     <div className="empty-forum-panda-container">
-                        <img src="/emptyForum_panda.png"/>
+                        <img src="/smaller_empty_forum_panda.png"/>
                     </div>
                 </div>
             )
@@ -38,4 +37,4 @@ class PostList extends React.Component {
     }
 }
 
-export default PostList;
+export default profilePostList;

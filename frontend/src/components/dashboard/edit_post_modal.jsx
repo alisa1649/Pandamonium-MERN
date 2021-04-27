@@ -14,7 +14,7 @@ class EditPostModal extends React.Component {
         this.setState({
             text: e.currentTarget.value
         })
-    }
+    };
 
     handleSubmit() {
         const newPost = Object.assign({}, this.props.post, this.state)
@@ -23,12 +23,19 @@ class EditPostModal extends React.Component {
     }
 
     render() {
+        const { currentUser } = this.props;
         return (
             <div className="modal-background" onClick={this.props.closeAction}>
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     <form className='new-post-box' onSubmit={this.handleSubmit}>
-                        <div className='post-user-avatar'> </div>
-                        <textarea onChange={this.handleChange}>{this.state.text}</textarea>
+                        <div className="avatar-container">
+                            <div id={currentUser.img_bg_color} className="post-user-avatar">
+                                <img src={currentUser.image_path} />
+                            </div>
+                        </div>
+                        <div className="text-container">
+                            <textarea onChange={this.handleChange}>{this.state.text}</textarea>
+                        </div>
                         <input type='submit' className='post-box-button' value='Post' />
                     </form>
                 </div>

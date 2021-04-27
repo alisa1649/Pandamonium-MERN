@@ -29,6 +29,7 @@ class Dashboard extends React.Component {
             <div className="dashboard">
                 {this.state.editModalVisible ? (
                     <EditPostModal
+                        currentUser={this.props.currentUser}
                         post={this.state.editModalPost}
                         closeAction={() => this.setState({ editModalVisible: false })}
                         submitAction={(post) => {
