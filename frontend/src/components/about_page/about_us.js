@@ -18,7 +18,11 @@ const AboutUs = (props) => {
                         <h3 className="name">
                             Alisa Cheadle- <i>Role</i>
                         </h3>
-                        <p className="bio">Alisa focused primarily on our site's frontend, including styling of the landing, dashboard, profile, and thread pages as well as the frontend CRUD functionality for posts and comments. Alisa also integrated the frontend of posts, threads and comments to the backend.</p>
+                        <p className="bio">
+                            Alisa focused primarily on our site's frontend, including styling of the landing, dashboard,
+                            profile, and thread pages as well as the frontend CRUD functionality for posts and comments.
+                            Alisa also integrated the frontend of posts, threads and comments to the backend.
+                        </p>
                     </div>
                 </div>
                 <div className="link-box">
@@ -42,7 +46,12 @@ const AboutUs = (props) => {
                         <h3 className="name">
                             Danny Ho- <i>Backend Developer</i>
                         </h3>
-                        <p className="bio">Danny focused primarily on Pandamonium's backend, including implementation of its user authentication, and structuring the models, validations and routes for location-based forums, posts/comments, and user data. Danny also assisted in connecting the location-based forum to the frontend.</p>
+                        <p className="bio">
+                            Danny focused primarily on Pandamonium's backend, including implementation of its user
+                            authentication, and structuring the models, validations and routes for location-based
+                            forums, posts/comments, and user data. Danny also assisted in connecting the location-based
+                            forum to the frontend.
+                        </p>
                     </div>
                 </div>
                 <div className="link-box">
@@ -81,7 +90,7 @@ const AboutUs = (props) => {
                         <i className="fab fa-linkedin"></i>
                     </a>
                     {/* personal site goes here */}
-                    <a href="" target="_blank">
+                    <a href="https://lrharris215.github.io./" target="_blank">
                         <i className="fas fa-user-circle"></i>
                     </a>
                 </div>
@@ -98,7 +107,11 @@ const AboutUs = (props) => {
                         <h3 className="name">
                             Yohan Oh- <i>Role</i>
                         </h3>
-                        <p className="bio">Yohan focused primarily on implementing the Google Maps API to Pandamonium's location-based forums, connecting users and forums to a specific region. Yohan also assisted with design aspects on the frontend.</p>
+                        <p className="bio">
+                            Yohan focused primarily on implementing the Google Maps API to Pandamonium's location-based
+                            forums, connecting users and forums to a specific region. Yohan also assisted with design
+                            aspects on the frontend.
+                        </p>
                     </div>
                 </div>
                 <div className="link-box">
