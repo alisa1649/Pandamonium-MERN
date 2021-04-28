@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import ReactToolTip from 'react-tooltip';
 /* global google */
 
 class EditProfileForm extends React.Component {
@@ -119,29 +120,30 @@ class EditProfileForm extends React.Component {
 
                             <label>
                                 Edit your location:
-                                <input ref={this.autocompleteInput}  
-                                id="autocomplete" 
-                                placeholder="Enter your location"
-                                type="text"
-                            />
+                                <input
+                                    ref={this.autocompleteInput}
+                                    id="autocomplete"
+                                    placeholder="Enter your location"
+                                    type="text"
+                                />
                             </label>
                             <label>
-                                City: 
-                            <input                                
-                                value={this.state.city}
-                                placeholder={'city'}
-                                onChange={this.update('city')}
-                                readOnly
-                            />
+                                City:
+                                <input
+                                    value={this.state.city}
+                                    placeholder={'city'}
+                                    onChange={this.update('city')}
+                                    readOnly
+                                />
                             </label>
                             <label>
-                                State: 
-                            <input
-                                value={this.state.state}
-                                placeholder={'state'}
-                                onChange={this.update('state')}
-                                readOnly
-                            />
+                                State:
+                                <input
+                                    value={this.state.state}
+                                    placeholder={'state'}
+                                    onChange={this.update('state')}
+                                    readOnly
+                                />
                             </label>
 
                             <label>
@@ -180,24 +182,120 @@ class EditProfileForm extends React.Component {
                                 </div>
                             </div>
                             <div className="color-box">
-                                <div className="color" id="blue" onClick={this.updateColor()}></div>
-                                <div className="color" id="red" onClick={this.updateColor()}></div>
-                                <div className="color" id="green" onClick={this.updateColor()}></div>
-                                <div className="color" id="purple" onClick={this.updateColor()}></div>
-                                <div className="color" id="yellow" onClick={this.updateColor()}></div>
-                                <div className="color" id="orange" onClick={this.updateColor()}></div>
-                                <div className="color" id="pink" onClick={this.updateColor()}></div>
-                                <div className="color" id="rainbow" onClick={this.updateColor()}></div>
-                                <div className="color" id="lesbian-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="bisexual-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="pansexual-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="transgender-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="asexual-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="nonbinary-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="genderfluid-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="genderqueer-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="agender-pride" onClick={this.updateColor()}></div>
-                                <div className="color" id="intersex-pride" onClick={this.updateColor()}></div>
+                                <ReactToolTip
+                                    border
+                                    borderColor="darkgreen"
+                                    backgroundColor="#fffa"
+                                    textColor="black"
+                                    id="color-tip"></ReactToolTip>
+                                <div
+                                    data-tip="Blue"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="blue"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Red"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="red"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Green"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="green"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Purple"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="purple"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Yellow"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="yellow"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Orange"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="orange"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Pink"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="pink"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Gay Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="rainbow"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Lesbian Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="lesbian-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Bisexual Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="bisexual-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Pansexual Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="pansexual-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Transgender Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="transgender-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Asexual Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="asexual-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Non-Binary Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="nonbinary-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Genderfluid Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="genderfluid-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Genderqueer Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="genderqueer-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Agender Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="agender-pride"
+                                    onClick={this.updateColor()}></div>
+                                <div
+                                    data-tip="Intersex Pride"
+                                    data-for="color-tip"
+                                    className="color"
+                                    id="intersex-pride"
+                                    onClick={this.updateColor()}></div>
                             </div>
                         </div>
                     </div>
