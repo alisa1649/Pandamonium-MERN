@@ -70,10 +70,7 @@ const AboutUs = (props) => {
             <div id="lane" className="about-us-item">
                 <div className="left">
                     <div className="about-us-pic">
-                        <img
-                            id="lane-pic"
-                            alt="picture of Lane"
-                            src="https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/906/medium/Lane_Harris.jpg?1610668094"></img>
+                        <img id="lane-pic" alt="picture of Lane" src="./lane_profile.jpg"></img>
                     </div>
                     <div className="about-us-info">
                         <h3 className="name">
