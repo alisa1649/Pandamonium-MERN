@@ -70,16 +70,18 @@ const AboutUs = (props) => {
             <div id="lane" className="about-us-item">
                 <div className="left">
                     <div className="about-us-pic">
-                        <img
-                            id="lane-pic"
-                            alt="picture of Lane"
-                            src="https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/906/medium/Lane_Harris.jpg?1610668094"></img>
+                        <img id="lane-pic" alt="picture of Lane" src="./lane_profile.jpg"></img>
                     </div>
                     <div className="about-us-info">
                         <h3 className="name">
-                            Lane Harris- <i>Role</i>
+                            Lane Harris- <i>Flex Developer</i>
                         </h3>
-                        <p className="bio">Write something nice here! What did you work on??</p>
+                        <p className="bio">
+                            Lane worked as a flex developer for this project, predominantly working on the
+                            implementation of user profiles from back to front. She added the ability to post
+                            anonymously, as well as the ability to upvote and downvote posts. Lane also assisted in
+                            styling aspects across the entire site.
+                        </p>
                     </div>
                 </div>
                 <div className="link-box">
