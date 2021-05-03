@@ -314,6 +314,10 @@ body {
   overflow-y: scroll;
   height: 100%; }
 
+input:read-only {
+  background-color: #EEE;
+  cursor: not-allowed; }
+
 h1,
 h2,
 h3,
@@ -578,6 +582,11 @@ input:read-only {
         height: 70px; }
     .profile-page .profile-header h1 {
       margin: 0 20px; }
+  .profile-page .emptyForumMessage {
+    text-align: center;
+    font-weight: normal;
+    color: #0aad77;
+    font-size: 18px; }
 
 .new-post-box {
   display: flex;
@@ -614,6 +623,7 @@ input:read-only {
     background-color: #ffffffbd; }
     .new-post-box .text-container .textarea {
       height: 100%;
+
       width: 100%; }
   .new-post-box .new-post-middle {
     width: calc(90% - 150px);
@@ -669,7 +679,8 @@ input:read-only {
           margin-left: 10px;
           background-color: #ffffffbd; }
         .edit-profile-form-container .edit-profile-form .main-form-section .left-half textarea {
-          background-color: #ffffffbd; }
+          background-color: #ffffffbd;
+          height: 180px; }
         .edit-profile-form-container .edit-profile-form .main-form-section .left-half textarea:focus,
         .edit-profile-form-container .edit-profile-form .main-form-section .left-half input:focus {
           background-color: #fff; }

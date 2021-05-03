@@ -41,6 +41,10 @@ module.exports = function validateSignupInput(data) {
     errors.password2 = 'Passwords must match';
   }
 
+  if (Validator.isEmpty(data.city) || Validator.isEmpty(data.state)) {
+    errors.email = 'Location is missing or invalid';
+  }
+
   return {
     errors,
     isValid: Object.keys(errors).length === 0

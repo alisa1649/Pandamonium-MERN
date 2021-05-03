@@ -13,9 +13,7 @@ class profilePostList extends React.Component {
         if (sortedPosts.length < 1) {
             return (
                 <div className='emptyForumMessage'>
-                    <div className="empty-forum-panda-container">
-                        <img src="/smaller_empty_forum_panda.png"/>
-                    </div>
+                    You haven't made any posts yet
                 </div>
             )
         }

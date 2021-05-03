@@ -119,31 +119,16 @@ class EditProfileForm extends React.Component {
                             </label>
 
                             <label>
-                                Edit your location:
-                                <input
-                                    ref={this.autocompleteInput}
-                                    id="autocomplete"
-                                    placeholder="Enter your location"
-                                    type="text"
-                                />
-                            </label>
-                            <label>
-                                City:
-                                <input
-                                    value={this.state.city}
-                                    placeholder={'city'}
-                                    onChange={this.update('city')}
-                                    readOnly
-                                />
-                            </label>
-                            <label>
-                                State:
-                                <input
-                                    value={this.state.state}
-                                    placeholder={'state'}
-                                    onChange={this.update('state')}
-                                    readOnly
-                                />
+
+                                Change your location:
+                                <input ref={this.autocompleteInput}  
+                                id="autocomplete" 
+                                placeholder="Enter city and state"
+                                type="text"
+                            />
+                            <span>
+                                <i>Current Location: <u>{this.state.city}, {this.state.state}</u></i>
+                        </span>
                             </label>
 
                             <label>

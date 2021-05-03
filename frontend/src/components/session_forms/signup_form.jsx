@@ -46,10 +46,13 @@ class SignupForm extends React.Component {
 
     handlePlaceChanged = () => {
         const place = this.autocomplete.getPlace();
-        this.setState({
-            city: place.address_components[0].long_name,
-            state: place.address_components[2].long_name,
-        });
+        const place_is_valid = !!place.place_id
+        if (place_is_valid) {
+            this.setState({
+                city: place.address_components[0].long_name,
+                state: place.address_components[2].long_name,
+            });
+        }
     };
 
 
@@ -73,7 +76,9 @@ class SignupForm extends React.Component {
         
         
         this.props.signup(user).then(() => {
-            this.props.login(user)
+            if(this.props.signedIn) {
+                this.props.login(user)
+            }
         })
     }
 
@@ -117,7 +122,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br />
                         <label>
-                            <input ref={this.autocompleteInput}  
+                            <input ref={this.autocompleteInput}
                             id="autocomplete" 
                             placeholder="Enter your city and state"
                             type="text"
@@ -125,7 +130,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br/>
                         <label>
-                        <input                                
+                        <input
                             value={this.state.city}
                             placeholder={'City'}
                             onChange={this.update('city')}
