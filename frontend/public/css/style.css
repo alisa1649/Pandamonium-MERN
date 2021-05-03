@@ -621,9 +621,7 @@ input:read-only {
     border-radius: 5px;
     box-sizing: border-box;
     background-color: #ffffffbd; }
-    .new-post-box .text-container .textarea {
-      height: 100%;
-
+    .new-post-box .text-container textarea {
       width: 100%; }
   .new-post-box .new-post-middle {
     width: calc(90% - 150px);
