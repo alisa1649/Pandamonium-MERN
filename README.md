@@ -14,6 +14,47 @@ Pandamonium was built on a MongoDB backend framework, to structure essential use
 - Google Maps API
 
 # Features
+### User Auth
+- Users can sign up and create a Pandamonium account, linking their new profiles to a specific region (city/state).
+- The signup form is rendered with a modal design.
+- Users who would like to cample the app first, may log in as a demo user to browse the site and its functionality.
+- Upon logging in, users are directed to their regional forum.
+
+### Location/Region
+- Pandamonium utilizes Google Maps API to integrate regional data (i.e. city/state search, and autocomplete).
+- Each region is linked to its own unique forum, which users are also linked to upon creating an account tied to such location. If a regional forum does not yet exist, due to no users yet existing in a region, the app dynamically creates a new regional forum the instant a new account is linked to such new region.  
+```
+    User.findOne({ email: req.body.email }).then((user) => {
+        if (user) {
+            // Throw a 400 error if the email address already exists
+            return res.status(400).json({ email: 'A user has already signed up with this address' });
+        } else {
+            // Otherwise create a new user
+            Forum.find({city: req.body.city, state: req.body.state}).then((newForumArray) => {
+                let newForum = newForumArray[0];
+                console.log('newForum1', newForum);
+            if (!newForum) {
+                newForum = new Forum({
+                    name: req.body.city + ', ' + req.body.state,
+                    city: req.body.city,
+                    state: req.body.state
+                });
+                console.log('newForum2', newForum);
+                newForum.save();
+            }
+```
+- Users can change their location and redirect to an alternate regional forum even after initial account creation.
+
+### Forums/Posts
+- Regional forums serve as central hubs containing and indexing all 'top-level' posts (i.e. new original posts) for its given location.
+- Such top-level posts can be commented on directly via 'sub-posts'.
+- All posts, (whether top-level or subsidiary) can be up/down-voted by a logged in user.
+- Any post can be submitted anonymously, simply by checking a box before submission. This helps maintain a sense of security and comfort for certain users that may want to ease into a community at a steadier pace.
+
+### User Profiles
+- User profiles consist of location data, a bio, an avatar, and an index of such user's history of posts.
+- A user can edit their bio or avatar from the profile page.
+- A user can also edit their location (city/state), which will render such new location's regional forum page the next time such user navigates to their 'home page'.
 
 # Credits
 
