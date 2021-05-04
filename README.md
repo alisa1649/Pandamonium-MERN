@@ -17,7 +17,7 @@ Pandamonium was built on a MongoDB backend framework, to structure essential use
 ### User Auth
 - Users can sign up and create a Pandamonium account, linking their new profiles to a specific region (city/state).
 - The signup form is rendered with a modal design.
-- Users who would like to cample the app first, may log in as a demo user to browse the site and its functionality.
+- Users who would like to sample the app first, may log in as a demo user to browse the site and its functionality.
 - Upon logging in, users are directed to their regional forum.
 
 ### Location/Region
