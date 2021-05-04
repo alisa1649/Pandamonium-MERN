@@ -53,8 +53,8 @@ Pandamonium was built on a MongoDB backend framework, to structure essential use
 
 ### User Profiles
 - User profiles consist of location data, a bio, an avatar, and an index of such user's history of posts.
-- A user can edit their bio or avatar from the profile page.
-- A user can also edit their location (city/state), which will render such new location's regional forum page the next time such user navigates to their 'home page'.
+- A logged-in user can edit their bio or avatar from the profile page.
+- A logged-in user can also edit their location (city/state), which will render such new location's regional forum page the next time such user navigates to their 'home page'.
 
 # Credits
 
