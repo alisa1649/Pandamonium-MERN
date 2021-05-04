@@ -48,7 +48,7 @@ Pandamonium was built on a MongoDB backend framework, to structure essential use
 ### Forums/Posts
 - Regional forums serve as central hubs containing and indexing all 'top-level' posts (i.e. new original posts) for its given location.
 - Such top-level posts can be commented on directly via 'sub-posts'.
-- All posts, (whether top-level or subsidiary) can be up/down-voted by a logged in user.
+- All posts, (whether top-level or subsidiary) can be up/down-voted by a logged-in user.
 - Any post can be submitted anonymously, simply by checking a box before submission. This helps maintain a sense of security and comfort for certain users that may want to ease into a community at a steadier pace.
 
 ### User Profiles
