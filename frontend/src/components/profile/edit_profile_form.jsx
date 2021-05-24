@@ -137,7 +137,8 @@ class EditProfileForm extends React.Component {
                                     cols="35"
                                     rows="5"
                                     value={this.state.bio}
-                                    onChange={this.update('bio')}></textarea>
+                                    onChange={this.update('bio')}>
+                                </textarea>
                             </label>
                         </div>
                         <div className="right-half">
@@ -172,119 +173,139 @@ class EditProfileForm extends React.Component {
                                     borderColor="darkgreen"
                                     backgroundColor="#fffa"
                                     textColor="black"
-                                    id="color-tip"></ReactToolTip>
+                                    id="color-tip">
+                                </ReactToolTip>
                                 <div
                                     data-tip="Blue"
                                     data-for="color-tip"
                                     className="color"
                                     id="blue"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Red"
                                     data-for="color-tip"
                                     className="color"
                                     id="red"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Green"
                                     data-for="color-tip"
                                     className="color"
                                     id="green"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Purple"
                                     data-for="color-tip"
                                     className="color"
                                     id="purple"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Yellow"
                                     data-for="color-tip"
                                     className="color"
                                     id="yellow"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Orange"
                                     data-for="color-tip"
                                     className="color"
                                     id="orange"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Pink"
                                     data-for="color-tip"
                                     className="color"
                                     id="pink"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Gay Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="rainbow"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Lesbian Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="lesbian-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Bisexual Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="bisexual-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Pansexual Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="pansexual-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Transgender Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="transgender-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Asexual Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="asexual-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Non-Binary Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="nonbinary-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Genderfluid Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="genderfluid-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Genderqueer Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="genderqueer-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Agender Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="agender-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                                 <div
                                     data-tip="Intersex Pride"
                                     data-for="color-tip"
                                     className="color"
                                     id="intersex-pride"
-                                    onClick={this.updateColor()}></div>
+                                    onClick={this.updateColor()}>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Edit Profile"></input>
+                    <input type="submit" value="Edit Profile">
+                    </input>
                 </form>
             </div>
         );
