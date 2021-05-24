@@ -24,7 +24,6 @@ export const editCurrentUserInfo = (newInfo) => (dispatch) => {
 };
 
 export const getOtherUserInfo = (userId) => (dispatch) => {
-    console.log('getOtherUserInfo: ' + userId);
     return APIUtil.getOtherUserInfo(userId).then((otherUser) => dispatch(receiveOtherUser(otherUser)));
 };
 export const deleteUser = (userId) => (dispatch) => {
