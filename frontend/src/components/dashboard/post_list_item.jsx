@@ -87,6 +87,7 @@ class PostListItem extends React.Component {
         const editAction = this.props.editAction;
         const deleteAction = this.props.deleteAction;
         const isParentPost = !post.parent;
+        const timestamp = this.props.post.timestamps;
 
         const belongsToUser = this.props.currentUserId === post.user;
 
@@ -137,7 +138,7 @@ class PostListItem extends React.Component {
                             </div>
                         </div>
                     </div>
-
+                <div className="buttons-timestamps-container">
                     <div className="post-body-buttons">
                         {belongsToUser && !!editAction ? (
                             <button
@@ -163,6 +164,10 @@ class PostListItem extends React.Component {
                             ''
                         )}
                     </div>
+                    <div className="post-timestamps">
+                        I'm a timestamp!
+                    </div>
+                </div>
                 </li>
             </Link>
         );
