@@ -107,7 +107,7 @@ const AboutUs = (props) => {
                     </div>
                     <div className="about-us-info">
                         <h3 className="name">
-                            Yohan Oh- <i>Role</i>
+                            Yohan Oh- <i>Flex Developer</i>
                         </h3>
                         <p className="bio">
                             Yohan focused primarily on implementing the Google Maps API to Pandamonium's location-based
