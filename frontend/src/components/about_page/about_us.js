@@ -16,7 +16,7 @@ const AboutUs = (props) => {
                     </div>
                     <div className="about-us-info">
                         <h3 className="name">
-                            Alisa Cheadle- <i>Role</i>
+                            Alisa Cheadle- <i>Frontend Developer</i>
                         </h3>
                         <p className="bio">
                             Alisa focused primarily on our site's frontend, including styling of the landing, dashboard,
