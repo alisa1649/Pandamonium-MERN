@@ -4,6 +4,7 @@ import {
     RECEIVE_PARENT_POST_ERRORS,
     RECEIVE_PARENT_POSTS, RECEIVE_UPDATE_PARENT_POST
 } from '../actions/parent_post_actions';
+import {RECEIVE_USER_LOGOUT} from "../actions/session_actions";
 
 const initialState = {};
 
@@ -31,6 +32,8 @@ const ParentPostsReducer = (state = initialState, action) =>  {
             const newState2 = Object.assign({}, state);
             delete newState2[action.postId];
             return newState2;
+        case RECEIVE_USER_LOGOUT:
+            return {};
         default:
             return state;
     }

@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
                             <h2 className='login-header'>Sign In</h2>
 
                             <span className='errors'>
-                                {this.props.modalStatus === null ? <p>{this.renderErrors()}</p> : null}
+                                {this.props.modalStatus === null ? this.renderErrors() : null}
                             </span>
 
                             <input
