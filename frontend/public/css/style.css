@@ -867,7 +867,8 @@ input:read-only {
       position: absolute;
       right: 20px;
       bottom: 20px;
-      font-size: 12px; }
+      font-size: 13px;
+      color: #3b3b3b; }
   .post-item-container .delete-button:hover {
     cursor: pointer; }
 
