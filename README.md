@@ -87,6 +87,8 @@ Pandamonium was built on a MongoDB backend framework, to structure essential use
 
 # Credits
 
+This project was inspired by Ariton Sefedini and his original idea!
+
 panda1- Charles Ho (https://www.instagram.com/hojincha/)  
 panda2- http://clipart-library.com/clip-art/transparent-panda-5.htm  
 panda3- http://clipart-library.com/clip-art/transparent-panda-6.htm  
