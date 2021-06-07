@@ -20,6 +20,10 @@ Pandamonium was built on a MongoDB backend framework, to structure essential use
 - Users who would like to sample the app first, may log in as a demo user to browse the site and its functionality.
 - Upon logging in, users are directed to their regional forum.
 
+  ![pandamonium_readme_signup_image](https://user-images.githubusercontent.com/74744805/121084230-6654c300-c7ae-11eb-8025-fdb0d2911d3b.png)
+
+
+
 ### Location/Region
 - Pandamonium utilizes Google Maps API to integrate regional data (i.e. city/state search, and autocomplete).
 - Each region is linked to its own unique forum, which users are also linked to upon creating an account tied to such location. If a regional forum does not yet exist, due to no users yet existing in a region, the app dynamically creates a new regional forum the instant a new account is linked to such new region.  
@@ -51,10 +55,35 @@ Pandamonium was built on a MongoDB backend framework, to structure essential use
 - All posts, (whether top-level or subsidiary) can be up/down-voted by a logged-in user.
 - Any post can be submitted anonymously, simply by checking a box before submission. This helps maintain a sense of security and comfort for certain users that may want to ease into a community at a steadier pace.
 
+```
+<div className="vote-box">
+  <div
+      className={this.isUpvoted ? 'pressed' : 'unpressed'}
+      id="upvote"
+      onClick={(e) => this.handleUpvote(e)}>
+      <i className="fas fa-arrow-alt-circle-up"></i>
+      <p>{this.state.upvoteNum}</p>
+  </div>
+  <div
+      className={this.isDownvoted ? 'pressed' : 'unpressed'}
+      id="downvote"
+      onClick={(e) => this.handleDownvote(e)}>
+      <i className="fas fa-arrow-alt-circle-down"></i>
+      <p>{this.state.downvoteNum}</p>
+  </div>
+</div>
+```
+
 ### User Profiles
 - User profiles consist of location data, a bio, an avatar, and an index of such user's history of posts.
 - A logged-in user can edit their bio or avatar from the profile page.
 - A logged-in user can also edit their location (city/state), which will render such new location's regional forum page the next time such user navigates to their 'home page'.
+
+
+    ![pandamonium-readme-image](https://user-images.githubusercontent.com/74744805/121081276-83879280-c7aa-11eb-8920-35c21ac65dd8.png)
+
+
+
 
 # Credits
 
